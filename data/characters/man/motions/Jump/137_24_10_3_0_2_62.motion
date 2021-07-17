@@ -1,0 +1,54 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_descriptor_avg =  1.388704 -0.066085 0.199280 -0.031482 0.005594 0.007127 0.709606;
+	motion_descriptor_min =  1.388704 -0.066085 0.199280 -0.031482 0.005594 0.007127 0.709606;
+	motion_descriptor_max =  1.388704 -0.066085 0.199280 -0.031482 0.005594 0.007127 0.709606;
+	motion_descriptor_env =  1.322215 -0.470957 1.592594 -0.429672 1.549105 -0.269039 1.327535 -0.051127 1.199721 -0.245570;
+	motion_success =  0;
+}
+
+Hips_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.644765 0.939716 1.394799 2.992908;
+	trajectory_channel_p_y =  -0.042805 -0.496105 0.021247 -0.071708 -0.042805;
+	trajectory_channel_tng =  0.526849 -2.000000 0.500000 0.500000 0.500000;
+}
+Hips_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.477700 0.867208 1.812057;
+	trajectory_channel_p_y =  0.000000 0.096099 -0.187363 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Hips_VEC_Z 
+{
+	trajectory_channel_p_t =  0.000000 0.434197 0.825793 2.000001;
+	trajectory_channel_p_y =  0.062237 0.738388 -0.141906 0.062237;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+ContactModule_FLOAT 
+{
+	trajectory_channel_p_t =  0.000000 0.479952 1.517731;
+	trajectory_channel_p_y =  0.500000 1.244698 0.500000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+GainMult 
+{
+	trajectory_channel_p_t =  0.000000 1.014030 1.264903 2.179670;
+	trajectory_channel_p_y =  2.599999 2.100204 1.453185 2.599999;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Foot_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.870435 1.152780 1.716313;
+	trajectory_channel_p_y =  0.000000 0.709099 -0.199354 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Arm_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.449122 0.776652 1.497873;
+	trajectory_channel_p_y =  0.000000 1.054823 -0.357391 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}

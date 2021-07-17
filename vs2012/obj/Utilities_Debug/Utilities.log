@@ -1,0 +1,34 @@
+﻿Build started 6/12/2013 10:51:54 PM.
+     1>Project "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\Utilities.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\..\sdks\include /I..\include /I..\..\graphsim /I..\..\fltk /ZI /nologo /W3 /WX- /Od /Oy- /D SR_DEBUG /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\Utilities_Debug\\" /Fd"obj\Utilities_Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\Utlities\util_manipulator.cpp
+         util_manipulator.cpp
+     1>c:\users\robert\desktop\labcode\physicalhuman\src\utlities\util_manipulator.cpp(705): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"obj\Utilities_Debug\Utilities-dbg.lib" /NOLOGO obj\Utilities_Debug\util_serializable_editor_fluid.obj
+         obj\Utilities_Debug\util_curve.obj
+         obj\Utilities_Debug\util_models.obj
+         obj\Utilities_Debug\util_primitives.obj
+         obj\Utilities_Debug\util_trajectory.obj
+         obj\Utilities_Debug\m3dconnexion.obj
+         obj\Utilities_Debug\util_channel_traj.obj
+         obj\Utilities_Debug\util_channel.obj
+         obj\Utilities_Debug\util_file_manager.obj
+         obj\Utilities_Debug\util_image_viewer.obj
+         obj\Utilities_Debug\util_manipulator.obj
+         obj\Utilities_Debug\util_motion.obj
+         obj\Utilities_Debug\util_parameter.obj
+         obj\Utilities_Debug\util_serializable.obj
+         obj\Utilities_Debug\util.obj
+         obj\Utilities_Debug\util_server.obj
+         obj\Utilities_Debug\util_serializable_editor.obj
+         Utilities.vcxproj -> C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\obj\Utilities_Debug\Utilities-dbg.lib
+       PostBuildEvent:
+         copy /Y "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\obj\Utilities_Debug\Utilities-dbg.lib" "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\\..\lib\Utilities-dbg.lib"
+         :VCEnd
+                 1 file(s) copied.
+     1>Done Building Project "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\Utilities.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.77

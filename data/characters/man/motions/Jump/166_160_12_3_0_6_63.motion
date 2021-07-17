@@ -1,0 +1,54 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_descriptor_avg =  1.911644 -3.019423 0.131968 -0.042952 0.004236 -0.037078 0.633261;
+	motion_descriptor_min =  1.911644 -3.019423 0.131968 -0.042952 0.004236 -0.037078 0.633261;
+	motion_descriptor_max =  1.911644 -3.019423 0.131968 -0.042952 0.004236 -0.037078 0.633261;
+	motion_descriptor_env =  1.831163 -3.221120 1.886852 -2.964661 1.920596 -2.430130 1.806960 -1.820594 1.654839 -1.026425 1.491354 -0.671674 1.297403 -0.744013 1.271086 -1.101821;
+	motion_success =  0;
+}
+
+Hips_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.671544 0.939716 1.394799 2.992908;
+	trajectory_channel_p_y =  -0.042805 -0.392312 0.021247 -0.071708 -0.042805;
+	trajectory_channel_tng =  0.526849 -2.000000 0.500000 0.500000 0.500000;
+}
+Hips_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.647649 1.003914 1.812057;
+	trajectory_channel_p_y =  0.000000 -0.129493 0.066717 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Hips_VEC_Z 
+{
+	trajectory_channel_p_t =  0.000000 0.526255 0.829857 2.000001;
+	trajectory_channel_p_y =  0.062237 0.523338 -0.025411 0.062237;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+ContactModule_FLOAT 
+{
+	trajectory_channel_p_t =  0.000000 0.646121 1.517731;
+	trajectory_channel_p_y =  0.500000 1.305590 0.500000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+GainMult 
+{
+	trajectory_channel_p_t =  0.000000 0.973067 1.231882 2.179670;
+	trajectory_channel_p_y =  2.600000 2.082802 1.278558 2.600000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Foot_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.707271 1.180888 1.716313;
+	trajectory_channel_p_y =  0.000000 0.111896 -0.195593 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Arm_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.541270 0.658922 1.497873;
+	trajectory_channel_p_y =  0.000000 1.182470 -0.164193 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}

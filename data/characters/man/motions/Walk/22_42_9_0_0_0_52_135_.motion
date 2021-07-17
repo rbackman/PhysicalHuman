@@ -1,0 +1,84 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_descriptor_avg =  0.226509 -0.422618 -0.094368 0.000000 0.000000 0.000000 0.525268 1.359057;
+	motion_descriptor_min =  0.000000 -0.422618 -0.094368 0.000000 0.000000 0.000000 0.000000 0.000000;
+	motion_descriptor_max =  0.226509 0.000000 0.000000 0.000000 0.000000 0.000000 0.525268 1.359057;
+	motion_descriptor_env =  0.000000;
+	motion_success =  34;
+}
+
+StepInput 
+{
+	trajectory_channel_p_t =  0.000000 0.300000;
+	trajectory_channel_p_y =  0.000000 0.500000;
+	trajectory_channel_tng =  0.000000;
+}
+Swing_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.264382 0.600000;
+	trajectory_channel_p_y =  -0.003968 0.092494 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+Swing_Z 
+{
+	trajectory_channel_p_t =  0.000000 0.280366;
+	trajectory_channel_p_y =  0.000000 -0.003067;
+	trajectory_channel_tng =  0.500000 0.500000;
+}
+Stance_Z 
+{
+	trajectory_channel_p_t =  0.000000 0.309091;
+	trajectory_channel_p_y =  0.000000 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000;
+}
+Swing_RX 
+{
+	trajectory_channel_p_t =  0.000000 0.150000;
+	trajectory_channel_p_y =  0.000000 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000;
+}
+Stance_RX 
+{
+	trajectory_channel_p_t =  0.000000 0.300000 0.600000;
+	trajectory_channel_p_y =  0.000000 0.000000 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+Stance_Y 
+{
+	trajectory_channel_p_t =  0.000000;
+	trajectory_channel_p_y =  0.000000;
+	trajectory_channel_tng =  -2.000000;
+}
+VelDesired_Z 
+{
+	trajectory_channel_p_t =  0.300000;
+	trajectory_channel_p_y =  0.131959;
+	trajectory_channel_tng =  0.500000;
+}
+Heading 
+{
+	trajectory_channel_p_t =  0.100000;
+	trajectory_channel_p_y =  0.000000;
+	trajectory_channel_tng =  0.500000;
+}
+ToeHeelRatio 
+{
+	trajectory_channel_p_t =  0.100000;
+	trajectory_channel_p_y =  0.521189;
+	trajectory_channel_tng =  0.500000;
+}
+StanceSwingRatio 
+{
+	trajectory_channel_p_t =  0.100000;
+	trajectory_channel_p_y =  0.820859;
+	trajectory_channel_tng =  0.500000;
+}
+Hips_RX 
+{
+	trajectory_channel_p_t =  0.100000;
+	trajectory_channel_p_y =  0.244926;
+	trajectory_channel_tng =  0.500000;
+}

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{0a480d50-95b6-4b59-b974-f28b99979abb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fltk">
+      <UniqueIdentifier>{3b18b762-79c0-409f-aac1-ec89dc862f31}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Utlities\util.cpp" />
+    <ClCompile Include="..\src\Utlities\util_channel.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utlities\util_manipulator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utlities\util_channel_traj.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\util_trajectory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utlities\util_parameter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\util_primitives.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\util_curve.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\util_models.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utlities\util_motion.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utlities\util_serializable.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Window\util_serializable_editor.cpp">
+      <Filter>fltk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\util_serializable_editor_fluid.cpp">
+      <Filter>fltk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utlities\m3dconnexion.cpp" />
+    <ClCompile Include="..\src\Utlities\util_server.cpp" />
+    <ClCompile Include="..\src\Utlities\util_image_viewer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\util.h" />
+    <ClInclude Include="..\include\util_channel.h" />
+    <ClInclude Include="..\include\util_manipulator.h" />
+    <ClInclude Include="..\include\util_motion.h" />
+    <ClInclude Include="..\include\common.h" />
+    <ClInclude Include="..\include\util_curve.h" />
+    <ClInclude Include="..\include\util_models.h" />
+    <ClInclude Include="..\include\util_primitives.h" />
+    <ClInclude Include="..\include\util_trajectory.h" />
+    <ClInclude Include="..\include\util_channel_traj.h" />
+    <ClInclude Include="..\include\util_parameter.h" />
+    <ClInclude Include="..\include\util_serializable.h" />
+    <ClInclude Include="..\include\util_serializable_editor_events.h">
+      <Filter>fltk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\util_serializable_editor_fluid.h">
+      <Filter>fltk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\util_serializable_editor.h">
+      <Filter>fltk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\m3dconnexion.h" />
+    <ClInclude Include="..\include\util_server.h" />
+    <ClInclude Include="..\include\util_image_viewer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\include\util_serializable_editor_fluid.fl">
+      <Filter>fltk</Filter>
+    </None>
+  </ItemGroup>
+</Project>

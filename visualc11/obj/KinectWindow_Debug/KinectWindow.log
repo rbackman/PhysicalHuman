@@ -1,0 +1,22 @@
+﻿Build started 5/5/2013 11:02:17 PM.
+     1>Project "C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\KinectWindow.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\..\sdks\include /I"C:\Program Files\Microsoft SDKs\Kinect\v1.0\inc" /I..\include /I..\..\graphsim /I..\..\fltk /I..\..\graphsimdev /ZI /nologo /W3 /WX- /Od /Oy- /D SR_DEBUG /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\KinectWindow_Debug\\" /Fd"obj\KinectWindow_Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\Kinect\kinect_main_win.cpp
+         kinect_main_win.cpp
+     1>c:\users\robert\desktop\labcode\physicalhuman\src\kinect\kinect_main_win.cpp(738): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\robert\desktop\labcode\physicalhuman\src\kinect\kinect_main_win.cpp(1013): warning C4018: '<' : signed/unsigned mismatch
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"obj\KinectWindow_Debug\KinectWindow-dbg.lib" /NOLOGO obj\KinectWindow_Debug\kinect_fluid.obj
+         obj\KinectWindow_Debug\hand_viewer.obj
+         obj\KinectWindow_Debug\kinect_main_win.obj
+         obj\KinectWindow_Debug\kinect_viewer.obj
+         KinectWindow.vcxproj -> C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\obj\KinectWindow_Debug\KinectWindow-dbg.lib
+       PostBuildEvent:
+         copy /Y "C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\obj\KinectWindow_Debug\KinectWindow-dbg.lib" "C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\\..\lib\KinectWindow-dbg.lib"
+         :VCEnd
+                 1 file(s) copied.
+     1>Done Building Project "C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\KinectWindow.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.69

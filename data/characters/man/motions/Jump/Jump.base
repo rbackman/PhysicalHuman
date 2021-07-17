@@ -1,0 +1,129 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_trajectory_list =  Hips_VEC_Y Hips_ROT_X Hips_VEC_Z ContactModule_FLOAT GainMult Foot_ROT_X Arm_VEC_Y;
+	motion_node_list =  RightFootY ArmRev;
+	motion_duration =  3.000000;
+	motion_loops = false;
+	motion_env_expand_len = 0.45;
+}
+
+Hips_VEC_Y 
+{
+	channel_parameter_name =  manipulator_position;
+	channel_object_name =  Hips;
+	channel_object_type =  IKManip;
+	channel_dof =  VEC_Y;
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -1.013000 0.000000 0.987000;
+	channel_node_position = vec 0.377651 -1.000000 0.000000;
+	trajectory_channel_loop_continuity = true;
+}
+Hips_ROT_X 
+{
+	channel_parameter_name =  manipulator_orientation;
+	channel_object_name =  Hips;
+	channel_object_type =  IKManip;
+	channel_dof =  ROT_X;
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -6.283185 0.000000 6.283185;
+	channel_node_position = vec 0.378788 -0.700000 0.000000;
+	trajectory_channel_loop_continuity = true;
+}
+Hips_VEC_Z 
+{
+	channel_parameter_name =  manipulator_position;
+	channel_object_name =  Hips;
+	channel_object_type =  IKManip;
+	channel_dof =  VEC_Z;
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -0.937763 0.000000 1.062237;
+	channel_node_position = vec 0.376894 -0.400000 0.000000;
+	trajectory_channel_loop_continuity = true;
+}
+ContactModule_FLOAT 
+{
+	channel_parameter_name =  contact_toe_heel_ratio;
+	channel_object_name =  ContactModule;
+	channel_object_type =  Controller;
+	channel_dof =  FLOAT;
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -0.500000 0.000000 1.500000;
+	channel_node_position = vec 0.376894 -0.100000 0.000000;
+	trajectory_channel_loop_continuity = true;
+}
+GainMult 
+{
+	channel_parameter_name =  human_gain_mult;
+	channel_object_name =  Human;
+	channel_object_type =  Human;
+	channel_dof =  FLOAT;
+	channel_float_index = 0;
+
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  1.600000 0.000000 3.600000;
+	channel_node_position = vec -0.011574 -1.318560 0.000000;
+	trajectory_channel_loop_continuity = true;
+}
+Foot_ROT_X 
+{
+	channel_parameter_name =  manipulator_orientation;
+	channel_object_name =  LeftFoot;
+	channel_object_type =  IKManip;
+	channel_dof =  ROT_X;
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -6.283185 0.000000 6.283185;
+	channel_node_position = vec 0.350758 0.345328 0.000000;
+	trajectory_channel_loop_continuity = true;
+}
+Arm_VEC_Y 
+{
+	channel_parameter_name =  joint_rot_offset;
+	channel_object_name =  LeftArm;
+	channel_object_type =  PhysicalJoint;
+	channel_dof =  VEC_Y;
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -1.000000 0.000000 1.000000;
+	channel_node_position = vec -0.047979 1.345245 0.000000;
+	trajectory_channel_loop_continuity = true;
+}
+RightFootY 
+{
+	channel_parameter_name =  manipulator_orientation;
+	channel_object_name =  RightFoot;
+	channel_object_type =  IKManip;
+	channel_dof =  ROT_X;
+	channel_control_mode =  ADDITIVE;
+	channel_control_list =  Foot_ROT_X;
+	channel_node_val =  0.000000;
+	channel_node_position = vec 0.834722 0.684983 0.000000;
+	trajectory_channel_loop_continuity = true;
+}
+ArmRev 
+{
+	channel_parameter_name =  joint_rot_offset;
+	channel_object_name =  RightArm;
+	channel_object_type =  PhysicalJoint;
+	channel_dof =  VEC_Y;
+	channel_control_mode =  SCALE;
+	channel_control_list =  Arm_VEC_Y;
+	channel_node_val =  -1.000000;
+	channel_node_position = vec 0.518181 1.088949 0.000000;
+	trajectory_channel_loop_continuity = true;
+}

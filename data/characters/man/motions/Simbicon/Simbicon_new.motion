@@ -1,0 +1,65 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+}
+
+SwingY 
+{
+	trajectory_channel_p_t =  0.000000 0.232038 0.600000;
+	trajectory_channel_p_y =  0.000000 0.175736 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+SwingFootRX 
+{
+	trajectory_channel_p_t =  0.000000;
+	trajectory_channel_p_y =  0.000000;
+	trajectory_channel_tng =  0.000000;
+}
+StanceFootRX 
+{
+	trajectory_channel_p_t =  0.000000;
+	trajectory_channel_p_y =  0.000000;
+	trajectory_channel_tng =  0.000000;
+}
+SwingFootZ 
+{
+	trajectory_channel_p_t =  0.000000;
+	trajectory_channel_p_y =  0.000000;
+	trajectory_channel_tng =  0.000000;
+}
+StanceFootZ 
+{
+	trajectory_channel_p_t =  0.000000;
+	trajectory_channel_p_y =  0.000000;
+	trajectory_channel_tng =  0.000000;
+}
+SwingArmRY 
+{
+	trajectory_channel_p_t =  0.000000;
+	trajectory_channel_p_y =  0.000000;
+	trajectory_channel_tng =  0.000000;
+}
+StanceArmRY 
+{
+	trajectory_channel_p_t =  0.000000;
+	trajectory_channel_p_y =  0.000000;
+	trajectory_channel_tng =  0.000000;
+}
+toeHeel 
+{
+	channel_node_val =  0.438000;
+}
+vDesired 
+{
+	channel_node_val =  0.100000;
+}
+StanceSwing 
+{
+	channel_node_val =  0.643000;
+}
+Hips_ROT_X 
+{
+	channel_node_val =  0.110000;
+}

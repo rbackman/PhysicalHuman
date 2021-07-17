@@ -1,0 +1,28 @@
+﻿Build started 5/5/2013 8:30:04 PM.
+     1>Project "C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\KinectManager.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Iinc\ /I..\..\graphsim /I..\include /ZI /nologo /W3 /WX- /Od /Oy- /D SR_DEBUG /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\obj\Kinect_Debug\\" /Fd".\obj\Kinect_Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\Kinect\depth_image.cpp ..\src\Kinect\kinect.cpp ..\src\Kinect\kinect_manager.cpp ..\src\Kinect\kinect_marker.cpp ..\src\Kinect\point_cloud.cpp
+         depth_image.cpp
+         kinect.cpp
+         kinect_manager.cpp
+     1>c:\users\robert\desktop\labcode\physicalhuman\src\kinect\kinect_manager.cpp(565): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\robert\desktop\labcode\physicalhuman\src\kinect\kinect_manager.cpp(566): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+         kinect_marker.cpp
+         point_cloud.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:".\obj\Kinect_Debug\Kinect-dbg.lib" /NOLOGO .\obj\Kinect_Debug\depth_image.obj
+         .\obj\Kinect_Debug\kinect.obj
+         .\obj\Kinect_Debug\kinect_manager.obj
+         .\obj\Kinect_Debug\kinect_marker.obj
+         .\obj\Kinect_Debug\point_cloud.obj
+         KinectManager.vcxproj -> C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\.\obj\Kinect_Debug\Kinect-dbg.lib
+       PostBuildEvent:
+         copy /Y "C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\obj\Kinect_Debug\Kinect-dbg.lib" "C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\\..\lib\Kinect-dbg.lib"
+         :VCEnd
+                 1 file(s) copied.
+     1>Done Building Project "C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\KinectManager.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:07.49

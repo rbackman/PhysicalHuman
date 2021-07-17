@@ -1,0 +1,32 @@
+#env file
+#Robert Backman rbackman@ucmerced.edu
+#8/14/12
+
+Scene
+{
+	scene_object_list = Ground Box1 Box2;
+}
+Ground
+{
+	ode_position = vec 0.0 -0.1 0.0;
+	ode_box_dim = vec 50.0 0.05 50.0;
+	ode_dynamic = false;
+	ode_object_color = color blue;
+}
+Box1
+{
+	ode_position = vec 0.0 3.0 1;
+	ode_box_dim = vec 0.5 0.5 0.5;
+	ode_dynamic = true;
+	ode_object_color = color red;
+}
+Box2
+{
+	ode_position = vec 0.0 2.0 1.5;
+	ode_box_dim = vec 0.5 0.5 0.5;
+	ode_dynamic = true;
+	ode_object_color = color green;
+
+}
+
+end

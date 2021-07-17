@@ -1,0 +1,54 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_descriptor_avg =  4.423045 -35.341545 0.098869 -0.064827 -0.004078 0.003138 0.463691;
+	motion_descriptor_min =  4.423045 -35.341545 0.098869 -0.064827 -0.004078 0.003138 0.463691;
+	motion_descriptor_max =  4.423045 -35.341545 0.098869 -0.064827 -0.004078 0.003138 0.463691;
+	motion_descriptor_env =  1.410534 -0.059263 1.341041 0.066582 1.152281 0.256584 1.034525 0.294464 1.001712 0.283360 0.976990 0.268171 0.932104 0.116229 1.162233 -0.058295;
+	motion_success =  0;
+}
+
+Hips_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.680909 0.939716 1.394799 2.992908;
+	trajectory_channel_p_y =  -0.042805 -0.579870 0.021247 -0.071708 -0.042805;
+	trajectory_channel_tng =  0.526849 -2.000000 0.500000 0.500000 0.500000;
+}
+Hips_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.597858 1.017303 1.812057;
+	trajectory_channel_p_y =  0.000000 0.076621 -0.063021 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Hips_VEC_Z 
+{
+	trajectory_channel_p_t =  0.000000 0.474084 0.873125 2.000001;
+	trajectory_channel_p_y =  0.062237 0.702814 -0.081636 0.062237;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+ContactModule_FLOAT 
+{
+	trajectory_channel_p_t =  0.000000 0.599992 1.517731;
+	trajectory_channel_p_y =  0.500000 1.331674 0.500000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+GainMult 
+{
+	trajectory_channel_p_t =  0.000000 1.108583 1.223397 2.179670;
+	trajectory_channel_p_y =  2.600000 2.125154 1.817185 2.600000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Foot_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.809386 1.226569 1.716313;
+	trajectory_channel_p_y =  0.000000 0.763957 0.050954 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Arm_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.515577 0.779698 1.497873;
+	trajectory_channel_p_y =  0.000000 0.875767 0.091985 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}

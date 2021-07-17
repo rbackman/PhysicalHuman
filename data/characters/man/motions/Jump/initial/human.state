@@ -1,0 +1,50 @@
+#state file for physical humanoid
+#Robert Backman 11/4/2011
+
+Human
+{
+human_stance_state = true;
+human_manual_com = true;
+human_gain_mult =  2.600000 1.000000 1.000000 1.000000;
+}
+IKModule
+{
+module_active = true;
+manip_module_list =  LeftHand RightHand LeftFoot RightFoot Hips;
+manip_module_origin = vec null;
+manip_module_frame = quat null;
+}
+VirtualModule
+{
+module_active = true;
+manip_module_list =  RightHand LeftHand LeftFoot RightFoot;
+manip_module_origin = vec null;
+manip_module_frame = quat null;
+}
+COMModule
+{
+module_active = true;
+com_desired_pos = vec 0.006240 -0.042601 0.028450;
+com_desired_support_vector = vec -0.139758 1.028648 0.062237;
+}
+ContactModule
+{
+module_active = true;
+contact_toe_heel_ratio =  0.5;
+contact_stance_swing_ratio =  0.500000;
+contact_stance_offset = vec 0.140000 0.000000 0.040000;
+}
+BalanceModule
+{
+balance_jcom_velocity_desired = vec null;
+balance_simbicon_active = false;
+balance_simbicon_gain_d = vec 0.500000 0.000000 -0.200000;
+balance_simbicon_gain_v = vec -0.400000 0.000000 0.200000;
+}
+
+RootModule
+{
+	root_stance_hip_damping = 0.0;
+}
+
+end

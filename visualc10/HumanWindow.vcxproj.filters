@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\Window\phw_window.cpp" />
+    <ClCompile Include="..\src\Window\phw_events.cpp" />
+    <ClCompile Include="..\src\Window\phw_graph_viewer.cpp" />
+    <ClCompile Include="..\src\Window\phw_viewer.cpp" />
+    <ClCompile Include="..\include\phw_window_fluid.cpp">
+      <Filter>fltk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Window\phw_node_viewer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\phw_window.h" />
+    <ClInclude Include="..\include\phw_events.h" />
+    <ClInclude Include="..\include\phw_graph_viewer.h" />
+    <ClInclude Include="..\include\phw_viewer.h" />
+    <ClInclude Include="..\include\phw_window_fluid.h">
+      <Filter>fltk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\phw_node_viewer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="fltk">
+      <UniqueIdentifier>{dad5033a-c574-48c3-b1c5-0c68af6dd9d0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\include\phw_window_fluid.fl">
+      <Filter>fltk</Filter>
+    </None>
+  </ItemGroup>
+</Project>

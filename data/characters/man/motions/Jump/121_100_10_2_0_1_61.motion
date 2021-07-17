@@ -1,0 +1,54 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_descriptor_avg =  5.846530 -25.530199 0.103393 -0.012741 0.125147 -0.014559 0.532249;
+	motion_descriptor_min =  5.846530 -25.530199 0.103393 -0.012741 0.125147 -0.014559 0.532249;
+	motion_descriptor_max =  5.846530 -25.530199 0.103393 -0.012741 0.125147 -0.014559 0.532249;
+	motion_descriptor_env =  1.219500 -1.649495 1.277212 -1.419128 1.340719 -0.817902 1.287961 -0.594094 1.204944 -0.495963 1.127939 -1.023209 1.135545 -1.403390;
+	motion_success =  0;
+}
+
+Hips_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.605062 0.939716 1.394799 2.992908;
+	trajectory_channel_p_y =  -0.042805 -0.508304 0.021247 -0.071708 -0.042805;
+	trajectory_channel_tng =  0.526849 -2.000000 0.500000 0.500000 0.500000;
+}
+Hips_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.561144 1.039776 1.812057;
+	trajectory_channel_p_y =  0.000000 0.125354 -0.002671 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Hips_VEC_Z 
+{
+	trajectory_channel_p_t =  0.000000 0.423639 0.787865 2.000001;
+	trajectory_channel_p_y =  0.062237 0.731913 -0.033644 0.062237;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+ContactModule_FLOAT 
+{
+	trajectory_channel_p_t =  0.000000 0.559978 1.517731;
+	trajectory_channel_p_y =  0.500000 1.363360 0.500000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+GainMult 
+{
+	trajectory_channel_p_t =  0.000000 1.101466 1.244110 2.179670;
+	trajectory_channel_p_y =  2.600000 1.860206 1.514163 2.600000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Foot_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.779110 1.224188 1.716313;
+	trajectory_channel_p_y =  0.000000 0.745369 -0.044218 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Arm_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.486089 0.677552 1.497873;
+	trajectory_channel_p_y =  0.000000 0.936399 -0.036045 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}

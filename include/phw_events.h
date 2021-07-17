@@ -1,0 +1,261 @@
+#pragma once
+
+
+
+enum HumanWindowEvent
+ { 
+	 //node viewer events
+	 evShowAllNodes,
+	evHideSelectedNodes,
+	evHideAllNodes,
+	 evViewInputNodes,
+	 evViewOutputNodes,
+	 evViewConnectedNodes,
+	 evCreateNode,
+
+	 //controller
+
+	 evNewController, //create a new empty controller
+	 evSetControllerScene, //set the selected scene as the controllers default scene
+	 evSaveAllMotions, //save all motions in controller including the base motion
+	 evSaveWithParmNames, //rename the motions in the controllers based on their parameters. will ask user which motion to rename.
+	 evSaveBaseMotionFile, //save the base motion for the controller
+	  evResetParms, //reset the analysis parameters for controller and make succes num 0
+	  evEditParm, //edit the radial basis function parameters
+	  evSetControllerInitialState,
+
+	 //controller Env
+	 evEnvMake,
+	 evEnvEdit,
+	 evEnvDuplicate,
+	 evEnvAddBlock,
+	 evEnvResize,
+	 evStartExpandingCurrent,
+	evGoalSelectMode,
+	evRemoveDuplicates,
+	evReduceMotionEnv,
+	evUpdateAllLines,
+	evSaveEditingMotions,
+	evStartExpandingEnv,
+	evShowAllMotionEnv,
+	evHideMotionEnv,
+	evShowMotionEnv,
+	evAddEnv,
+	evExpandEnv,
+	evEnvOffset,
+	evMakeMotionEnv,
+		evShowMotionOutputs,
+			 evMotionEnv,
+
+	//motion
+	evVerifyMotion,
+	evPrintMotionDescriptors,
+	evMotionEditWindow,
+	
+	 //configurations
+	 evCreateConfig,
+	 evNewConfig,
+	 evEditConfig,
+	 evCharacterListSelected,
+	 evLoadCharacter,
+	 evClearCharacters,
+	 //scene
+	 evSaveCurrentScene,
+	 evSaveNewScene,
+	
+	 //kinect stuff
+	 evMakePointCloud,
+	 evSaveDepthBuffer,
+	 evConnectKinect,
+
+	 //trajectories
+	evShowSampleBounds,
+	evEditSample,
+	evForceKeys,
+	evMakeLocalSample,
+	evConfigureBounds,
+	evSaveBounds,
+	evEditBounds,
+	evNextPoint,
+
+	 //state
+	 evPrintState,
+
+	
+
+
+
+	 evSelectClosestMotion,
+	 evSetFromEnvDesc,
+	 evSetEnvDescFromAnalysis,
+	 evSetMotion,
+	 evAnalyzeMotion,
+	 evReanalyzeMotions,
+	 evInterpMotion,
+	 evDeleteMotion,
+	 evEditNodeViewer,
+	 evMakeChannelInverse,
+	 evMakeChannelFeedback,
+	 evMakeInv,
+	 evOverrideCurveLook,
+	 evMakeTraj,
+	 evDetachNode,
+	
+	 evMakeMod,
+	 evMakeMult,
+	 evMakeAdd,
+	 evMakeSwitch,
+	 evStop,
+	 evStart,
+	 evResetView,
+	 evFitView,
+	 evAddControlChannel,
+	 evDrawNodes,
+	 evArrangeNodes,
+	 evScaleMotion,
+	 evViewCharacter,
+	 evDrawSnapShots,
+	 evTimeEdit,
+	 evForceForward,
+	 evForceBackward,
+	 evRefreshChannels,
+	 evMakeLinear,
+	 evMakeBezier,
+	 evMakeStep,
+	 evLoadGraphViewerEditor,
+	 evLoadPlanEditor,
+	 evPopGraphviewer,
+	 evEmbedGraphviewer,
+	 evMakeChannelAdditive,
+	 evMakeChannelScale,
+	 evMakeChannelEvent,
+	 evMakeChannelIdler,
+	 evForceRight,
+	 evForceLeft,
+	 evEditSelected,
+	 evSimbiconAdjust,
+	 evDrawMotion,
+	 evMergePoints,
+	 evManipListSelected,
+	 evCmdLine,
+	 evGeneralizeMotion,
+	 evManipMatchHm,
+	 evManipMatchSk,
+	 evManipActive,
+	 evManipVisible,
+	 evManipEdit,
+	 evMakeComposite,
+	 evOpenCompositeWindow,
+	 evMakeTimeWarp,
+	evCurveFit,
+	evToggleHeadingDraw,
+	evToggleCollisionDraw,
+	evToggleHumanDraw,
+	evToggleVis,
+	evStateCapture,
+	evStateNew,
+	evStateRename,
+	evMotionCaptureState,
+	evToggleSkeletonAxis,
+	evToggleSkeletonDraw,
+	evDrawOriginalMotion,
+	 evControllerMatchFrame,
+	 evControllerMatchHm,
+	 evControllerMatchSk,
+	 evEditMotion,
+	 evEditChannel,
+	 evKnMotionListSelected,
+	 evReloadController,
+	 evMirrorSegment,
+	evTranslateSegment,
+	evOrientSegment,
+	 evSegmentMotion,
+	 evStateReload,
+	 evMovePoint,
+	 evAddPoint,
+	 evDeletePoint,
+	 evStraightenPoint,
+	 evFreePoint,
+	 evFlattenPoint,
+
+	 evToggleBounds,
+	 evMoveChannelUp,
+	 evMoveChannelDown,
+	 evDraw,
+	 evStateSnapshot,
+	 evChannelRename,
+	 evToggleInteractive,
+	evResetState,
+	evRemoveMotion,
+	evControllerListSelected,
+	evControllerActive,
+	evControllerVisible,
+	evEditModule,
+	evEditController,
+	evSkelWin,
+	evJointParm,  
+	evJointBody,  
+	evLoadMainWinEditor,
+	evLoadViewerEditor,
+	evLoadManagerEditor,
+	evToggleCameraFollow,
+	evLoadFileManagerEditor,
+	evLoadODEWorldEditor,
+	evLoadMotionManagerEditor,
+	evLoadHumanEditor,
+	evEulerJointAdjust,
+	evJointListSelect,
+	evMotionSel,
+	evMotionResets,
+	evMotionLoops,
+	evSceneBrowse,
+	evNodeVal,
+	evStateListSelected,
+
+	evPointEdit,  //manually editing a curve point
+	evEditParameters, //if the user is editing parameters with the graphsim parm editor
+	evWalkAdjust,
+	evIndividualJointAdjust,
+	evBreakSpring,
+	//buttons 
+	evPlayFurthest,
+	evPlayLongest,
+	evLoadDefault,
+	evSaveMotion,
+	evSaveConfig,
+	evRunOde,
+	evStanceAdjust,
+	evStepOde,
+	evOdeReset,
+	evDropBalls,
+	evSkelAdjust,
+	evRandomize, //randomize trajectories within sample bounds
+	evMakeSample, //make the current selected curve point sampleable
+	evTorqueMult,
+	evControlMethods,
+	evLoadSkeleton,
+	evQuit,
+	evPlanStart,
+	evPlanStop,
+	evDeleteConfig,	
+	evSavePref,		//save the pref.dat file
+	evSaveState,
+	evDeleteState,
+	//for curve editor window
+	evChannelEdit,
+	evChannelSelect,
+	evDeleteChannels,
+	evInitCurves,
+
+	evPhaseSlider,
+	evMotionPlay,
+	
+	evGainAdjust,
+	evMotionReset,
+	evGraphWinKey,
+
+	evSwitchStance,
+	evPrintMotion,
+	evLastOneNotUsed
+ };
+

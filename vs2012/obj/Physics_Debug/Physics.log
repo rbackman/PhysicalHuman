@@ -1,0 +1,23 @@
+﻿Build started 6/12/2013 11:13:01 PM.
+     1>Project "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\Physics.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\..\graphsim /I..\include /I..\..\sdks\include /ZI /nologo /W3 /WX- /Od /Oy- /D SR_DEBUG /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\Physics_Debug\\" /Fd"obj\Physics_Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\Physics\ode_object.cpp
+         ode_object.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"obj\Physics_Debug\Physics-dbg.lib" /NOLOGO obj\Physics_Debug\ode_box.obj
+         obj\Physics_Debug\ode_contact.obj
+         obj\Physics_Debug\ode_model.obj
+         obj\Physics_Debug\ode_object.obj
+         obj\Physics_Debug\ode_sphere.obj
+         obj\Physics_Debug\ode_spring.obj
+         obj\Physics_Debug\ode_world.obj
+         Physics.vcxproj -> C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\obj\Physics_Debug\Physics-dbg.lib
+       PostBuildEvent:
+         copy /Y "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\obj\Physics_Debug\Physics-dbg.lib" "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\\..\lib\Physics-dbg.lib"
+         :VCEnd
+                 1 file(s) copied.
+     1>Done Building Project "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\Physics.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.50

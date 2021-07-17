@@ -1,0 +1,48 @@
+﻿Build started 6/24/2013 5:04:31 PM.
+     1>Project "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\PhysicalHuman.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\..\sdks\include\ /I..\..\graphsim /I..\include /ZI /nologo /W3 /WX- /Od /Oy- /D SR_DEBUG /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\Human_Debug\\" /Fd"obj\Human_Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\Human\ph_char_builder.cpp
+         ph_char_builder.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"obj\Human_Debug\Human-dbg.lib" /NOLOGO obj\Human_Debug\ph_char_builder.obj
+         obj\Human_Debug\ph_controller.obj
+         obj\Human_Debug\ph_env_builder.obj
+         obj\Human_Debug\ph_file_manager.obj
+         obj\Human_Debug\ph_mod.obj
+         obj\Human_Debug\ph_mod_balance.obj
+         obj\Human_Debug\ph_mod_com.obj
+         obj\Human_Debug\ph_mod_contact.obj
+         obj\Human_Debug\ph_mod_gravity.obj
+         obj\Human_Debug\ph_mod_ik.obj
+         obj\Human_Debug\ph_mod_manip.obj
+         obj\Human_Debug\ph_mod_puppet.obj
+         obj\Human_Debug\ph_mod_ref.obj
+         obj\Human_Debug\ph_mod_root.obj
+         obj\Human_Debug\ph_mod_template.obj
+         obj\Human_Debug\ph_mod_virtual.obj
+         obj\Human_Debug\ph_manip_frame.obj
+         obj\Human_Debug\ph_manager.obj
+         obj\Human_Debug\ph_manip.obj
+         obj\Human_Debug\ph_motion.obj
+         obj\Human_Debug\ph_motion_manager.obj
+         obj\Human_Debug\ph_manip_ik.obj
+         obj\Human_Debug\ph_human.obj
+         obj\Human_Debug\ph_human_getters.obj
+         obj\Human_Debug\ph_human_loader.obj
+         obj\Human_Debug\ph_joint.obj
+         obj\Human_Debug\ph_manip_puppet.obj
+         obj\Human_Debug\ph_manip_virtual.obj
+         obj\Human_Debug\ph_motion_manager_editing.obj
+         obj\Human_Debug\ph_motion_segmenter.obj
+         obj\Human_Debug\ph_state_manager.obj
+         obj\Human_Debug\ph_trajectory_planner.obj
+         PhysicalHuman.vcxproj -> C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\obj\Human_Debug\Human-dbg.lib
+       PostBuildEvent:
+         copy /Y "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\obj\Human_Debug\Human-dbg.lib" "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\\..\lib\Human-dbg.lib"
+         :VCEnd
+                 1 file(s) copied.
+     1>Done Building Project "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\PhysicalHuman.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.56

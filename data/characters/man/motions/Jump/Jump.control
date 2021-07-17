@@ -1,0 +1,17 @@
+#controller for physical humanoid
+#Robert Backman 10/28/11
+
+Controller
+{
+	controller_name =  Jump;
+	controller_parameters = 	distance height    com_contact_dist     lat_distance 	heading 	foot_offset 	energy ;
+	controller_parameter_weights =  1.0 	 1.0 	   1.0     		0.0 	     	0.0 		0.0 		0.0;
+	controller_load_env = true;
+	controller_wants_static_balance = true;
+	controller_analyze_time = 4.0;
+	controller_verify_time = 4.0;
+	controller_num_test = 0;
+	controller_scene = MotionJump;
+	controller_accumulate_descriptors = false;
+	controller_max_com_contact_dist = 0.13;
+}

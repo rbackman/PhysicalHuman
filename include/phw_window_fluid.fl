@@ -1,0 +1,2244 @@
+# data file for the FLTK User Interface Designer (FLUID)
+version 2.1000 
+images_dir header_name 
+header_name {.h} 
+code_name {.cpp} 
+gridx 5 
+gridy 5 
+snap 3
+decl {\# include "phw_events.h"} {public
+} 
+
+decl {\# include "phw_viewer.h"} {public
+} 
+
+decl {\# include "phw_graph_viewer.h"} {public
+} 
+
+decl {\# include "phw_node_viewer.h"} {public
+} 
+
+class HumanWindowFluid {open
+} {
+  decl {virtual void event ( HumanWindowEvent e )=0;} {public
+  }
+  Function {HumanWindowFluid()} {open
+  } {
+    {fltk::Window} ui_window {
+      label {Physical Human} open
+      xywh {6 143 1614 945} vertical resizable visible
+    } {
+      {fltk::Group} ui_main_group {open
+        xywh {0 0 310 945} box DOWN_BOX color 0xa0a0a000
+      } {
+        {fltk::Group} {} {open
+          xywh {0 5 310 940}
+        } {
+          {fltk::Group} ui_main_header_group {open
+            xywh {10 5 285 84} box DOWN_BOX color 0xaaaaaa00
+          } {
+            {fltk::LightButton} ui_ode_run {
+              label Run
+              callback {event(evRunOde);}
+              xywh {36 22 50 20} box PLASTIC_UP_BOX buttonbox PLASTIC_UP_BOX color 0xd3d3d300 selection_color 0xff0000 buttoncolor 0xd3d3d300 shortcut 0x40061
+            }
+            {fltk::MenuBar} {} {open
+              xywh {0 0 285 20} box DOWN_BOX color 0xc0c0c000 buttoncolor 0xe8e8d800 highlight_color 0x9b9b9b00
+            } {
+              {fltk::Item} {} {
+                label X
+                callback {event ( evQuit );}
+                box NO_BOX buttonbox NO_BOX labelfont 1 textfont 1 color 0xece9d800 textcolor 0xd40d2900 selection_textcolor 0xff122b00
+              }
+              {fltk::ItemGroup} {} {
+                label File
+                } {
+                {fltk::ItemGroup} {} {
+                  label {save scene }
+                  } {
+                  {fltk::Item} {} {
+                    label {save current scene}
+                    callback {event(evSaveCurrentScene);}
+                    }
+                  {fltk::Item} {} {
+                    label {save new scene}
+                    callback {event(evSaveNewScene);}
+                    }
+                }
+                {fltk::ItemGroup} {} {
+                  label {save controller} open
+                  } {
+                  {fltk::Item} {} {
+                    label everything
+                    callback {event(evSaveAllMotions);}
+                    tooltip {save all the motions in the controller. }
+                    color 0xf0f0f000
+                  }
+                  {fltk::Item} {} {
+                    label {new controller}
+                    callback {event(evNewController);}
+                    tooltip {make a new controller and save it to a file. creates .base file and an initial .motion}
+                    color 0xf0f0f000
+                  }
+                  {fltk::Item} {} {
+                    label {new motion}
+                    callback {event(evSaveMotion);}
+                    tooltip {save a new motion and ask user for name}
+                    color 0xf0f0f000
+                  }
+                  {fltk::Item} {} {
+                    label {current editing motions}
+                    callback {event(evSaveEditingMotions);}
+                    tooltip {save the current motions being edited based on the  motion_manager parm human_motion_manager_edit_motions}
+                    color 0xf0f0f000
+                  }
+                  {fltk::Item} {} {
+                    label bounds
+                    callback {event(evSaveBounds);}
+                    tooltip {save the sample bounds to its own file *.sample}
+                    color 0xf0f0f000
+                  }
+                  {fltk::Item} {} {
+                    label {base motion}
+                    callback {event(evSaveBaseMotionFile);}
+                    tooltip {save the base motion to its own file *.base}
+                    color 0xf0f0f000
+                  }
+                  {fltk::Item} {} {
+                    label {motion with parm name}
+                    callback {event(evSaveWithParmNames);}
+                    tooltip {this will delete the previous file and save with the name based on the parm values}
+                    color 0xf0f0f000
+                  }
+                  {fltk::Item} {} {
+                    label {set name from parms}
+                    callback {event(evSaveWithParmNames);}
+                    color 0xf0f0f000
+                  }
+                }
+                {fltk::Item} {} {
+                  label {load a skeleton}
+                  callback {event(evLoadSkeleton);}
+                  }
+                {fltk::Item} {} {
+                  label {connect to kinect}
+                  callback {event(evConnectKinect);}
+                  }
+              }
+              {fltk::ItemGroup} {} {
+                label Edit open
+                box PLASTIC_UP_BOX color 0xa0a0a000
+              } {
+                {fltk::ItemGroup} {} {
+                  label {parameter editors}
+                  } {
+                  {fltk::Item} {} {
+                    label human
+                    callback {event(evLoadHumanEditor);}
+                    box NO_BOX color 0xffffff00 buttoncolor 0xf0f0f000
+                  }
+                  {fltk::Item} {} {
+                    label Files
+                    callback {event(evLoadFileManagerEditor);}
+                    }
+                  {fltk::Item} {} {
+                    label ODE
+                    callback {event(evLoadODEWorldEditor);}
+                    }
+                  {fltk::Item} {} {
+                    label Viewer
+                    callback {event(evLoadViewerEditor);}
+                    }
+                  {fltk::Item} {} {
+                    label Motion
+                    callback {event(evLoadMotionManagerEditor);}
+                    }
+                  {fltk::Item} {} {
+                    label {Graph Viewer}
+                    callback {event(evLoadGraphViewerEditor);}
+                    }
+                  {fltk::Item} {} {
+                    label Planner
+                    callback {event(evLoadPlanEditor);}
+                    }
+                  {fltk::Item} {} {
+                    label manager
+                    callback {event(evLoadManagerEditor);}
+                    }
+                }
+                {fltk::Divider} {} {
+                  box NO_BOX color 0xffffff00 buttoncolor 0xf0f0f000
+                }
+                {fltk::ItemGroup} {} {
+                  label controller
+                  box NO_BOX color 0xffffff00 buttoncolor 0xf0f0f000
+                } {
+                  {fltk::Item} {} {
+                    label edit
+                    callback {event(evEditController);}
+                    box NO_BOX color 0xffffff00 buttoncolor 0xf0f0f000
+                  }
+                  {fltk::Item} {} {
+                    label {set scene for controller}
+                    callback {event(evSetControllerScene);}
+                    }
+                  {fltk::Item} {} {
+                    label {remove current motion}
+                    callback {event(evRemoveMotion);}
+                    color 0xf0f0f000
+                  }
+                  {fltk::Item} {} {
+                    label {set initial}
+                    callback {event(evSetControllerInitialState);}
+                    tooltip {set the initial state of the controller and save it to a file}
+                    }
+                }
+                {fltk::ItemGroup} {} {
+                  label {motion  }
+                  box NO_BOX color 0xffffff00 buttoncolor 0xf0f0f000
+                } {
+                  {fltk::Item} {} {
+                    label edit
+                    callback {event(evEditMotion);}
+                    box NO_BOX color 0xffffff00 buttoncolor 0xf0f0f000
+                  }
+                  {fltk::ItemGroup} {} {
+                    label modify open
+                    } {
+                    {fltk::Item} {} {
+                      label randomize
+                      callback {event(evRandomize);}
+                      }
+                    {fltk::Item} {} {
+                      label {reset parms}
+                      callback {event(evResetParms);}
+                      tooltip {reset the total success of all the motions this will set the descriptors avg and min max to default values.}
+                      }
+                    {fltk::Item} {} {
+                      label {force keys}
+                      callback {event(evForceKeys);}
+                      tooltip {force the initial set of keys of an animation based on  each channels feedback value}
+                      }
+                  }
+                  {fltk::ItemGroup} {} {
+                    label sample
+                    } {
+                    {fltk::Item} {} {
+                      label {reconfigure bounds}
+                      callback {event(evConfigureBounds);}
+                      tooltip {looks at all the motions in the controller so far and shrinkwraps the sample bounds to the existing points}
+                      }
+                    {fltk::Item} {} {
+                      label {make local sample}
+                      callback {event(evMakeLocalSample);}
+                      tooltip {this changes the sample bounds on this motion alone to some tolerance around the sample points. }
+                      }
+                    {fltk::Item} {} {
+                      label {reduce hull}
+                      callback {event(evReduceMotionEnv);}
+                      }
+                  }
+                  {fltk::ItemGroup} {} {
+                    label Env
+                    } {
+                    {fltk::Item} {} {
+                      label {add Env}
+                      callback {event(evAddEnv);}
+                      }
+                    {fltk::Item} {} {
+                      label {expand Env}
+                      callback {event(evExpandEnv);}
+                      }
+                    {fltk::Item} {} {
+                      label {load motion environment}
+                      callback {event(evMotionEnv);}
+                      }
+                  }
+                  {fltk::ItemGroup} {} {
+                    label old
+                    } {
+                    {fltk::Divider} {} {
+                      }
+                    {fltk::Item} {} {
+                      label {switch stance}
+                      callback {event(evSwitchStance);}
+                      tooltip {reverse the stance on this motion if it is reversable}
+                      }
+                    {fltk::Item} {} {
+                      label segment
+                      callback {event(evSegmentMotion);}
+                      }
+                    {fltk::Item} {} {
+                      label {make composite}
+                      callback {event(evOpenCompositeWindow);}
+                      }
+                    {fltk::Item} {} {
+                      label {make timewarp}
+                      callback {event(evMakeTimeWarp);}
+                      }
+                    {fltk::Item} {} {
+                      label {scale motion}
+                      callback {event(evScaleMotion);}
+                      tooltip {print the motion to the console}
+                      }
+                    {fltk::Item} {} {
+                      label capture
+                      callback {event(evMotionCaptureState);}
+                      }
+                    {fltk::Item} {} {
+                      label generalize
+                      callback {event(evGeneralizeMotion);}
+                      tooltip {this changes each name in the motion channel from ex. LeftFoot -> StanceFoot RightFoot->SwingFoot..etc}
+                      }
+                  }
+                }
+                {fltk::ItemGroup} {} {
+                  label database
+                  box NO_BOX color 0xffffff00 buttoncolor 0xf0f0f000
+                } {
+                  {fltk::Item} {} {
+                    label {explore new env}
+                    callback {event(evPlanStart);}
+                    tooltip {manager->getPlanner()->start();
+find new goals within sample bounds}
+                    }
+                  {fltk::Item} {} {
+                    label {expand env}
+                    callback {event(evStartExpandingEnv);}
+                    tooltip {event evStartExpandingEnv;
+motion_manager->startExpandingEnv();
+this searches the env bounds of each motion
+}
+                    }
+                  {fltk::Item} {} {
+                    label {stop planning}
+                    callback {event(evPlanStop);}
+                    }
+                  {fltk::Item} {} {
+                    label {analyze motion}
+                    callback {event(evAnalyzeMotion);}
+                    }
+                  {fltk::Item} {} {
+                    label {verify all motion}
+                    callback {event(evVerifyMotion);}
+                    }
+                  {fltk::Item} {} {
+                    label {reanalyze all motions}
+                    callback {event(evReanalyzeMotions);}
+                    }
+                  {fltk::Item} {} {
+                    label {set descriptor from env }
+                    callback {event(evSetFromEnvDesc);}
+                    tooltip {set the general descriptor values from the environment descriptor. overwriting the analysis}
+                    }
+                  {fltk::Item} {} {
+                    label {set env from descriptor}
+                    callback {event(evSetEnvDescFromAnalysis);}
+                    tooltip {set the environmental parameter from the analysis hopefully getting to a better point}
+                    }
+                  {fltk::Item} {} {
+                    label {remove duplicates}
+                    callback {event(evRemoveDuplicates);}
+                    tooltip {set the environmental parameter from the analysis hopefully getting to a better point}
+                    }
+                  {fltk::Item} {} {
+                    label {update all env lines}
+                    callback {event(evUpdateAllLines);}
+                    }
+                  {fltk::Item} {} {
+                    label {select mode}
+                    callback {event(evGoalSelectMode);}
+                    tooltip {event evGoalSelectMode
+motion_manager->selectMode();}
+                    }
+                  {fltk::Item} {} {
+                    label {start expanding current}
+                    callback {event(evStartExpandingCurrent);}
+                    }
+                }
+                {fltk::ItemGroup} {} {
+                  label channel
+                  tooltip {these effect the channels selected}
+                  box NO_BOX color 0xffffff00 buttoncolor 0xf0f0f000
+                } {
+                  {fltk::Item} {} {
+                    label refresh
+                    callback {event(evRefreshChannels);}
+                    }
+                  {fltk::Item} {} {
+                    label delete
+                    callback {event(evDeleteChannels);}
+                    tooltip {delete all the channels selected}
+                    }
+                  {fltk::Item} {} {
+                    label rename
+                    callback {event(evChannelRename);}
+                    }
+                  {fltk::Item} {} {
+                    label init
+                    callback {event(evInitCurves);}
+                    tooltip {sets the selected channels  to have 1 keypoint and value  that is its rest}
+                    }
+                  {fltk::Item} {} {
+                    label {set key}
+                    callback {event(evGraphWinKey);}
+                    tooltip {This will set a key for each of the selected channels according to the actual channels value}
+                    shortcut 0x6b
+                  }
+                  {fltk::Item} {} {
+                    label edit
+                    callback {event(evEditChannel);}
+                    }
+                  {fltk::Item} {} {
+                    label merge
+                    callback {event(evMergePoints);}
+                    }
+                  {fltk::Item} {} {
+                    label reduce
+                    callback {event(evCurveFit);}
+                    }
+                  {fltk::Divider} {} {
+                    }
+                  {fltk::ItemGroup} {} {
+                    label {curve type}
+                    } {
+                    {fltk::Item} {} {
+                      label Linear
+                      callback {event(evMakeLinear);}
+                      }
+                    {fltk::Item} {} {
+                      label Bezier
+                      callback {event(evMakeBezier);}
+                      }
+                    {fltk::Item} {} {
+                      label Step
+                      callback {event(evMakeStep);}
+                      }
+                  }
+                  {fltk::ItemGroup} {} {
+                    label {control type}
+                    } {
+                    {fltk::Item} {} {
+                      label {make additive}
+                      callback {event(evMakeChannelAdditive);}
+                      }
+                    {fltk::Item} {} {
+                      label {make scale}
+                      callback {event(evMakeChannelScale);}
+                      }
+                    {fltk::Item} {} {
+                      label {make event}
+                      callback {event(evMakeChannelEvent);}
+                      tooltip {an event channel will skip the rest of an animation to the end of the event.}
+                      }
+                    {fltk::Item} {} {
+                      label {make idler}
+                      callback {event(evMakeChannelIdler);}
+                      tooltip {an idler channel will wait for a certain event to start playing}
+                      }
+                    {fltk::Item} {} {
+                      label {make inverse}
+                      callback {event(evMakeChannelInverse);}
+                      }
+                    {fltk::Item} {} {
+                      label {make inverse}
+                      callback {event(evMakeChannelFeedback);}
+                      }
+                  }
+                  {fltk::Item} {} {
+                    label {add control}
+                    callback {event(evAddControlChannel);}
+                    }
+                }
+                {fltk::ItemGroup} {} {
+                  label character open
+                  } {
+                  {fltk::Item} {} {
+                    label item
+                    }
+                }
+                {fltk::Divider} {} {
+                  box NO_BOX color 0xffffff00 buttoncolor 0xf0f0f000
+                }
+                {fltk::ItemGroup} {} {
+                  label random
+                  align 100 box NO_BOX buttonbox NO_BOX color 0xffffff00 buttoncolor 0xf0f0f000
+                } {
+                  {fltk::Item} {} {
+                    label {Drop Balls}
+                    callback {event(evDropBalls);}
+                    tooltip {Drop a few balls on our unsuspecting victim..}
+                    }
+                  {fltk::Item} {} {
+                    label {Reset Scene}
+                    callback {event(evOdeReset);}
+                    }
+                }
+              }
+              {fltk::ItemGroup} {} {
+                label View
+                } {
+                {fltk::Item} {} {
+                  label {show all outputs}
+                  callback {event(evShowMotionOutputs);}
+                  box NO_BOX
+                }
+                {fltk::Item} {} {
+                  label {show motion env}
+                  callback {event(evShowMotionEnv);}
+                  box NO_BOX
+                }
+                {fltk::Item} {} {
+                  label {hide motion env}
+                  callback {event(evHideMotionEnv);}
+                  box NO_BOX
+                }
+                {fltk::Item} {} {
+                  label {show all motion env}
+                  callback {event(evShowAllMotionEnv);}
+                  box NO_BOX
+                }
+                {fltk::ItemGroup} {} {
+                  label character
+                  box NO_BOX
+                } {
+                  {fltk::Item} {} {
+                    label {view character}
+                    callback {event(evViewCharacter);}
+                    }
+                  {fltk::Item} {} {
+                    label {camera follow}
+                    callback {event(evToggleCameraFollow);}
+                    }
+                  {fltk::Item} {} {
+                    label human
+                    callback {event(evToggleHumanDraw);}
+                    }
+                  {fltk::Item} {} {
+                    label visualization
+                    callback {event(evToggleVis);}
+                    }
+                  {fltk::Item} {} {
+                    label collision
+                    callback {event(evToggleCollisionDraw);}
+                    }
+                  {fltk::Item} {} {
+                    label heading
+                    callback {event(evToggleHeadingDraw);}
+                    }
+                  {fltk::Item} {} {
+                    label skeleton
+                    callback {event(evToggleSkeletonDraw);}
+                    }
+                  {fltk::Item} {} {
+                    label axis
+                    callback {event(evToggleSkeletonAxis);}
+                    }
+                }
+                {fltk::ItemGroup} {} {
+                  label trajectory
+                  box NO_BOX buttonbox PLASTIC_UP_BOX color 0xd3d3d300 buttoncolor 0xffffff00
+                } {
+                  {fltk::Item} {} {
+                    label trajectories
+                    callback {event(evDrawMotion);}
+                    tooltip {draws the IK position trajectories}
+                    }
+                  {fltk::Item} {} {
+                    label {original motion}
+                    callback {event(evDrawOriginalMotion);}
+                    tooltip {draws the IK position trajectories}
+                    }
+                  {fltk::Item} {} {
+                    label snapshots
+                    callback {event(evDrawSnapShots);}
+                    tooltip {draws the saved states of the animation}
+                    }
+                  {fltk::Item} {} {
+                    label {reset view}
+                    callback {event(evResetView);}
+                    tooltip {draws the saved states of the animation}
+                    }
+                  {fltk::Item} {} {
+                    label {fit view}
+                    callback {event(evFitView);}
+                    tooltip {draws the saved states of the animation}
+                    shortcut 0x76
+                  }
+                  {fltk::Item} {} {
+                    label bounds
+                    callback {event(evToggleBounds);}
+                    tooltip {show or hide the sample bounds}
+                    }
+                  {fltk::ItemGroup} {} {
+                    label old open
+                    } {
+                    {fltk::Item} {} {
+                      label {override curve look}
+                      callback {event(evOverrideCurveLook);}
+                      tooltip {draws the IK position trajectories}
+                      }
+                  }
+                  {fltk::Item} {} {
+                    label {show sample bounds}
+                    callback {event(evShowSampleBounds);}
+                    tooltip {case evShowSampleBounds
+manager->getPlanner()->toggleBoundLines();}
+                    box NO_BOX
+                  }
+                }
+                {fltk::ItemGroup} {} {
+                  label windows
+                  box NO_BOX
+                } {
+                  {fltk::Item} {} {
+                    label {motion editor}
+                    callback {event(evMotionEditWindow);}
+                    }
+                  {fltk::Item} {} {
+                    label interpolate
+                    callback {event(evInterpMotion);}
+                    }
+                  {fltk::Item} {} {
+                    label {node editor}
+                    callback {event(evDrawNodes);}
+                    tooltip {switch between curve mode and node mode}
+                    }
+                  {fltk::Item} {} {
+                    label {skel win}
+                    callback {event(evSkelWin);}
+                    tooltip {open up a graphsim skeleton editor window}
+                    }
+                }
+                {fltk::Item} {} {
+                  label {save depth buffer}
+                  callback {event(evSaveDepthBuffer);}
+                  box NO_BOX
+                }
+                {fltk::Item} {} {
+                  label {make point cloud from dbuffer}
+                  callback {event(evMakePointCloud);}
+                  box NO_BOX
+                }
+              }
+              {fltk::ItemGroup} {} {
+                label print
+                } {
+                {fltk::Item} {} {
+                  label {Print Motion}
+                  callback {event(evPrintMotion);}
+                  tooltip {print the motion to the console}
+                  }
+                {fltk::Item} {} {
+                  label {Print motion descriptors}
+                  callback {event(evPrintMotionDescriptors);}
+                  tooltip {print the motion  descriptors to the console}
+                  }
+                {fltk::Item} {} {
+                  label {Print state}
+                  callback {event(evPrintState);}
+                  tooltip {print the state parameters to the console}
+                  }
+              }
+            }
+            {fltk::Output} ui_state_label {
+              label state
+              tooltip {the current state}
+              xywh {45 42 240 20}
+            }
+            {fltk::Output} ui_motion_label {
+              label motion
+              tooltip {the current motion}
+              xywh {45 61 240 20}
+            }
+            {fltk::Button} {} {
+              label Step
+              callback {event(evStepOde);}
+              xywh {189 22 50 20} buttonbox PLASTIC_UP_BOX color 0xd3d3d300 buttoncolor 0xd3d3d300
+            }
+            {fltk::Button} {} {
+              label Reset
+              callback {event(evResetState);}
+              xywh {138 22 50 20} buttonbox PLASTIC_UP_BOX color 0xd3d3d300 buttoncolor 0xd3d3d300 shortcut 0x4007a
+            }
+            {fltk::Button} {} {
+              label play
+              callback {event(evMotionPlay);}
+              xywh {87 22 50 20} buttonbox PLASTIC_UP_BOX color 0xd3d3d300 buttoncolor 0xd3d3d300
+            }
+          }
+          {fltk::Group} ui_tab_grp {open
+            xywh {0 85 310 855} box DOWN_BOX color 0xb6b6b600
+          } {
+            {fltk::TabGroup} ui_main_tab {open
+              xywh {0 5 310 850} box NO_BOX buttonbox PLASTIC_UP_BOX color 0xc5c5c500
+            } {
+              {fltk::Group} {} {
+                label conf open
+                xywh {10 30 300 795}
+              } {
+                {fltk::Group} {} {
+                  label Scenes
+                  xywh {0 531 290 259} align 33 box DOWN_BOX color 0x9b9b9b00
+                } {
+                  {fltk::Browser} ui_scene_browser {
+                    callback {event(evSceneBrowse);} open
+                    xywh {0 17 278 61}
+                  } {}
+                  {fltk::Button} {} {
+                    label load
+                    callback {event(evSceneBrowse);}
+                    xywh {2 78 40 20}
+                  }
+                  {fltk::Button} {} {
+                    label cont
+                    callback {event(evSetControllerScene);}
+                    tooltip {set the current scene as the default one for the current controller}
+                    xywh {42 79 40 20}
+                  }
+                  {fltk::ValueSlider} {ui_env_size[0]} {
+                    label x
+                    callback {event(evEnvResize);}
+                    xywh {60 137 175 21} align 4 maximum 5 value 1
+                  }
+                  {fltk::Button} {} {
+                    label create
+                    callback {event(evEnvMake);}
+                    xywh {40 99 40 25}
+                  }
+                  {fltk::ValueSlider} {ui_env_size[1]} {
+                    label y
+                    callback {event(evEnvResize);}
+                    xywh {60 157 175 21} align 4 maximum 5 value 1
+                  }
+                  {fltk::ValueSlider} {ui_env_size[2]} {
+                    label z
+                    callback {event(evEnvResize);}
+                    xywh {60 178 175 16} align 4 maximum 5 value 1
+                  }
+                  {fltk::Button} {} {
+                    label edit
+                    callback {event(evEnvEdit);}
+                    xywh {0 99 40 25}
+                  }
+                  {fltk::ValueSlider} ui_env_mu {
+                    label mu
+                    callback {event(evEnvResize);}
+                    xywh {60 194 180 21} align 4 maximum 200 value 1
+                  }
+                  {fltk::ValueSlider} ui_env_bounce {
+                    label bounce
+                    callback {event(evEnvResize);}
+                    xywh {60 213 175 21} align 4 value 1
+                  }
+                  {fltk::Button} {} {
+                    label duplicate
+                    callback {event(evEnvDuplicate);}
+                    xywh {190 79 65 25}
+                  }
+                  {fltk::Button} {} {
+                    label {add block}
+                    callback {event(evEnvAddBlock);}
+                    xywh {120 79 60 25}
+                  }
+                  {fltk::CheckButton} ui_env_dynamic {
+                    label dynamic
+                    callback {event(evEnvResize);}
+                    xywh {115 104 60 25}
+                  }
+                  {fltk::ValueSlider} ui_env_density {
+                    label density
+                    callback {event(evEnvResize);}
+                    xywh {60 233 175 21} align 4 value 1
+                  }
+                  {fltk::CheckButton} ui_env_unique {
+                    label {unique prop}
+                    callback {event(evEnvResize);}
+                    tooltip {determines if this object should have its own properties like bounce friction or density or just use the global ones}
+                    xywh {190 104 60 25}
+                  }
+                }
+                {fltk::Group} {} {
+                  label Characters open
+                  xywh {0 299 283 151} align 33 box DOWN_BOX color 0x9b9b9b00
+                } {
+                  {fltk::Browser} ui_character_list {
+                    callback {event(evCharacterListSelected);} open selected
+                    xywh {3 22 278 100}
+                  } {}
+                  {fltk::Button} {} {
+                    label save
+                    callback {event(evSaveConfig);}
+                    xywh {45 122 40 20}
+                  }
+                  {fltk::Button} {} {
+                    label load
+                    callback {event(evLoadCharacter);}
+                    xywh {5 122 40 20}
+                  }
+                  {fltk::Button} {} {
+                    label delete
+                    callback {event(evDeleteConfig);}
+                    xywh {85 122 40 20}
+                  }
+                  {fltk::Button} {} {
+                    label new
+                    callback {event(evNewConfig);}
+                    xywh {125 122 40 20}
+                  }
+                  {fltk::Button} {} {
+                    label edit
+                    callback {event(evEditConfig);}
+                    xywh {165 122 40 20}
+                  }
+                  {fltk::Button} {} {
+                    label create
+                    callback {event(evCreateConfig);}
+                    xywh {205 122 40 20}
+                  }
+                  {fltk::CheckButton} ui_mult_characters {
+                    label {multiple char}
+                    xywh {180 1 40 20}
+                  }
+                  {fltk::Button} {} {
+                    label clear
+                    callback {event(evClearCharacters);}
+                    xywh {5 2 40 20}
+                  }
+                }
+                {fltk::Group} {} {
+                  label States open
+                  tooltip {Load different configurations for the controllers}
+                  xywh {0 22 290 198} align 33 box DOWN_BOX color 0x9b9b9b00
+                } {
+                  {fltk::Browser} ui_state_browser {
+                    callback {event(evStateListSelected);} open
+                    xywh {5 21 278 177}
+                  } {}
+                  {fltk::MenuBar} {} {
+                    xywh {0 3 90 20} box NO_BOX
+                  } {
+                    {fltk::ItemGroup} {} {
+                      label state
+                      box PLASTIC_UP_BOX
+                    } {
+                      {fltk::Item} {} {
+                        label new
+                        callback {event(evStateNew);}
+                        }
+                      {fltk::Item} {} {
+                        label capture
+                        callback {event(evStateCapture);}
+                        }
+                      {fltk::Item} {} {
+                        label reload
+                        callback {event(evStateReload);}
+                        }
+                      {fltk::Item} {} {
+                        label save
+                        callback {event(evSaveState);}
+                        }
+                      {fltk::Item} {} {
+                        label delete
+                        callback {event(evDeleteState);}
+                        }
+                      {fltk::Item} {} {
+                        label snapshot
+                        callback {event(evStateSnapshot);}
+                        tooltip {capture the current state but dont save to a file}
+                        }
+                      {fltk::Item} {} {
+                        label rename
+                        callback {event(evStateRename);}
+                        }
+                    }
+                  }
+                }
+              }
+              {fltk::Group} {} {
+                label motion
+                xywh {10 30 290 820} hide box FLAT_BOX buttonbox PLASTIC_UP_BOX color 0xf0f0f000 buttoncolor 0xf0f0f000
+              } {
+                {fltk::Group} ui_graph_group {
+                  xywh {0 5 287 280} box DOWN_BOX color 0xa0a0a000
+                } {
+                  {fltk::MenuBar} ui_graph_menu {
+                    label {edit mode} open
+                    xywh {190 3 90 20} align 4 color 0xa0a0a000 shortcut 0xffbe
+                  } {
+                    {fltk::ItemGroup} ui_curve_edit_mode {
+                      label {move    }
+                      align 4 box PLASTIC_UP_BOX color 0xa0a0a000
+                    } {
+                      {fltk::Item} {} {
+                        label move
+                        callback {event(evMovePoint);}
+                        shortcut 0x61
+                      }
+                      {fltk::Item} {} {
+                        label add
+                        callback {event(evAddPoint);}
+                        shortcut 0x73
+                      }
+                      {fltk::Item} {} {
+                        label delete
+                        callback {event(evDeletePoint);}
+                        shortcut 0x64
+                      }
+                      {fltk::Item} {} {
+                        label free
+                        callback {event(evFreePoint);}
+                        shortcut 0x66
+                      }
+                      {fltk::Item} {} {
+                        label straighten
+                        callback {event(evStraightenPoint);}
+                        shortcut 0x67
+                      }
+                      {fltk::Item} {} {
+                        label flatten
+                        callback {event(evFlattenPoint);}
+                        }
+                      {fltk::Item} {} {
+                        label {edit bounds}
+                        callback {event(evEditBounds);}
+                        }
+                    }
+                  }
+                  {fltk::Group} ui_graphviewer_group {open
+                    xywh {0 20 285 215}
+                  } {
+                    {fltk::Group} ui_graph_viewer {
+                      xywh {5 5 275 210} align 4 resizable box DOWN_BOX color 0x7eabf000
+                      class HumanWindowGraphViewer
+                    } {}
+                  }
+                  {fltk::Slider} ui_graph_phase {
+                    callback {event(evPhaseSlider);}
+                    xywh {5 235 275 20} align 4 box DOWN_BOX color 0xc5c5c500 buttoncolor 0xc5c5c500 step 0.001
+                  }
+                  {fltk::Group} ui_frame_group {open
+                    xywh {70 255 210 25}
+                  } {
+                    {fltk::ValueInput} ui_current_frame {
+                      callback {event(evTimeEdit);}
+                      tooltip {current frame}
+                      xywh {0 0 40 20} minimum 1 maximum 5000 step 1 value 1
+                    }
+                    {fltk::ValueInput} {ui_curve_pt[0]} {
+                      callback {event(evPointEdit);}
+                      xywh {85 0 60 20}
+                    }
+                    {fltk::ValueInput} {ui_curve_pt[1]} {
+                      callback {event(evPointEdit);}
+                      xywh {145 0 65 19} minimum -1 step 0.05
+                    }
+                    {fltk::Button} {} {
+                      label {>}
+                      callback {event(evNextPoint);}
+                      xywh {65 1 20 20}
+                    }
+                  }
+                  {fltk::Group} ui_time_group {
+                    xywh {80 255 197 20} hide
+                  } {
+                    {fltk::ValueInput} ui_last_time {
+                      callback {event(evTimeEdit);}
+                      tooltip {last time to show
+}
+                      xywh {132 0 65 20} maximum 5000 step 0.1
+                    }
+                    {fltk::ValueInput} ui_first_time {
+                      callback {event(evTimeEdit);}
+                      tooltip {first time to show
+}
+                      xywh {70 0 65 20} maximum 5000 step 0.1
+                    }
+                    {fltk::ValueInput} ui_current_time {
+                      callback {event(evTimeEdit);}
+                      tooltip {current time}
+                      xywh {5 0 65 20} maximum 30 step 0.001
+                    }
+                  }
+                  {fltk::CheckButton} ui_show_time {
+                    label frames
+                    callback {if(ui_show_time->value())
+{
+ui_time_group->show();
+ui_frame_group->hide();
+ui_show_time->label("time");
+}
+else
+{
+ui_time_group->hide();
+ui_frame_group->show();
+ui_show_time->label("frames");
+}}
+                    tooltip {toggles between frame control or time control}
+                    xywh {50 257 21 16} align 4
+                  }
+                }
+                {fltk::TabGroup} ui_motion_tab_group {open
+                  xywh {0 480 285 335}
+                } {
+                  {fltk::Group} {} {
+                    label Controller
+                    xywh {0 25 285 310}
+                  } {
+                    {fltk::Browser} ui_motionList {
+                      callback {event(evMotionSel);}
+                      xywh {5 0 278 260}
+                    } {}
+                    {fltk::Group} {} {
+                      label controler open
+                      xywh {5 265 135 40} align 33 box DOWN_BOX
+                    } {
+                      {fltk::Button} {} {
+                        label reload
+                        callback {event(evReloadController);}
+                        tooltip {reload the selected controller from file discarding any changes made}
+                        xywh {50 15 44 20}
+                      }
+                      {fltk::Button} {} {
+                        label new
+                        callback {event(evNewController);}
+                        tooltip {create a new empty controller}
+                        xywh {5 15 44 20}
+                      }
+                    }
+                    {fltk::Group} {} {
+                      label motion open
+                      xywh {140 265 145 40} align 33 box DOWN_BOX
+                    } {
+                      {fltk::Button} {} {
+                        label delete
+                        callback {event(evDeleteMotion);}
+                        tooltip {delete the motion and the file for the motion}
+                        xywh {5 15 44 20} align 128
+                      }
+                    }
+                  }
+                  {fltk::Group} {} {
+                    label KnMotion
+                    xywh {0 20 283 200} hide
+                  } {
+                    {fltk::Browser} ui_kn_motion_list {
+                      callback {event(evKnMotionListSelected);} open
+                      xywh {5 5 278 155}
+                    } {}
+                    {fltk::Button} {} {
+                      label mirror
+                      callback {event(evMirrorSegment);}
+                      xywh {130 180 44 20}
+                    }
+                    {fltk::Button} {} {
+                      label trans
+                      callback {event(evTranslateSegment);}
+                      xywh {175 180 35 20}
+                    }
+                    {fltk::Button} {} {
+                      label orient
+                      callback {event(evOrientSegment);}
+                      xywh {210 180 40 20}
+                    }
+                    {fltk::Button} {} {
+                      label composite
+                      callback {event(evOpenCompositeWindow);}
+                      xywh {65 180 65 20}
+                    }
+                  }
+                }
+                {fltk::Group} ui_channel_group {open
+                  xywh {0 280 290 195} box DOWN_BOX
+                } {
+                  {fltk::Browser} ui_channelList {
+                    callback {event(evChannelSelect);}
+                    xywh {15 3 270 167} type Multi align 5
+                  } {}
+                  {fltk::Button} {} {
+                    callback {event(evMoveChannelUp);}
+                    xywh {3 14 10 20} shortcut 0xffbf
+                  }
+                  {fltk::Button} {} {
+                    callback {event(evMoveChannelDown);}
+                    xywh {3 42 10 20} shortcut 0xffc0
+                  }
+                  {fltk::CheckButton} ui_channel_active {
+                    callback {event(evChannelEdit);}
+                    xywh {0 69 15 15} vertical
+                  }
+                  {fltk::Button} {} {
+                    label delete
+                    xywh {15 170 50 20}
+                  }
+                  {fltk::CheckButton} ui_trajectories_vis {
+                    label trajectories
+                    callback {event(evRefreshChannels);}
+                    tooltip {show only the trajectories}
+                    xywh {65 170 50 20}
+                  }
+                }
+              }
+              {fltk::Group} {} {
+                label env open
+                xywh {10 25 290 810} hide
+              } {}
+              {fltk::Group} {} {
+                label dev
+                xywh {0 20 310 805} hide buttonbox PLASTIC_UP_BOX
+              } {
+                {fltk::Group} {} {
+                  tooltip {Random Stuff}
+                  xywh {10 405 285 365} box DOWN_BOX color 0xd3d3d300
+                } {
+                  {fltk::ValueSlider} ui_desired_heading {
+                    label {desired heading}
+                    callback {event(evStanceAdjust);}
+                    xywh {110 5 165 15} align 4 minimum -2 maximum 2
+                  }
+                  {fltk::ValueSlider} ui_stanceSwingRatio {
+                    label {stance/swing ratio}
+                    callback {event(evStanceAdjust);}
+                    xywh {110 21 165 15} align 4 value 0.5
+                  }
+                  {fltk::ValueSlider} ui_stanceToeHeel {
+                    label {toe/heel ratio}
+                    callback {event(evStanceAdjust);}
+                    xywh {110 38 165 15} align 4 maximum 1.2 value 0.5
+                  }
+                  {fltk::ValueSlider} ui_p_mult {
+                    label {p mult}
+                    callback {event(evGainAdjust);}
+                    xywh {110 54 165 15} align 4 maximum 10 value 1
+                  }
+                  {fltk::ValueSlider} ui_d_mult {
+                    label {d mult}
+                    callback {event(evGainAdjust);}
+                    xywh {110 71 165 15} align 4 maximum 10 value 1
+                  }
+                  {fltk::ValueSlider} ui_psw_mult {
+                    label {stance mult}
+                    callback {event(evGainAdjust);}
+                    xywh {110 87 165 15} align 4 value 0.5
+                  }
+                  {fltk::ValueSlider} ui_dsw_mult {
+                    label {swing mult}
+                    callback {event(evGainAdjust);}
+                    xywh {110 104 165 15} align 4 value 0.5
+                  }
+                  {fltk::ValueSlider} ui_contact_offset {
+                    label {stance offset}
+                    callback {event(evStanceAdjust);}
+                    xywh {110 120 165 15} align 4 maximum 1.2 value 0.5
+                  }
+                  {fltk::ValueSlider} ui_contact_offset_z {
+                    label {stance offset z}
+                    callback {event(evStanceAdjust);}
+                    xywh {110 137 165 15} align 4 minimum -0.5 maximum 0.5
+                  }
+                  {fltk::ValueSlider} ui_sim_d_x {
+                    label {simd x}
+                    callback {event(evSimbiconAdjust);}
+                    xywh {110 153 165 15} align 4 when CHANGED minimum -1 step 0.001 value 1
+                  }
+                  {fltk::ValueSlider} ui_sim_d_z {
+                    label {simd z}
+                    callback {event(evSimbiconAdjust);}
+                    xywh {110 170 165 15} align 4 when CHANGED minimum -1 step 0.001 value 1
+                  }
+                  {fltk::ValueSlider} ui_sim_v_x {
+                    label {simv x}
+                    callback {event(evSimbiconAdjust);}
+                    xywh {110 186 165 15} align 4 when CHANGED minimum -1 step 0.001 value 1
+                  }
+                  {fltk::ValueSlider} ui_sim_v_z {
+                    label {simv z}
+                    callback {event(evSimbiconAdjust);}
+                    xywh {110 203 165 15} align 4 when CHANGED minimum -1 step 0.001 value 1
+                  }
+                  {fltk::ValueSlider} ui_sim_root_scale {
+                    label {root sc}
+                    callback {event(evSimbiconAdjust);}
+                    xywh {110 220 165 15} align 4 when CHANGED maximum 2 step 0.001 value 1
+                  }
+                  {fltk::LightButton} ui_select_mode {
+                    label select
+                    tooltip {Load a parameter editor for any serializable picked in the viewer}
+                    xywh {60 340 60 20} box PLASTIC_UP_BOX buttonbox PLASTIC_UP_BOX color 0xd3d3d300 selection_color 0xff0000 buttoncolor 0xa0a0a000
+                  }
+                  {fltk::Output} ui_selected_joint {
+                    tooltip {the current motion}
+                    xywh {120 340 90 20}
+                  }
+                  {fltk::Button} {} {
+                    label edit
+                    callback {event(evEditSelected);}
+                    xywh {210 340 60 20} buttonbox PLASTIC_UP_BOX
+                  }
+                  {fltk::Group} {} {
+                    xywh {55 265 220 70} box DOWN_BOX color 0xa0a0a000
+                  } {
+                    {fltk::Button} {} {
+                      label {^}
+                      callback {event(evForceForward);}
+                      xywh {155 5 20 20} vertical buttonbox PLASTIC_UP_BOX
+                    }
+                    {fltk::Button} {} {
+                      label {>}
+                      callback {event(evForceRight);}
+                      xywh {175 25 20 20} vertical buttonbox PLASTIC_UP_BOX
+                    }
+                    {fltk::Button} {} {
+                      label {<}
+                      callback {event(evForceLeft);}
+                      xywh {135 25 20 20} vertical buttonbox PLASTIC_UP_BOX
+                    }
+                    {fltk::Button} {} {
+                      label v
+                      callback {event(evForceBackward);}
+                      xywh {155 45 20 20} vertical buttonbox PLASTIC_UP_BOX
+                    }
+                    {fltk::ValueInput} ui_ext_force_duration {
+                      label duration
+                      xywh {70 35 60 20} value 0.2
+                    }
+                    {fltk::ValueInput} ui_ext_force {
+                      label force
+                      xywh {70 15 60 15} value 100
+                    }
+                  }
+                  {fltk::ValueSlider} ui_vel_desired_z {
+                    label {vel z}
+                    callback {event(evStanceAdjust);}
+                    xywh {110 235 165 15} align 4 when CHANGED minimum -1 maximum 2 step 0.001
+                  }
+                  {fltk::ValueSlider} ui_desired_v_scale {
+                    label {desired v scale}
+                    callback {event(evStanceAdjust);}
+                    xywh {110 250 165 15} align 4 when CHANGED maximum 200 step 0.001 value 1
+                  }
+                }
+                {fltk::Group} {} {
+                  tooltip {Load different configurations for the controllers}
+                  xywh {10 85 290 175} align 33 box DOWN_BOX color 0x9b9b9b00
+                } {
+                  {fltk::Browser} ui_controller_browser {
+                    callback {event(evControllerListSelected);}
+                    xywh {5 22 280 148} when CHANGED
+                  } {}
+                  {fltk::MenuBar} {} {open
+                    xywh {6 3 199 20} box NO_BOX
+                  } {
+                    {fltk::ItemGroup} {} {
+                      label Controllers open
+                      box PLASTIC_UP_BOX
+                    } {
+                      {fltk::Item} {} {
+                        label edit
+                        callback {event(evEditModule);}
+                        }
+                      {fltk::Item} {} {
+                        label {match to human}
+                        callback {event(evControllerMatchHm)}
+                        }
+                      {fltk::Item} {} {
+                        label {match to skeleton}
+                        callback {event(evControllerMatchSk);}
+                        }
+                      {fltk::Item} {} {
+                        label {match to frame}
+                        callback {event(evControllerMatchFrame)}
+                        }
+                    }
+                  }
+                  {fltk::LightButton} ui_controll_active {
+                    label active
+                    callback {event(evControllerActive);}
+                    xywh {94 3 55 18} buttonbox PLASTIC_UP_BOX value 1
+                  }
+                  {fltk::LightButton} ui_controll_visible {
+                    label vis
+                    callback {event(evControllerVisible);}
+                    xywh {147 3 55 18} buttonbox PLASTIC_UP_BOX
+                  }
+                }
+                {fltk::Group} ui_manip_group {
+                  tooltip {Load different configurations for the controllers}
+                  xywh {10 260 290 145} align 33 box DOWN_BOX color 0x9b9b9b00
+                } {
+                  {fltk::MenuBar} {} {
+                    xywh {5 3 200 20} box NO_BOX
+                  } {
+                    {fltk::ItemGroup} {} {
+                      label Manipulators open
+                      box PLASTIC_UP_BOX
+                    } {
+                      {fltk::Item} {} {
+                        label edit
+                        callback {event(evManipEdit)}
+                        }
+                      {fltk::Item} {} {
+                        label {match to human}
+                        callback {event(evManipMatchHm);}
+                        }
+                      {fltk::Item} {} {
+                        label {match to skeleton}
+                        callback {event(evManipMatchSk);}
+                        }
+                      {fltk::Item} {} {
+                        label {match to frame}
+                        callback {event(evControllerMatchFrame)}
+                        }
+                    }
+                  }
+                  {fltk::Browser} ui_manip_browser {
+                    callback {event(evManipListSelected);}
+                    xywh {5 22 280 110} when CHANGED
+                  } {}
+                  {fltk::LightButton} ui_manip_active {
+                    label active
+                    callback {event(evManipActive);}
+                    xywh {100 4 55 18} buttonbox PLASTIC_UP_BOX value 1
+                  }
+                  {fltk::LightButton} ui_manip_visible {
+                    label vis
+                    callback {event(evManipVisible);}
+                    xywh {155 4 40 18} buttonbox PLASTIC_UP_BOX value 1
+                  }
+                }
+                {fltk::Group} {} {open
+                  xywh {10 775 275 25}
+                } {
+                  {fltk::Button} {} {
+                    label reduce
+                    callback {event(evCurveFit);}
+                    tooltip {reduce the selected channels to bezier curves with flat tangents.
+}
+                    xywh {10 0 50 20}
+                  }
+                  {fltk::ValueInput} ui_curve_fit_points {
+                    callback {event(evChannelEdit);}
+                    tooltip {number of adjacent points to average when considering the slope}
+                    xywh {60 0 40 20} maximum 10 step 1 value 3
+                  }
+                  {fltk::ValueInput} ui_curve_fit_tolerance {
+                    callback {event(evChannelEdit);}
+                    tooltip {tolerance when deciding to add point, changes when -tol > slope >tol}
+                    xywh {100 0 40 20} step 0.0001 value 0.2
+                  }
+                  {fltk::Button} {} {
+                    label merge
+                    callback {event(evMergePoints);}
+                    tooltip {merge any control points within the tolerance specified
+}
+                    xywh {182 0 42 20}
+                  }
+                  {fltk::ValueInput} ui_curve_merge_tolerance {
+                    callback {event(evChannelEdit);}
+                    tooltip {tolerance for merging points. basically if there is a point within this distance to the left this point will be deleted. unless it is the endpoint}
+                    xywh {225 0 40 20} step 0.0001 value 0.1
+                  }
+                  {fltk::ValueInput} ui_curve_conc_tolerance {
+                    callback {event(evChannelEdit);}
+                    tooltip {tolerance for adding point based on change in concavity}
+                    xywh {139 0 40 20} step 0.0001 value 0.2
+                  }
+                }
+                {fltk::LightButton} ui_interactive_edit {
+                  label intrctv
+                  callback {event(evToggleInteractive);}
+                  xywh {72 14 55 20} box PLASTIC_UP_BOX buttonbox PLASTIC_UP_BOX color 0xd3d3d300 selection_color 0xff0000 buttoncolor 0xa0a0a000 value 1
+                }
+                {fltk::Button} {} {
+                  label Stop
+                  callback {event(evStop);}
+                  xywh {127 15 50 20} buttonbox PLASTIC_UP_BOX color 0xd3d3d300 buttoncolor 0xd3d3d300
+                }
+                {fltk::Button} {} {
+                  label Start
+                  callback {event(evStart);}
+                  xywh {177 15 50 20} buttonbox PLASTIC_UP_BOX color 0xd3d3d300 buttoncolor 0xd3d3d300
+                }
+                {fltk::LightButton} ui_draw {
+                  label draw
+                  callback {event(evDraw);}
+                  tooltip {toggles the drawing of the scene..}
+                  xywh {22 25 50 20} box PLASTIC_UP_BOX buttonbox PLASTIC_UP_BOX color 0xd3d3d300 selection_color 0xff0000 buttoncolor 0xa0a0a000
+                }
+                {fltk::ValueInput} {ui_sample_bounds[4]} {
+                  label seed
+                  callback {event(evEditSample);}
+                  xywh {36 48 45 25} maximum 255 step 1
+                }
+                {fltk::ValueInput} {ui_sample_bounds[0]} {
+                  label {min z}
+                  callback {event(evEditSample);}
+                  xywh {120 35 45 25} maximum 4 step 0.001
+                }
+                {fltk::ValueInput} {ui_sample_bounds[1]} {
+                  label {max z}
+                  callback {event(evEditSample);}
+                  xywh {120 60 45 25} maximum 4 step 0.001
+                }
+                {fltk::ValueInput} {ui_sample_bounds[3]} {
+                  label {max y}
+                  callback {event(evEditSample);}
+                  xywh {205 35 45 25} maximum 4 step 0.001
+                }
+                {fltk::ValueInput} {ui_sample_bounds[2]} {
+                  label {min y}
+                  callback {event(evEditSample);}
+                  xywh {205 60 45 25} maximum 4 step 0.001
+                }
+                {fltk::Button} {} {
+                  label expand
+                  callback {event(evPlanStart);}
+                  xywh {230 15 50 20} buttonbox PLASTIC_UP_BOX color 0xd3d3d300 buttoncolor 0xd3d3d300
+                }
+                {fltk::LightButton} ui_pick_mode {
+                  label pick
+                  xywh {20 5 55 20} box PLASTIC_UP_BOX buttonbox PLASTIC_UP_BOX color 0xd3d3d300 selection_color 0xff0000 buttoncolor 0xa0a0a000 value 1
+                }
+              }
+              {fltk::Group} {} {
+                label joint
+                xywh {10 30 285 780} hide
+              } {
+                {fltk::Browser} ui_jointList {
+                  label Joint
+                  callback {event(evJointListSelect);}
+                  xywh {5 35 280 260} type Multi align 5
+                } {}
+                {fltk::ValueSlider} ui_jointP {
+                  label P
+                  callback {event(evIndividualJointAdjust);}
+                  xywh {50 355 140 20} align 4 maximum 5 step 0.001 value 0.3
+                }
+                {fltk::ValueSlider} ui_jointD {
+                  label D
+                  callback {event(evIndividualJointAdjust);}
+                  xywh {50 375 140 20} align 4 maximum 0.1 step 0.0001 value 0.01
+                }
+                {fltk::CheckButton} ui_jointGrav {
+                  label {Gravity Compensate}
+                  callback {event(evIndividualJointAdjust);}
+                  xywh {30 397 136 20}
+                }
+                {fltk::CheckButton} ui_jointPD {
+                  label PD
+                  callback {event(evIndividualJointAdjust);}
+                  xywh {31 415 45 20}
+                }
+                {fltk::ValueSlider} ui_jointJX {
+                  label jX
+                  callback {event(evIndividualJointAdjust);}
+                  xywh {80 475 175 20} align 4 minimum -5 maximum 5 value 1
+                }
+                {fltk::ValueSlider} ui_jointJY {
+                  label jY
+                  callback {event(evIndividualJointAdjust);}
+                  xywh {80 495 175 20} align 4 minimum -5 maximum 5 value 1
+                }
+                {fltk::ValueSlider} ui_jointJZ {
+                  label jZ
+                  callback {event(evIndividualJointAdjust);}
+                  xywh {80 515 175 20} align 4 minimum -5 maximum 5 value 1
+                }
+                {fltk::ValueSlider} ui_jointMaxT {
+                  label maxT
+                  callback {event(evIndividualJointAdjust);}
+                  xywh {80 535 175 20} align 4 minimum -5 maximum 5 value 1
+                }
+                {fltk::Group} {} {
+                  label {Euler Control} open
+                  xywh {20 650 258 115} align 33 box DOWN_BOX
+                } {
+                  {fltk::ValueSlider} ui_jointRX {
+                    label rX
+                    callback {event(evEulerJointAdjust);}
+                    xywh {50 35 175 20} align 4 minimum -180 maximum 180 step 1
+                  }
+                  {fltk::ValueSlider} ui_jointRY {
+                    label rY
+                    callback {event(evEulerJointAdjust);}
+                    xywh {50 55 175 20} align 4 minimum -180 maximum 180 step 1
+                  }
+                  {fltk::ValueSlider} ui_jointRZ {
+                    label rZ
+                    callback {event(evEulerJointAdjust);}
+                    xywh {50 75 175 20} align 4 minimum -180 maximum 180 step 1
+                  }
+                  {fltk::CheckButton} ui_feedback {
+                    label {live angles}
+                    xywh {110 90 25 25}
+                  }
+                }
+                {fltk::CheckButton} ui_char_frame {
+                  label {char frame}
+                  callback {event(evIndividualJointAdjust);}
+                  xywh {31 435 85 20}
+                }
+                {fltk::Output} ui_joint_type {
+                  label type
+                  xywh {75 325 105 25} box NO_BOX buttonbox NO_BOX
+                }
+                {fltk::Output} ui_multiSelect {
+                  xywh {10 300 145 20} box NO_BOX buttonbox NO_BOX
+                }
+                {fltk::Button} {} {
+                  label parm
+                  callback {event(evJointParm);}
+                  xywh {155 300 45 20}
+                }
+                {fltk::Button} {} {
+                  label body
+                  callback {event(evJointBody);}
+                  xywh {200 300 50 20}
+                }
+                {fltk::ValueSlider} {ui_joint_scale[0]} {
+                  label scale_x
+                  callback {event(evIndividualJointAdjust);}
+                  xywh {80 565 175 20} align 4 value 1
+                }
+                {fltk::ValueSlider} {ui_joint_scale[2]} {
+                  label scale_z
+                  callback {event(evIndividualJointAdjust);}
+                  xywh {80 605 175 20} align 4 value 1
+                }
+                {fltk::ValueSlider} {ui_joint_scale[1]} {
+                  label scale_y
+                  callback {event(evIndividualJointAdjust);}
+                  xywh {80 585 175 20} align 4 value 1
+                }
+              }
+            }
+          }
+        }
+      }
+      {fltk::Group} {} {open
+        xywh {305 0 1309 930} box DOWN_BOX color 0x50505000
+      } {
+        {fltk::Input} ui_cmd_line {
+          label cmd
+          callback {event(evCmdLine);}
+          xywh {265 896 181 29} when ENTER_KEY_ALWAYS color 56 textcolor 0xe8e8d800 labelcolor 0xffffff00
+        }
+        {fltk::Output} ui_message {
+          xywh {445 896 840 27} color 56 textcolor 0xffffff00 labelcolor 0xffffff00
+        }
+        {fltk::Group} ui_viewer {
+          xywh {5 5 1299 885} resizable box DOWN_BOX color 0xd3d3d300
+          class AppViewer
+        } {}
+        {fltk::ProgressBar} ui_status_bar {
+          xywh {45 894 185 30}
+        }
+        {fltk::ValueOutput} ui_num_found {
+          xywh {0 894 40 30}
+        }
+      }
+    }
+    {fltk::Window} ui_composite_window {
+      xywh {1810 813 445 215} hide resizable
+    } {
+      {fltk::Button} {} {
+        label make
+        callback {event(evMakeComposite);}
+        xywh {385 164 50 26}
+      }
+      {fltk::Input} ui_control_motion {
+        label control
+        xywh {45 165 140 19}
+      }
+      {fltk::Group} {} {
+        label {left foot}
+        xywh {5 15 205 44} align 36 box DOWN_BOX
+      } {
+        {fltk::CheckButton} {ui_comp[0]} {
+          label x
+          xywh {75 14 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[1]} {
+          label y
+          xywh {95 14 20 29} align 1 value 1
+        }
+        {fltk::CheckButton} {ui_comp[2]} {
+          label z
+          xywh {115 14 20 29} align 1 value 1
+        }
+        {fltk::CheckButton} {ui_comp[3]} {
+          label rx
+          xywh {135 14 20 29} align 1 value 1
+        }
+        {fltk::CheckButton} {ui_comp[4]} {
+          label ry
+          xywh {155 14 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[5]} {
+          label rz
+          xywh {175 14 20 29} align 1
+        }
+      }
+      {fltk::Group} {} {
+        label {right foot}
+        xywh {5 61 205 46} align 36 box DOWN_BOX
+      } {
+        {fltk::CheckButton} {ui_comp[6]} {
+          label x
+          xywh {75 16 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[7]} {
+          label y
+          xywh {95 16 20 29} align 1 value 1
+        }
+        {fltk::CheckButton} {ui_comp[8]} {
+          label z
+          xywh {115 16 20 29} align 1 value 1
+        }
+        {fltk::CheckButton} {ui_comp[9]} {
+          label rx
+          xywh {135 16 20 29} align 1 value 1
+        }
+        {fltk::CheckButton} {ui_comp[10]} {
+          label ry
+          xywh {155 16 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[11]} {
+          label rz
+          xywh {175 16 20 29} align 1
+        }
+      }
+      {fltk::Group} {} {
+        label root
+        xywh {5 112 205 46} align 36 box DOWN_BOX
+      } {
+        {fltk::CheckButton} {ui_comp[12]} {
+          label x
+          xywh {80 16 20 29} align 1 value 1
+        }
+        {fltk::CheckButton} {ui_comp[13]} {
+          label y
+          xywh {100 16 20 29} align 1 value 1
+        }
+        {fltk::CheckButton} {ui_comp[14]} {
+          label z
+          xywh {120 16 20 29} align 1 value 1
+        }
+        {fltk::CheckButton} {ui_comp[15]} {
+          label rx
+          xywh {140 16 20 29} align 1 value 1
+        }
+        {fltk::CheckButton} {ui_comp[16]} {
+          label ry
+          xywh {160 16 20 29} align 1 value 1
+        }
+        {fltk::CheckButton} {ui_comp[17]} {
+          label rz
+          xywh {180 16 20 29} align 1 value 1
+        }
+      }
+      {fltk::Group} {} {
+        label {left hand}
+        xywh {220 12 205 44} align 36 box DOWN_BOX
+      } {
+        {fltk::CheckButton} {ui_comp[18]} {
+          label x
+          xywh {80 14 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[19]} {
+          label y
+          xywh {100 14 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[20]} {
+          label z
+          xywh {120 14 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[21]} {
+          label rx
+          xywh {140 14 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[22]} {
+          label ry
+          xywh {160 14 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[23]} {
+          label rz
+          xywh {180 14 20 29} align 1
+        }
+      }
+      {fltk::Group} {} {
+        label {right hand}
+        xywh {220 58 210 49} align 36 box DOWN_BOX
+      } {
+        {fltk::CheckButton} {ui_comp[24]} {
+          label x
+          xywh {80 19 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[25]} {
+          label y
+          xywh {100 19 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[26]} {
+          label z
+          xywh {120 19 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[27]} {
+          label rx
+          xywh {140 19 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[28]} {
+          label ry
+          xywh {160 19 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[29]} {
+          label rz
+          xywh {180 19 20 29} align 1
+        }
+      }
+      {fltk::Group} {} {
+        label com
+        xywh {220 114 210 44} align 36 box DOWN_BOX
+      } {
+        {fltk::CheckButton} {ui_comp[30]} {
+          label x
+          xywh {90 14 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[31]} {
+          label y
+          xywh {110 14 20 29} align 1
+        }
+        {fltk::CheckButton} {ui_comp[32]} {
+          label z
+          xywh {130 14 20 29} align 1
+        }
+      }
+      {fltk::Group} {} {open
+        xywh {15 186 235 26} box DOWN_BOX
+      } {
+        {fltk::ValueInput} ui_first_frame_comp {
+          label first
+          xywh {75 5 45 20} maximum 100 step 1 value 1
+        }
+        {fltk::ValueInput} ui_last_frame_comp {
+          label last
+          xywh {145 5 90 20} maximum 2000 step 1 value 200
+        }
+        {fltk::CheckButton} ui_all_frames {
+          label all
+          callback {if(ui_all_frames->value())
+{
+ui_first_frame_comp->hide();
+ui_last_frame_comp->hide();
+}
+else
+{
+ui_first_frame_comp->show();
+ui_last_frame_comp->show();
+}}
+          xywh {5 5 45 20}
+        }
+      }
+      {fltk::Input} ui_group_name {
+        label name
+        xywh {230 166 140 19}
+      }
+    }
+    {fltk::Window} ui_node_window {
+      xywh {2167 87 1315 872} hide resizable
+    } {
+      {fltk::Group} {} {
+        label {Node Editor} open
+        xywh {6 2 1309 855}
+      } {
+        {fltk::Group} ui_node_viewer {open
+          xywh {13 33 1295 822} align 4 box DOWN_BOX color 0x7eabf000
+          class HumanWindowNodeViewer
+        } {}
+        {fltk::MenuBar} {} {open
+          xywh {15 5 254 25}
+        } {
+          {fltk::ItemGroup} {} {
+            label make
+            box PLASTIC_UP_BOX buttonbox PLASTIC_UP_BOX
+          } {
+            {fltk::Item} {} {
+              label mult
+              callback {event(evMakeMult);}
+              }
+            {fltk::Item} {} {
+              label switch
+              callback {event(evMakeSwitch);}
+              }
+            {fltk::Item} {} {
+              label modulate
+              callback {event(evMakeMod);}
+              }
+            {fltk::Item} {} {
+              label add
+              callback {event(evMakeAdd);}
+              }
+            {fltk::Item} {} {
+              label inverse
+              callback {event(evMakeInv);}
+              }
+            {fltk::Item} {} {
+              label trajectory
+              callback {event(evMakeTraj);}
+              }
+          }
+          {fltk::ItemGroup} {} {
+            label change
+            box PLASTIC_UP_BOX
+          } {
+            {fltk::Item} {} {
+              label additive
+              callback {event(evMakeChannelAdditive);}
+              }
+            {fltk::Item} {} {
+              label scale
+              callback {event(evMakeChannelScale);}
+              }
+            {fltk::Item} {} {
+              label inverse
+              callback {event(evMakeChannelInverse);}
+              }
+            {fltk::Item} {} {
+              label feedback
+              callback {event(evMakeChannelFeedback);}
+              }
+            {fltk::Item} {} {
+              label event
+              callback {event(evMakeChannelEvent);}
+              tooltip {an event channel will skip the rest of an animation to the end of the event.}
+              }
+            {fltk::Item} {} {
+              label idler
+              callback {event(evMakeChannelIdler);}
+              tooltip {an idler channel will wait for a certain event to start playing}
+              }
+          }
+          {fltk::ItemGroup} {} {
+            label edit open
+            box PLASTIC_UP_BOX buttonbox PLASTIC_UP_BOX
+          } {
+            {fltk::Item} {} {
+              label arrange
+              callback {event(evArrangeNodes);}
+              }
+            {fltk::Item} {} {
+              label detach
+              callback {event(evDetachNode);}
+              tooltip {remove the object from this node but keep it around}
+              }
+            {fltk::Item} {} {
+              label rename
+              callback {event(evChannelRename);}
+              }
+            {fltk::Item} {} {
+              label {edit viewer}
+              callback {event(evEditNodeViewer);}
+              }
+          }
+          {fltk::ItemGroup} {} {
+            label view open
+            } {
+            {fltk::Item} {} {
+              label {view inputs}
+              callback {event(evViewInputNodes);}
+              tooltip {toggle showing only selected}
+              }
+            {fltk::Item} {} {
+              label {view outputs}
+              callback {event(evViewOutputNodes);}
+              }
+            {fltk::Item} {} {
+              label {view connected}
+              callback {event(evViewConnectedNodes);}
+              }
+            {fltk::Item} {} {
+              label {hide all}
+              callback {event(evHideAllNodes);}
+              }
+            {fltk::Item} {} {
+              label {show all}
+              callback {event(evShowAllNodes);}
+              }
+            {fltk::Item} {} {
+              label {hide selected}
+              callback {event(evHideSelectedNodes);}
+              }
+          }
+        }
+        {fltk::ValueInput} ui_node_val {
+          label {node val}
+          callback {event(evNodeVal);}
+          xywh {345 3 95 25}
+        }
+      }
+    }
+    {fltk::Window} ui_graph_window {
+      xywh {669 212 719 530} hide resizable
+    } {
+      {fltk::Group} ui_popviewer_group {open
+        xywh {0 4 719 526}
+      } {}
+    }
+    {fltk::Window} ui_interp_window {
+      xywh {322 113 388 276} hide resizable
+    } {
+      {fltk::Group} {} {open
+        xywh {0 0 388 150} box DOWN_BOX
+      } {
+        {fltk::ValueSlider} {ui_parm_edit[0]} {
+          callback {event(evEditParm);}
+          xywh {100 10 195 15} align 4 maximum 2
+        }
+        {fltk::ValueSlider} {ui_parm_edit[1]} {
+          callback {event(evEditParm);}
+          xywh {100 25 195 15} align 4
+        }
+        {fltk::ValueSlider} {ui_parm_edit[2]} {
+          callback {event(evEditParm);}
+          xywh {100 40 195 15} align 4
+        }
+        {fltk::ValueSlider} {ui_parm_edit[3]} {
+          callback {event(evEditParm);}
+          xywh {100 55 195 15} align 4
+        }
+        {fltk::ValueSlider} {ui_parm_edit[4]} {
+          callback {event(evEditParm);}
+          xywh {100 70 195 15} align 4
+        }
+        {fltk::ValueSlider} {ui_parm_edit[5]} {
+          callback {event(evEditParm);}
+          xywh {100 85 195 15} align 4
+        }
+        {fltk::Output} {ui_parm_name[0]} {
+          xywh {10 10 90 15}
+        }
+        {fltk::Output} {ui_parm_name[1]} {
+          xywh {10 25 90 15}
+        }
+        {fltk::Output} {ui_parm_name[2]} {
+          xywh {10 40 90 15}
+        }
+        {fltk::Output} {ui_parm_name[3]} {
+          xywh {10 55 90 15}
+        }
+        {fltk::Output} {ui_parm_name[4]} {
+          xywh {10 70 90 15}
+        }
+        {fltk::Output} {ui_parm_name[5]} {
+          xywh {10 85 90 15}
+        }
+        {fltk::ValueInput} {ui_parm_weight[0]} {
+          xywh {310 12 60 18} when CHANGED maximum 5 step 1 value 1
+        }
+        {fltk::ValueInput} {ui_parm_weight[1]} {
+          xywh {310 27 60 18} when CHANGED maximum 5 step 1 value 1
+        }
+        {fltk::ValueInput} {ui_parm_weight[2]} {
+          xywh {310 42 60 18} when CHANGED maximum 5 step 1 value 1
+        }
+        {fltk::ValueInput} {ui_parm_weight[3]} {
+          xywh {310 57 60 18} when CHANGED maximum 5 step 1 value 1
+        }
+        {fltk::ValueInput} {ui_parm_weight[4]} {
+          xywh {310 72 60 18} when CHANGED maximum 5 step 1 value 1
+        }
+        {fltk::ValueInput} {ui_parm_weight[5]} {
+          xywh {310 87 60 18} when CHANGED maximum 5 step 1 value 1
+        }
+        {fltk::ValueSlider} {ui_parm_edit[6]} {
+          callback {event(evEditParm);}
+          xywh {100 100 195 15} align 4
+        }
+        {fltk::Output} {ui_parm_name[6]} {
+          xywh {10 100 90 15}
+        }
+        {fltk::ValueInput} {ui_parm_weight[6]} {
+          xywh {310 102 60 18} when CHANGED maximum 5 step 1 value 1
+        }
+        {fltk::ValueSlider} {ui_parm_edit[7]} {
+          callback {event(evEditParm);}
+          xywh {100 115 195 15} align 4
+        }
+        {fltk::Output} {ui_parm_name[7]} {
+          xywh {10 115 90 15}
+        }
+        {fltk::ValueInput} {ui_parm_weight[7]} {
+          xywh {310 117 60 18} when CHANGED maximum 5 step 1 value 1
+        }
+        {fltk::ValueSlider} {ui_parm_edit[8]} {
+          callback {event(evEditParm);}
+          xywh {100 130 195 15} align 4
+        }
+        {fltk::Output} {ui_parm_name[8]} {
+          xywh {10 130 90 15}
+        }
+        {fltk::ValueInput} {ui_parm_weight[8]} {
+          xywh {310 132 60 18} when CHANGED maximum 5 step 1 value 1
+        }
+      }
+      {fltk::CheckButton} ui_parm_live {
+        label live
+        tooltip {will update the current selected motion by interpolating the neighbor motions with the paramters set above}
+        xywh {22 165 48 31}
+      }
+      {fltk::Button} {} {
+        label new
+        callback {event(evSetMotion);}
+        xywh {15 196 50 24}
+      }
+      {fltk::ValueSlider} ui_rbds_height {
+        label height
+        callback {event(evEditParm);}
+        xywh {202 165 170 36} align 4 minimum 0.1 maximum 10 value 2
+      }
+      {fltk::ValueSlider} ui_rbds_support {
+        label support
+        callback {event(evEditParm);}
+        xywh {202 208 170 43} align 4 minimum 1 maximum 100 value 2
+      }
+      {fltk::Button} {} {
+        label env
+        callback {event(evMakeMotionEnv);}
+        xywh {15 221 50 24}
+      }
+      {fltk::Button} {} {
+        label save
+        callback {event(evMakeMotionEnv);}
+        xywh {65 196 50 24}
+      }
+      {fltk::ValueInput} {ui_env_offset[0]} {
+        label y
+        callback {event(evEnvOffset);}
+        xywh {20 245 40 30} when CHANGED maximum 5 step 0.001
+      }
+      {fltk::ValueInput} {ui_env_offset[1]} {
+        label z
+        callback {event(evEnvOffset);}
+        xywh {70 245 40 30} when CHANGED maximum 5 step 0.001
+      }
+      {fltk::CheckButton} ui_draw_basis {
+        label {draw basis}
+        tooltip {show the basis function in the graphviewer}
+        xywh {160 244 48 31}
+      }
+      {fltk::Button} {} {
+        label closest
+        callback {event(evSelectClosestMotion);}
+        tooltip {select the closest motion instead of interpolatin}
+        xywh {65 221 50 24}
+      }
+    }
+    {fltk::Window} ui_motion_edit_window {
+      label {Motion Edit Window}
+      xywh {731 244 300 186} hide resizable
+    } {
+      {fltk::Group} {} {open
+        xywh {5 0 294 184} box DOWN_BOX
+      } {
+        {fltk::Group} {} {
+          label pt open
+          xywh {105 45 175 75} align 37 box DOWN_BOX color 0xa0a0a000
+        } {
+          {fltk::ValueInput} {ui_pt[0]} {
+            label restx
+            callback {event(evPointEdit);}
+            xywh {37 28 45 16} deactivate
+          }
+          {fltk::ValueInput} {ui_pt[1]} {
+            label resty
+            callback {event(evPointEdit);}
+            xywh {120 27 45 16} deactivate minimum -1 step 0.05
+          }
+          {fltk::ValueInput} {ui_pt[2]} {
+            label min
+            callback {event(evPointEdit);}
+            xywh {37 43 45 16} deactivate minimum -1
+          }
+          {fltk::ValueInput} {ui_pt[3]} {
+            label max
+            callback {event(evPointEdit);}
+            xywh {37 59 45 16} deactivate
+          }
+          {fltk::ValueInput} {ui_pt[4]} {
+            label min
+            callback {event(evPointEdit);}
+            xywh {120 43 45 16} deactivate minimum -1 maximum 0
+          }
+          {fltk::ValueInput} {ui_pt[5]} {
+            label max
+            callback {event(evPointEdit);}
+            xywh {120 59 45 16} deactivate
+          }
+          {fltk::CheckButton} ui_makeSample {
+            label sample
+            callback {event(evMakeSample);}
+            xywh {49 7 25 20} deactivate
+          }
+          {fltk::Button} {} {
+            label rand
+            callback {event(evRandomize);}
+            xywh {114 7 35 20}
+          }
+        }
+        {fltk::Group} {} {
+          label ch
+          xywh {5 26 100 94} align 37 box DOWN_BOX color 0xa0a0a000
+        } {
+          {fltk::ValueInput} ui_channelMax {
+            label max
+            callback {event(evChannelEdit);}
+            xywh {40 29 60 16}
+          }
+          {fltk::ValueInput} ui_channelMin {
+            label min
+            callback {event(evChannelEdit);}
+            xywh {40 44 60 16}
+          }
+          {fltk::ValueInput} ui_channelRest {
+            label rest
+            callback {event(evChannelEdit);}
+            xywh {40 59 60 16}
+          }
+          {fltk::ValueInput} ui_channelRep {
+            label rep
+            callback {event(evChannelEdit);}
+            xywh {40 74 60 16} value 1
+          }
+          {fltk::ValueInput} ui_channelVal {
+            label val
+            callback {event(evChannelEdit);}
+            xywh {40 14 60 16}
+          }
+        }
+        {fltk::ValueInput} ui_motion_duration {
+          label duration
+          callback {event(evChannelEdit);}
+          tooltip {motion duration
+}
+          xywh {217 6 65 20} step 0.0001
+        }
+        {fltk::CheckButton} ui_motion_loops {
+          label loop
+          callback {event(evMotionLoops);}
+          tooltip {if the motion should repeat }
+          xywh {40 8 21 16} align 4
+        }
+        {fltk::CheckButton} ui_motion_resets {
+          label reset
+          callback {event(evMotionResets);}
+          tooltip {if when the motion repeats if it should load the start state of the character.}
+          xywh {95 11 25 13} align 4 value 1
+        }
+        {fltk::ValueInput} ui_last_frame {
+          label {last frame}
+          callback {event(evTimeEdit);}
+          tooltip {last frame to show
+}
+          xywh {85 160 65 20} minimum 1 maximum 5000 step 1 value 100
+        }
+        {fltk::ValueInput} ui_first_frame {
+          label {first frame}
+          callback {event(evTimeEdit);}
+          tooltip {first frame to show
+}
+          xywh {85 140 65 20} minimum 1 maximum 5000 step 1 value 1
+        }
+        {fltk::Button} {} {
+          label {>}
+          callback {event(evNextPoint);}
+          xywh {135 50 20 20}
+        }
+      }
+    }
+    {fltk::Window} ui_node_create_window {
+      xywh {65 303 325 310} hide resizable
+    } {
+      {fltk::Input} ui_node_create_name {
+        label {node name:}
+        xywh {100 215 179 30}
+      }
+      {fltk::Group} {} {open
+        xywh {30 115 286 55} box DOWN_BOX color 0xc0c0c000
+      } {
+        {fltk::RadioButton} ui_empty_node {
+          label empty
+          xywh {125 5 20 20}
+        }
+        {fltk::RadioButton} ui_trajectory_node {
+          label trajectory
+          xywh {5 5 20 20}
+        }
+        {fltk::RadioButton} ui_feedback_node {
+          label feedback
+          xywh {190 5 20 20}
+        }
+        {fltk::RadioButton} ui_add_node {
+          label add
+          xywh {75 4 20 20}
+        }
+        {fltk::RadioButton} ui_modulate_node {
+          label modulate
+          xywh {5 25 20 20}
+        }
+        {fltk::RadioButton} ui_mult_node {
+          label multiply
+          xywh {80 25 20 20}
+        }
+      }
+      {fltk::Button} {} {
+        label {create node}
+        callback {event(evCreateNode);}
+        xywh {47 261 100 40}
+      }
+      {fltk::Button} {} {
+        label cancel
+        callback {ui_node_create_window->hide();}
+        xywh {169 261 101 40}
+      }
+      {fltk::Group} {} {open
+        xywh {31 0 267 115} box DOWN_BOX color 0x9f9f9f00
+      } {
+        {fltk::Output} ui_node_create_serializable {
+          label name
+          xywh {70 5 125 25}
+        }
+        {fltk::Output} ui_node_create_serializable_type {
+          label type
+          xywh {69 30 125 25}
+        }
+        {fltk::Output} ui_node_create_parameter {
+          label parameter
+          xywh {70 55 125 25}
+        }
+        {fltk::Output} ui_node_create_dof {
+          label dof
+          xywh {70 80 125 25}
+        }
+        {fltk::ValueOutput} ui_node_create_parameter_index {
+          label index
+          xywh {210 30 30 20} align 1 maximum 100 step 1
+        }
+      }
+      {fltk::CheckButton} ui_constant_value {
+        label {constant value}
+        xywh {60 175 25 25}
+      }
+    }
+    {fltk::Window} ui_error_win {open
+      xywh {58 80 410 100} hide resizable
+    } {
+      {fltk::Output} ui_error_message {
+        xywh {10 5 385 55} type Wordwrap align 132
+      }
+      {fltk::Button} {} {
+        label ok
+        callback {ui_error_win->hide();}
+        xywh {160 65 75 25}
+      }
+    }
+  }
+} 

@@ -1,0 +1,54 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_descriptor_avg =  3.328211 -15.393415 0.252872 -0.006315 0.330849 -0.080014 0.827097;
+	motion_descriptor_min =  3.328211 -15.393415 0.252872 -0.006315 0.330849 -0.080014 0.827097;
+	motion_descriptor_max =  3.328211 -15.393415 0.252872 -0.006315 0.330849 -0.080014 0.827097;
+	motion_descriptor_env =  1.652984 -0.888979 1.476959 -0.366269 1.353395 -0.244080 1.248160 -0.222704 1.178960 -0.344978 1.223776 -0.539442 1.468577 -0.875341;
+	motion_success =  0;
+}
+
+Hips_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.647223 0.939716 1.394799 2.992908;
+	trajectory_channel_p_y =  -0.042805 -0.580071 0.021247 -0.071708 -0.042805;
+	trajectory_channel_tng =  0.526849 -2.000000 0.500000 0.500000 0.500000;
+}
+Hips_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.477020 0.867041 1.812057;
+	trajectory_channel_p_y =  0.000000 0.222015 -0.030509 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Hips_VEC_Z 
+{
+	trajectory_channel_p_t =  0.000000 0.433945 0.827425 2.000001;
+	trajectory_channel_p_y =  0.062237 0.818773 0.011434 0.062237;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+ContactModule_FLOAT 
+{
+	trajectory_channel_p_t =  0.000000 0.476789 1.517731;
+	trajectory_channel_p_y =  0.500000 1.171751 0.500000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+GainMult 
+{
+	trajectory_channel_p_t =  0.000000 1.013951 1.264271 2.179670;
+	trajectory_channel_p_y =  2.600000 1.839882 1.901208 2.600000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Foot_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.872044 1.149295 1.716313;
+	trajectory_channel_p_y =  0.000000 0.945411 0.077305 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Arm_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.445377 0.781688 1.497873;
+	trajectory_channel_p_y =  0.000000 1.110745 -0.176969 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}

@@ -1,0 +1,73 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+}
+
+SwingY 
+{
+	trajectory_channel_p_t =  0.000000 0.294545 0.500000;
+	trajectory_channel_p_y =  0.000000 0.266667 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+SwingFootRX 
+{
+	trajectory_channel_p_t =  0.000000 0.527273 0.607273;
+	trajectory_channel_p_y =  0.000000 -0.095238 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+StanceFootRX 
+{
+	trajectory_channel_p_t =  0.000000 0.261818 0.607273;
+	trajectory_channel_p_y =  0.000000 0.076190 -0.009524;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+SwingFootZ 
+{
+	trajectory_channel_p_t =  0.000000 0.604785;
+	trajectory_channel_p_y =  -0.045113 0.057644;
+	trajectory_channel_tng =  0.500000 0.500000;
+}
+StanceFootZ 
+{
+	trajectory_channel_p_t =  0.000000 0.596364;
+	trajectory_channel_p_y =  0.040816 -0.114286;
+	trajectory_channel_tng =  0.500000 0.500000;
+}
+SwingArmRY 
+{
+	trajectory_channel_p_t =  0.000000 0.239394 0.500000;
+	trajectory_channel_p_y =  0.000000 0.365079 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+StanceArmRY 
+{
+	trajectory_channel_p_t =  0.000000 0.389091 0.500000;
+	trajectory_channel_p_y =  0.000000 -0.923810 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+toeHeel 
+{
+	channel_node_val =  0.800000;
+}
+vDesired 
+{
+	channel_node_val =  0.200000;
+}
+StanceSwing 
+{
+	channel_node_val =  0.642000;
+}
+LArmRev 
+{
+	channel_node_val =  -1.000000;
+}
+RightForeArm_VEC_Y 
+{
+	channel_node_val =  1.000000;
+}
+LeftForeArm_VEC_Y 
+{
+	channel_node_val =  -1.000000;
+}

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\include\kinect_fluid.cpp" />
+    <ClCompile Include="..\src\Kinect\hand_viewer.cpp" />
+    <ClCompile Include="..\src\Kinect\kinect_main_win.cpp" />
+    <ClCompile Include="..\src\Kinect\kinect_viewer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\hand_viewer.h" />
+    <ClInclude Include="..\include\kinect_events.h" />
+    <ClInclude Include="..\include\kinect_fluid.h" />
+    <ClInclude Include="..\include\kinect_main_win.h" />
+    <ClInclude Include="..\include\kinect_viewer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\include\kinect_fluid.fl" />
+  </ItemGroup>
+</Project>

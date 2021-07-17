@@ -1,0 +1,77 @@
+#motion for physical humanoid
+#Robert Backman 10/28/11
+
+Motion
+{
+	motion_name =  control_default;
+	motion_start_state =  none;
+	motion_trajectory_list =  SwingFoot_VEC_Y COMModule_VEC_X COMModule_VEC_Z;
+	motion_duration =  1.000000;
+	motion_loops = false;
+
+	human_motion_stance_start =  Left;
+	human_motion_mirror = true;
+	human_motion_manual_com = true;
+	human_motion_stance_swing_vec_start =  vec 0.000000 0.000000 0.000000;
+	human_motion_stance_swing_vec_end =  vec 0.000000 0.000000 0.000000;
+	human_motion_stance_com_vec_start =  vec 0.000000 0.000000 0.000000;
+	human_motion_stance_com_vec_end =  vec 0.000000 0.000000 0.000000;
+}
+
+
+SwingFoot_VEC_Y
+{
+	channel_parameter_name =  manipulator_position;
+	channel_object_type =  IKManip;
+	channel_general_name =  SwingFoot;
+	channel_dof =  VEC_Y;
+	#channel_curve_num_points = 3;
+	channel_range =  -1.000000 0.000000 1.000000;
+	channel_phase_repetitions = 1;
+	channel_phase_flip = false;
+	trajectory_channel_p_t =  0.000000 0.5 1.000000;
+	trajectory_channel_p_y =  0.000000 0.1 0.000000;
+	trajectory_channel_tng =  0.500000 0.5 0.500000;
+	trajectory_channel_sample = true;
+	trajectory_channel_type =  BEZIER;
+	trajectory_channel_loop_continuity = false;
+	trajectory_channel_loop_flip = false;
+	trajectory_channel_sample_indexes = 1;
+	trajectory_channel_sample_values = -0.1 0.1 -0.1 0.1;
+}
+COMModule_VEC_X
+{
+	channel_parameter_name =  com_desired_support_vector;
+	channel_object_name =  COMModule;
+	channel_object_type =  Controller;
+	channel_dof =  VEC_X;
+	#channel_curve_num_points = 2;
+	channel_range =  -1.000000 0.000000 1.000000;
+	channel_phase_repetitions = 1;
+	channel_phase_flip = false;
+	trajectory_channel_p_t =  0.000000 1.000000;
+	trajectory_channel_p_y =  0.004785 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000;
+	trajectory_channel_sample = false;
+	trajectory_channel_type =  BEZIER;
+	trajectory_channel_loop_continuity = false;
+	trajectory_channel_loop_flip = false;
+}
+COMModule_VEC_Z
+{
+	channel_parameter_name =  com_desired_support_vector;
+	channel_object_name =  COMModule;
+	channel_object_type =  Controller;
+	channel_dof =  VEC_Z;
+	#channel_curve_num_points = 0;
+	channel_range =  -1.000000 0.000000 1.000000;
+	channel_phase_repetitions = 1;
+	channel_phase_flip = false;
+	trajectory_channel_p_t = 0.0;
+	trajectory_channel_p_y = 0.0;
+	trajectory_channel_tng =  0.500000;
+	trajectory_channel_sample = false;
+	trajectory_channel_type =  BEZIER;
+	trajectory_channel_loop_continuity = false;
+	trajectory_channel_loop_flip = false;
+}

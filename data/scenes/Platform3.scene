@@ -1,0 +1,105 @@
+#scene for physical humanoid
+#Robert Backman 8/15/12
+
+Scene
+{
+	scene_object_list =  Ground Box1 Box2 Box_9731 Box_9732 Box_9733 Box_9491 Box_9495 Box_9492 Box_9493 Box_9494;
+}
+Ground
+{
+ode_position = vec 0.000000 -0.891196 1.573897;
+ode_box_dim = vec 3.000000 0.050000 1.000000;
+ode_dynamic = false;
+ode_object_color = color 0 0 0;
+}
+Box1
+{
+ode_position = vec -0.002803 -0.140797 1.543405;
+ode_box_dim = vec 0.500000 0.050000 0.800000;
+ode_dynamic = true;
+ode_unique_properties = true;
+ode_density =  0.200000;
+ode_bounce =  0.100000;
+ode_friction =  30.000000;
+ode_object_color = color 0 0 255;
+}
+Box2
+{
+ode_position = vec -0.000289 -0.691335 1.857407;
+ode_box_dim = vec 0.500000 0.050000 0.500000;
+ode_dynamic = true;
+ode_unique_properties = true;
+ode_density =  0.200000;
+ode_bounce =  0.100000;
+ode_friction =  30.000000;
+ode_object_color = color 0 0 255;
+}
+Box_9731
+{
+ode_position = vec -0.000956 -0.416444 1.176868;
+ode_box_dim = vec 0.100000 0.500000 0.100000;
+ode_dynamic = true;
+ode_unique_properties = true;
+ode_density =  0.200000;
+ode_bounce =  0.100000;
+ode_friction =  30.000000;
+ode_object_color = color 0 0 255;
+}
+Box_9732
+{
+ode_position = vec 0.000105 -0.591441 1.609089;
+ode_box_dim = vec 0.500000 0.150000 0.100000;
+ode_dynamic = true;
+ode_unique_properties = true;
+ode_density =  0.200000;
+ode_bounce =  0.100000;
+ode_friction =  30.000000;
+ode_object_color = color 0 0 255;
+}
+Box_9733
+{
+ode_position = vec -0.000334 -0.791243 2.023304;
+ode_box_dim = vec 0.500000 0.150000 0.020000;
+ode_dynamic = true;
+ode_unique_properties = true;
+ode_density =  0.200000;
+ode_bounce =  0.100000;
+ode_friction =  30.000000;
+ode_object_color = color 0 0 255;
+}
+Box_9491
+{
+ode_position = vec 0.000000 -0.100000 0.000000;
+ode_box_dim = vec 3.000000 0.050000 1.000000;
+ode_dynamic = false;
+ode_object_color = color 0 0 0;
+}
+Box_9495
+{
+ode_position = vec -0.000088 -0.791297 1.592257;
+ode_box_dim = vec 0.500000 0.150000 0.100000;
+ode_dynamic = true;
+ode_object_color = color 0 0 255;
+}
+Box_9492
+{
+ode_position = vec -0.000414 -0.691347 1.345612;
+ode_box_dim = vec 0.500000 0.050000 0.500000;
+ode_dynamic = true;
+ode_object_color = color 0 0 255;
+}
+Box_9493
+{
+ode_position = vec -0.000369 -0.791246 1.130452;
+ode_box_dim = vec 0.500000 0.150000 0.020000;
+ode_dynamic = true;
+ode_object_color = color 0 0 255;
+}
+Box_9494
+{
+ode_position = vec -0.000631 -0.415165 1.938747;
+ode_box_dim = vec 0.100000 0.500000 0.100000;
+ode_dynamic = true;
+ode_object_color = color 0 0 255;
+}
+end

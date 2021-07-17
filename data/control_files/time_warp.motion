@@ -1,0 +1,17 @@
+#motion for physical humanoid
+#Robert Backman 10/28/11
+
+Motion
+{
+	motion_trajectory_list = TimeWarp;
+}
+TimeWarp
+{
+	#channel_curve_num_points =  3;
+	channel_range =  0.0 0.0 1.000000;
+	trajectory_channel_p_t =  0.0 0.5 1.0;
+	trajectory_channel_p_y =  0.0 0.5 1.0;
+	trajectory_channel_tng =  -2.0 -2.0 -2.0;
+	trajectory_channel_type =  BEZIER;
+	channel_dof = FLOAT;
+}

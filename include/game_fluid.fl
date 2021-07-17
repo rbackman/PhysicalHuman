@@ -1,0 +1,57 @@
+# data file for the FLTK User Interface Designer (FLUID)
+version 2.1000 
+images_dir header_name 
+header_name {.h} 
+code_name {.cpp} 
+gridx 5 
+gridy 5 
+snap 3
+decl {\# include "game_events.h"} {public
+} 
+
+decl {\# include "game_viewer.h"} {public
+} 
+
+class GameWindowFluid {open selected
+} {
+  decl {virtual void event ( GameWindowEvent e )=0;} {public
+  }
+  Function {GameWindowFluid()} {open
+  } {
+    {fltk::Window} ui_window {
+      label {Physical Human} open
+      xywh {255 158 668 37} vertical resizable visible
+    } {
+      {fltk::Group} {} {
+        label Viewer open
+        xywh {2 0 666 37} box DOWN_BOX
+      } {
+        {fltk::ValueSlider} ui_jump_distance {
+          label distance
+          callback {event(evSceneAdjust);}
+          xywh {283 5 165 30} align 4 minimum 0.5 maximum 2 value 1
+        }
+        {fltk::ValueSlider} ui_jump_height {
+          label height
+          callback {event(evSceneAdjust);}
+          xywh {498 5 166 30} align 4 minimum -1
+        }
+        {fltk::Button} {} {
+          label Jump
+          callback {event(evPlay);}
+          xywh {143 2 75 35}
+        }
+        {fltk::Button} {} {
+          label Reset
+          callback {event(evReset);}
+          xywh {73 2 65 35}
+        }
+        {fltk::Button} {} {
+          label Quit
+          callback {event ( evQuit );}
+          xywh {3 2 65 35}
+        }
+      }
+    }
+  }
+} 

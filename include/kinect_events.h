@@ -1,0 +1,40 @@
+# pragma once
+
+enum KinectEvent
+ { // General
+	 evConvertDatabase,
+	 evShowHandWin,
+	 evCheckCloud,
+	 evChangeCloud,
+	 evSaveSynthCloud,
+	 evSaveHandCloud,
+	 evCaptureHand,
+	 evChangeMarker,
+	 evChangeType,
+	 evFingerRadiusAdjust,
+	 evFingerAdjust,
+	 evDeleteLastFinger,
+	 evClearFinger,
+	 evCalibrate,
+   evKinectQuit,
+   evRangeAdjust,
+   evAngle,
+   evTrans,
+   evMakePoints,
+   evDeletePoints,
+   evLoadSkelWin,
+   evEditKinectManager,
+   evConfigListSelected,
+   evSaveConfig,
+   evShowImageWin,
+   evRefreshImageView,
+   evToggleDepthMode,
+   evStartRecording,
+   evFilterImage,
+   evSaveImage,
+  evLoadNet,
+  evKinectActive,
+  evShowGloveWin,
+  evConvertToText
+ };
+

@@ -1,0 +1,191 @@
+#state file for Human  manips.. they are in a separate file since they have the same names as the joints
+Hips
+{
+	ode_position = vec 0.006694 1.057510 0.022441;
+	ode_velocity = vec -0.000296 -0.000428 -0.000576;
+	ode_orientation = quat 0.999732 -0.021945 -0.007347 0.000143;
+	ode_rotational_velocity = vec 0.010037 -0.000548 -0.000617;
+	joint_setpoint_rot = quat null;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+LeftUpLeg
+{
+	ode_position = vec 0.146141 0.767195 0.096068;
+	ode_velocity = vec -0.000306 -0.000638 -0.000161;
+	ode_orientation = quat 0.991755 -0.127504 -0.012753 0.001112;
+	ode_rotational_velocity = vec -0.001908 -0.000301 0.000087;
+	joint_setpoint_rot = quat 0.994765 -0.102185 -0.000000 0.000001;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+LeftLeg
+{
+	ode_position = vec 0.149700 0.262087 0.064039;
+	ode_velocity = vec -0.000253 -0.000062 0.000143;
+	ode_orientation = quat 0.978701 0.204893 -0.011683 0.005234;
+	ode_rotational_velocity = vec 0.000572 -0.000284 0.000148;
+	joint_setpoint_rot = quat 0.961731 0.273994 -0.000000 -0.000000;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+LeftFoot
+{
+	ode_position = vec 0.151696 -0.042601 0.031288;
+	ode_velocity = vec -0.000060 -0.000355 0.000001;
+	ode_orientation = quat 0.999912 -0.000001 -0.013261 0.000002;
+	ode_rotational_velocity = vec 0.000223 0.000055 0.001797;
+	joint_setpoint_rot = quat 0.984695 -0.174285 -0.000000 -0.000001;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+RightUpLeg
+{
+	ode_position = vec -0.136112 0.766957 0.091638;
+	ode_velocity = vec -0.000205 -0.000557 -0.000369;
+	ode_orientation = quat 0.991854 -0.126958 -0.009372 -0.004328;
+	ode_rotational_velocity = vec -0.001761 -0.000513 0.000473;
+	joint_setpoint_rot = quat 0.994765 -0.102186 -0.000000 0.000002;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+RightLeg
+{
+	ode_position = vec -0.138601 0.261934 0.058863;
+	ode_velocity = vec 0.000075 -0.000597 0.000072;
+	ode_orientation = quat 0.978564 0.205684 -0.010273 -0.001011;
+	ode_rotational_velocity = vec -0.000050 -0.000527 0.000507;
+	joint_setpoint_rot = quat 0.961731 0.273994 -0.000000 -0.000000;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+RightFoot
+{
+	ode_position = vec -0.139219 -0.042601 0.025708;
+	ode_velocity = vec 0.000075 -0.000435 0.000050;
+	ode_orientation = quat 0.999964 0.000000 -0.008521 -0.000004;
+	ode_rotational_velocity = vec 0.001446 -0.000143 -0.002149;
+	joint_setpoint_rot = quat 0.984695 -0.174285 -0.000000 -0.000002;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+Spine
+{
+	ode_position = vec 0.006720 1.217281 0.014017;
+	ode_velocity = vec -0.000167 -0.000447 -0.000391;
+	ode_orientation = quat 0.999553 -0.028968 -0.007348 0.000092;
+	ode_rotational_velocity = vec -0.004004 -0.000552 -0.000827;
+	joint_setpoint_rot = quat null;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+Spine1
+{
+	ode_position = vec 0.006791 1.436833 0.000078;
+	ode_velocity = vec 0.000017 -0.000568 -0.000807;
+	ode_orientation = quat 0.999396 -0.033967 -0.007348 0.000055;
+	ode_rotational_velocity = vec -0.000222 -0.000551 -0.000772;
+	joint_setpoint_rot = quat null;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+Neck
+{
+	ode_position = vec 0.006884 1.606404 -0.011962;
+	ode_velocity = vec 0.000089 -0.000672 -0.000779;
+	ode_orientation = quat 0.999214 -0.038957 -0.007327 -0.000175;
+	ode_rotational_velocity = vec 0.001044 -0.000205 0.000496;
+	joint_setpoint_rot = quat null;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+Head
+{
+	ode_position = vec 0.006999 1.715995 -0.021421;
+	ode_velocity = vec 0.000042 -0.000539 -0.000971;
+	ode_orientation = quat 0.999007 -0.043950 -0.007326 -0.000212;
+	ode_rotational_velocity = vec -0.002305 -0.000204 0.000446;
+	joint_setpoint_rot = quat null;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+LeftArm
+{
+	ode_position = vec 0.235756 1.402076 -0.018201;
+	ode_velocity = vec 0.000085 -0.000634 -0.000363;
+	ode_orientation = quat 0.809287 0.017237 0.029759 -0.586406;
+	ode_rotational_velocity = vec -0.001962 -0.000759 -0.000397;
+	joint_setpoint_rot = quat 0.817255 0.040380 0.055463 -0.572178;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+LeftForeArm
+{
+	ode_position = vec 0.339338 1.086639 -0.002458;
+	ode_velocity = vec 0.000013 -0.000815 -0.000302;
+	ode_orientation = quat 0.806954 -0.053738 -0.068236 -0.584193;
+	ode_rotational_velocity = vec 0.001875 0.000494 -0.000203;
+	joint_setpoint_rot = quat 0.989564 -0.003668 -0.144043 -0.000534;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+LeftHand
+{
+	ode_position = vec 0.403900 0.879125 0.031420;
+	ode_velocity = vec -0.000076 -0.000876 -0.000650;
+	ode_orientation = quat 0.791138 -0.030504 -0.041688 -0.609452;
+	ode_rotational_velocity = vec 0.000724 -0.000009 -0.001859;
+	joint_setpoint_rot = quat 0.999016 -0.000000 0.030799 -0.031922;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+RightArm
+{
+	ode_position = vec -0.222307 1.401772 -0.002065;
+	ode_velocity = vec -0.000005 -0.000281 -0.000646;
+	ode_orientation = quat 0.809339 -0.029806 0.011362 0.586475;
+	ode_rotational_velocity = vec -0.002013 -0.000923 -0.000845;
+	joint_setpoint_rot = quat 0.819173 0.000000 0.000047 0.573546;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+RightForeArm
+{
+	ode_position = vec -0.326719 1.084141 0.015799;
+	ode_velocity = vec -0.000271 -0.000274 -0.000115;
+	ode_orientation = quat 0.809339 -0.029806 0.011362 0.586475;
+	ode_rotational_velocity = vec -0.001925 -0.000945 -0.000830;
+	joint_setpoint_rot = quat 0.999984 -0.001690 0.005402 0.000009;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+RightHand
+{
+	ode_position = vec -0.391663 0.874652 0.032062;
+	ode_velocity = vec -0.000270 -0.000214 0.000290;
+	ode_orientation = quat 0.789168 -0.047698 0.044605 0.610695;
+	ode_rotational_velocity = vec -0.003011 -0.001231 0.002165;
+	joint_setpoint_rot = quat 0.998486 -0.000000 0.043317 0.033906;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+LeftToeBase
+{
+	ode_position = vec 0.147005 -0.043350 0.208090;
+	ode_velocity = vec -0.000060 -0.000353 -0.000036;
+	ode_orientation = quat 0.999912 -0.000002 -0.013261 0.000002;
+	ode_rotational_velocity = vec -0.000346 0.000063 0.001754;
+	joint_setpoint_rot = quat null;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}
+RightToeBase
+{
+	ode_position = vec -0.142232 -0.043350 0.202546;
+	ode_velocity = vec 0.000048 0.000631 0.000030;
+	ode_orientation = quat 0.999964 -0.000001 -0.008521 -0.000004;
+	ode_rotational_velocity = vec 0.001060 -0.000146 -0.002233;
+	joint_setpoint_rot = quat null;
+	joint_desired_rotational_velocity = vec null;
+	joint_char_frame = false;
+}

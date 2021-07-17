@@ -1,0 +1,15 @@
+﻿Build started 5/5/2013 11:02:20 PM.
+     1>Project "C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\KinectApp.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"obj\KinectApp_Debug\KinectApp-dbg.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:lib /LIBPATH:..\..\graphsim\lib\ /LIBPATH:..\..\fltk\lib /LIBPATH:..\..\sdks\lib /LIBPATH:..\lib /LIBPATH:..\..\graphsimdev\lib /LIBPATH:..\..\sdks\lib\dglove "graphsim-dbg.lib" "graphsimfl-dbg.lib" "fltk2-dbg.lib" opengl32.lib glu32.lib ws2_32.lib "Utilities-dbg.lib" "Kinect-dbg.lib" "KinectWindow-dbg.lib" Kinect10.lib "raknet-dbg.lib" "graphsimdev-dbg.lib" fgloved.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcmtd.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"obj\KinectApp_Debug\testfl.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"obj\KinectApp_Debug\KinectApp-dbg.lib" /MACHINE:X86 /SAFESEH obj\KinectApp_Debug\app_main.obj
+     1>app_main.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+         KinectApp.vcxproj -> C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\obj\KinectApp_Debug\KinectApp-dbg.exe
+       PostBuildEvent:
+         copy /Y "C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\obj\KinectApp_Debug\KinectApp-dbg.exe" "C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\\..\bin\KinectApp-dbg.exe"
+         :VCEnd
+                 1 file(s) copied.
+     1>Done Building Project "C:\Users\Robert\Desktop\labcode\physicalhuman\visualc11\KinectApp.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.16

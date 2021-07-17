@@ -1,0 +1,106 @@
+# Graphsim Toolkit Skeleton Data - Marcelo Kallmann 2006
+# this file is automatically loaded when a .s of same file name is loaded
+
+KnSkeleton
+
+skeldata
+
+joint RightArm
+{ 
+  channel Swing axis 1 0 ang 0
+  channel Swing lim 110 150
+  channel Twist 0 -90 120
+  prerot  axis 0 1 0 ang -90
+  postrot axis 0 1 0 ang  90
+}
+
+
+joint RightForeArm
+{ 
+euler ZY
+  channel YRot 0 lim 0 160
+  channel ZRot 0 lim -120 45
+  prerot  axis 0 1 0 ang -90
+  postrot axis 0 1 0 ang  90
+}
+
+joint RightHand
+{ 
+	channel Swing lim 120 120
+	prerot  axis 0 1 0 ang -90
+	postrot axis 0 1 0 ang  90
+}
+
+joint LeftArm
+{
+  channel Swing axis 1 0 ang 0
+  channel Swing lim 110 150
+  channel Twist 0 -90 120
+  prerot  axis 0 1 0 ang  90
+  postrot axis 0 1 0 ang -90
+
+}
+
+joint LeftForeArm
+{
+  euler ZY
+  channel YRot 0 lim -160 0
+  channel ZRot 0 lim -45 120
+  prerot  axis 0 1 0 ang  90
+  postrot axis 0 1 0 ang -90
+
+}
+
+joint LeftHand
+{ 
+ channel Swing lim 120 120
+  prerot  axis 0 1 0 ang  90
+  postrot axis 0 1 0 ang -90
+
+}
+
+joint RightUpLeg
+{ 
+  channel Swing lim 160 160
+  channel Twist 0 -100 100
+  prerot  axis 1 1 -1 ang  120
+  postrot axis 1 1 -1 ang -120
+}
+
+joint RightLeg
+ { euler ZY
+   channel YRot 0 lim 0 160
+   channel ZRot 0 lim -90 90
+   prerot  axis 1 1 -1 ang  120
+   postrot axis 1 1 -1 ang -120
+ }
+ 
+joint RightFoot
+{ channel Swing lim 90 90
+  prerot  axis 1 1 -1 ang  120
+  postrot axis 1 1 -1 ang -120
+}
+
+joint LeftUpLeg
+{ 
+  channel Swing lim 160 160
+  channel Twist 0 -100 100
+  prerot  axis 1 1 -1 ang  120
+  postrot axis 1 1 -1 ang -120
+}
+
+joint LeftLeg
+{ euler ZY
+  channel YRot 0 lim 0 160
+  channel ZRot 0 lim -90 90
+  prerot  axis 1 1 -1 ang  120
+  postrot axis 1 1 -1 ang -120
+}
+
+joint LeftFoot
+{ channel Swing lim 90 90
+  prerot  axis 1 1 -1 ang  120
+  postrot axis 1 1 -1 ang -120
+}
+
+end

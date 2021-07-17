@@ -1,0 +1,15 @@
+#controller for physical humanoid
+#Robert Backman 10/28/11
+
+Controller
+{
+	controller_name =  Walk;
+	controller_parameters = 	speed heading lat_distance step_height head_height step_distance energy distance;
+	controller_parameter_weights =  1.0 	 0.0 	      0.0     0.0     1.0    1.0 1.0 1.0;
+	controller_load_env = false;
+	controller_wants_static_balance = false;
+	controller_analyze_time = 6.0;
+	controller_verify_time = 10.0;
+	controller_scene = FlatGround;
+
+}

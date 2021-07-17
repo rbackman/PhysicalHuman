@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Data">
+      <UniqueIdentifier>{3eb97781-0445-4a04-baff-92458b313761}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\config">
+      <UniqueIdentifier>{e1462373-c027-4d1b-b0ba-5adcb30f501a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\states">
+      <UniqueIdentifier>{4f424440-919d-44a1-91fd-d6993e8fbac3}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Data\motion">
+      <UniqueIdentifier>{291af84b-cc7f-4b45-a5b2-68ac00668238}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\kinematics">
+      <UniqueIdentifier>{877ca554-ba82-4a25-9be0-f8393c9d053c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\models">
+      <UniqueIdentifier>{0ae8b7e1-1d97-4181-bce8-c12de87c42e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\motion_groups">
+      <UniqueIdentifier>{b638b0f2-0f6a-4e76-8661-b9af0a8d348c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\motion\walk">
+      <UniqueIdentifier>{d5f4ce9c-c464-46d1-a95e-0ea907aeb03a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\motion\jump">
+      <UniqueIdentifier>{dbc27ac4-f6c1-440e-b821-9ddc1828ea25}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\data\pref.dat">
+      <Filter>Data</Filter>
+    </None>
+    <None Include="..\ReadMe.txt" />
+    <None Include="..\data\ReadMe.txt">
+      <Filter>Data</Filter>
+    </None>
+    <None Include="..\models\arrow.mtl">
+      <Filter>Data\models</Filter>
+    </None>
+    <None Include="..\models\dynoman\dynoman.m">
+      <Filter>Data\models</Filter>
+    </None>
+    <None Include="..\data\kinematics\cmu_skel.bvh">
+      <Filter>Data\kinematics</Filter>
+    </None>
+    <None Include="..\data\kinematics\dynoman.m">
+      <Filter>Data\kinematics</Filter>
+    </None>
+    <None Include="..\data\kinematics\dynoman.s">
+      <Filter>Data\kinematics</Filter>
+    </None>
+    <None Include="..\data\kinematics\man.s">
+      <Filter>Data\kinematics</Filter>
+    </None>
+    <None Include="..\data\kinematics\man.sd">
+      <Filter>Data\kinematics</Filter>
+    </None>
+    <None Include="..\data\kinematics\man_walks.bvh">
+      <Filter>Data\kinematics</Filter>
+    </None>
+    <None Include="..\data\configurations\man\controllers.cfg">
+      <Filter>Data\config</Filter>
+    </None>
+    <None Include="..\data\configurations\man\human.cfg">
+      <Filter>Data\config</Filter>
+    </None>
+    <None Include="..\data\configurations\man\ik.cfg">
+      <Filter>Data\config</Filter>
+    </None>
+    <None Include="..\data\configurations\man\joints.cfg">
+      <Filter>Data\config</Filter>
+    </None>
+    <None Include="..\data\configurations\man\puppet.cfg">
+      <Filter>Data\config</Filter>
+    </None>
+    <None Include="..\data\configurations\man\virtual.cfg">
+      <Filter>Data\config</Filter>
+    </None>
+    <None Include="..\data\motions\Walk\run.motion">
+      <Filter>Data\motion\walk</Filter>
+    </None>
+    <None Include="..\data\motions\Walk\Walk.base">
+      <Filter>Data\motion\walk</Filter>
+    </None>
+    <None Include="..\data\motions\Walk\Walk.control">
+      <Filter>Data\motion\walk</Filter>
+    </None>
+    <None Include="..\data\motions\Walk\walk.motion">
+      <Filter>Data\motion\walk</Filter>
+    </None>
+    <None Include="..\data\motions\Walk\Walk.sample">
+      <Filter>Data\motion\walk</Filter>
+    </None>
+    <None Include="..\data\motions\Jump\Jump.base">
+      <Filter>Data\motion\jump</Filter>
+    </None>
+    <None Include="..\data\motions\Jump\Jump.control">
+      <Filter>Data\motion\jump</Filter>
+    </None>
+    <None Include="..\data\motions\Jump\Jump.sample">
+      <Filter>Data\motion\jump</Filter>
+    </None>
+    <None Include="..\data\states\initial\human.state">
+      <Filter>Data\states</Filter>
+    </None>
+    <None Include="..\data\states\initial\ik.state">
+      <Filter>Data\states</Filter>
+    </None>
+    <None Include="..\data\states\initial\joints.state">
+      <Filter>Data\states</Filter>
+    </None>
+    <None Include="..\data\states\initial\virtual.state">
+      <Filter>Data\states</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\human_app_main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\App\human_app_main.cpp" />
+  </ItemGroup>
+</Project>

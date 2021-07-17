@@ -1,0 +1,31 @@
+#state file for VirtualModule  manips.. they are in a separate file since they have the same names as the joints
+RightHand{
+manipulator_position = vec 0.440578 -1.092043 0.065748;
+manipulator_orientation = quat 0.798316 -0.029201 0.039133 0.600256;
+manipulator_active = false;
+manipulator_visible = false;
+}
+LeftHand{
+manipulator_position = vec -0.443046 -1.085541 0.062848;
+manipulator_orientation = quat 0.799357 -0.025878 -0.036958 -0.599160;
+manipulator_active = false;
+manipulator_visible = false;
+}
+LeftFoot{
+manipulator_position = vec 0.000000 -0.420000 0.000000;
+manipulator_orientation = quat 1.000000 0.000000 -0.000000 -0.000000;
+manipulator_active = true;
+manipulator_visible = true;
+}
+RightFoot{
+manipulator_position = vec 0.000001 -0.420000 0.000001;
+manipulator_orientation = quat 1.000000 0.000000 -0.000000 0.000000;
+manipulator_active = true;
+manipulator_visible = true;
+}
+FrameManip{
+manipulator_position = vec null;
+manipulator_orientation = quat null;
+manipulator_active = true;
+manipulator_visible = false;
+}

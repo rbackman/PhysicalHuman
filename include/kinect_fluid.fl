@@ -1,0 +1,633 @@
+# data file for the FLTK User Interface Designer (FLUID)
+version 2.1000 
+images_dir fltk::ValueSlider 
+header_name {.h} 
+code_name {.cpp} 
+gridx 5 
+gridy 5 
+snap 3
+decl {\# include "gsim/fl_viewer.h"} {public
+} 
+
+decl {\# include "kinect_events.h"} {public
+} 
+
+decl {\# include "hand_viewer.h"} {public
+} 
+
+decl {\# include "kinect_viewer.h"} {public
+} 
+
+decl {\# include "util_image_viewer.h"} {public
+} 
+
+class KinectFluid {open
+} {
+  decl {virtual void event ( KinectEvent e )=0;} {public
+  }
+  Function {KinectFluid()} {open
+  } {
+    {fltk::Window} ui_window {
+      label {Hand Tracker} open
+      xywh {-897 426 845 561} vertical resizable visible
+    } {
+      {fltk::TiledGroup} {} {open
+        xywh {0 0 845 561}
+      } {
+        {fltk::Group} ui_viewer {open
+          xywh {245 0 600 560}
+          class KinectViewer
+        } {}
+        {fltk::Group} ui_main_group {open
+          xywh {0 0 255 560} box FLAT_BOX
+        } {
+          {fltk::MenuBar} {} {open
+            xywh {0 0 135 20}
+          } {
+            {fltk::Item} {} {
+              label X
+              callback {event ( evKinectQuit );}
+              labelfont 1 textfont 1 color 0xece9d800 textcolor 0xd40d2900 selection_textcolor 0xff122b00
+            }
+            {fltk::ItemGroup} {} {
+              label draw open
+              color 0xece9d800
+            } {
+              {fltk::Item} {} {
+                label {show hand win}
+                callback {event(evShowHandWin);}
+                }
+              {fltk::Item} {} {
+                label {refresh image viewer}
+                callback {event(evRefreshImageView);}
+                }
+              {fltk::Item} {} {
+                label {show image view window}
+                callback {event(evShowImageWin);}
+                }
+              {fltk::Item} {} {
+                label {show glove win}
+                callback {event(evShowGloveWin);}
+                }
+            }
+            {fltk::ItemGroup} {} {
+              label edit open
+              color 0xece9d800
+            } {
+              {fltk::Item} {} {
+                label {edit manager}
+                callback {event(evEditKinectManager);}
+                }
+            }
+          }
+          {fltk::Group} {} {open
+            xywh {0 20 250 540} resizable
+          } {
+            {fltk::TabGroup} ui_main_tab {open
+              xywh {0 0 245 540} resizable box FLAT_BOX
+            } {
+              {fltk::Group} {} {
+                label image open
+                xywh {5 30 240 490}
+              } {
+                {fltk::Group} {} {
+                  label image open
+                  xywh {0 0 240 190} align 33 box DOWN_BOX
+                } {
+                  {fltk::Button} {} {
+                    label {save }
+                    callback {event(evSaveImage);}
+                    xywh {20 20 45 25}
+                  }
+                  {fltk::ValueInput} ui_image_number {
+                    label num
+                    xywh {50 80 75 25} maximum 10000 step 1 value 1
+                  }
+                  {fltk::Input} ui_image_set_name {
+                    label {set name}
+                    xywh {80 105 120 20}
+                  }
+                  {fltk::CheckButton} ui_stream_images {
+                    label stream
+                    xywh {75 20 25 25}
+                  }
+                  {fltk::ValueInput} ui_image_w {
+                    label w
+                    xywh {85 125 40 25} maximum 128 step 1 value 16
+                  }
+                  {fltk::ValueInput} ui_image_h {
+                    label h
+                    xywh {150 125 40 25} maximum 128 step 1 value 16
+                  }
+                  {fltk::Group} {} {open
+                    xywh {14 46 200 30} box DOWN_BOX
+                  } {
+                    {fltk::RadioButton} ui_embed_jnt_angles {
+                      label angles
+                      xywh {10 10 20 20} vertical align 8
+                    }
+                    {fltk::RadioButton} ui_embed_pose_interp {
+                      label pose
+                      xywh {80 10 20 20} align 8 value 1
+                    }
+                    {fltk::RadioButton} ui_embed_manual_val {
+                      label manual
+                      xywh {140 10 20 20} align 8
+                    }
+                  }
+                  {fltk::Button} {} {
+                    label convert
+                    callback {event(evConvertDatabase);}
+                    xywh {20 125 45 25}
+                  }
+                  {fltk::Button} {} {
+                    label text
+                    callback {event(evConvertToText);}
+                    xywh {155 20 55 25}
+                  }
+                  {fltk::ValueInput} ui_pose_number {
+                    label pose
+                    xywh {165 80 45 25} minimum 1 maximum 10 step 1 value 1
+                  }
+                  {fltk::CheckButton} ui_preserve_aspect_ratio {
+                    label {preserve aspect ratio} selected
+                    xywh {30 155 25 25} value 1
+                  }
+                }
+              }
+              {fltk::Group} {} {
+                label net
+                xywh {10 25 220 515} hide
+              } {
+                {fltk::Input} ui_neural_net_cfg {
+                  label {config file}
+                  xywh {65 25 90 25}
+                }
+                {fltk::Button} {} {
+                  label load
+                  callback {event(evLoadNet);}
+                  xywh {160 25 45 25}
+                }
+                {fltk::CheckButton} ui_stream_net_output {
+                  label {stream output}
+                  xywh {25 60 25 25}
+                }
+                {fltk::ValueOutput} {ui_net_parms[0]} {
+                  label W
+                  xywh {85 100 65 25}
+                }
+                {fltk::ValueOutput} {ui_net_parms[1]} {
+                  label H
+                  xywh {85 130 65 25}
+                }
+                {fltk::ValueOutput} {ui_net_parms[2]} {
+                  label DIN
+                  xywh {85 155 65 25}
+                }
+                {fltk::ValueOutput} {ui_net_parms[3]} {
+                  label DOUT
+                  xywh {85 185 65 25}
+                }
+                {fltk::ValueOutput} {ui_net_parms[4]} {
+                  label NTRAIN
+                  xywh {85 210 65 25}
+                }
+                {fltk::ProgressBar} ui_net_output {
+                  label output
+                  xywh {5 265 205 35} align 1
+                }
+              }
+              {fltk::Group} {} {
+                label data open
+                xywh {5 25 240 515} hide
+              } {
+                {fltk::Group} {} {
+                  label config
+                  xywh {0 10 225 135} align 33 box DOWN_BOX
+                } {
+                  {fltk::Browser} ui_config_list {
+                    callback {event(evConfigListSelected);} open
+                    xywh {0 20 225 90}
+                  } {}
+                  {fltk::Button} {} {
+                    label {save }
+                    callback {event(evSaveConfig);}
+                    xywh {0 110 45 25}
+                  }
+                }
+                {fltk::Group} {} {
+                  label {point clouds}
+                  xywh {0 145 220 195} align 33 box DOWN_BOX
+                } {
+                  {fltk::Button} {} {
+                    label {capture }
+                    callback {event(evCaptureHand);}
+                    tooltip {capture the current point cloud for the hand from the kinect}
+                    xywh {45 110 50 20}
+                  }
+                  {fltk::ValueInput} ui_cloud_val {
+                    tooltip {the value associated with the pointcloud to save}
+                    xywh {140 110 40 20}
+                  }
+                  {fltk::Button} {} {
+                    label {check }
+                    callback {event(evCheckCloud);}
+                    tooltip {find thew closest cloud in the database to the current one}
+                    xywh {95 110 45 20}
+                  }
+                  {fltk::Browser} ui_cloud_list {
+                    callback {event(evChangeCloud);} open
+                    xywh {0 20 220 90}
+                  } {}
+                  {fltk::Button} {} {
+                    label save
+                    callback {event(evSaveHandCloud);}
+                    tooltip {save the currently selected cloud to a file in pointclouds folder}
+                    xywh {0 110 45 20}
+                  }
+                  {fltk::CheckButton} ui_rec_clouds {
+                    label rec
+                    callback {event(evStartRecording);}
+                    xywh {180 110 40 20}
+                  }
+                  {fltk::Button} {} {
+                    label filter
+                    callback {event(evFilterImage);}
+                    tooltip {save the currently selected cloud to a file in pointclouds folder}
+                    xywh {0 130 45 20}
+                  }
+                  {fltk::ValueInput} ui_sigd {
+                    label sigd
+                    tooltip {spatial sigma}
+                    xywh {30 150 25 25} maximum 50 step 0.01 value 20
+                  }
+                  {fltk::ValueInput} ui_sigr {
+                    label sigr
+                    tooltip {spatial sigma}
+                    xywh {80 150 25 25} maximum 50 step 0.01 value 20
+                  }
+                  {fltk::ValueInput} ui_hh {
+                    label hh
+                    tooltip {half height}
+                    xywh {130 150 30 25} maximum 20 step 1 value 5
+                  }
+                  {fltk::ValueInput} ui_hw {
+                    label hw
+                    tooltip {half height}
+                    xywh {180 150 30 25} maximum 20 step 1 value 5
+                  }
+                }
+              }
+              {fltk::Group} {} {
+                label filters
+                xywh {0 20 240 510} hide resizable labelfont 1 labelsize 11 textsize 11
+              } {
+                {fltk::Group} {} {
+                  xywh {0 5 240 490} align 33 box DOWN_BOX
+                } {
+                  {fltk::Group} {} {open
+                    xywh {5 5 235 70} box DOWN_BOX
+                  } {
+                    {fltk::CheckButton} ui_all_points {
+                      label all
+                      callback {event(evRangeAdjust);}
+                      tooltip {override all filters to display every captured points
+}
+                      xywh {10 10 25 25}
+                    }
+                    {fltk::CheckButton} ui_use_color {
+                      label color
+                      callback {event(evRangeAdjust);}
+                      tooltip {use the color stream from the kinect
+}
+                      xywh {10 23 25 25} value 1
+                    }
+                    {fltk::CheckButton} ui_use_depth {
+                      label depth
+                      callback {event(evRangeAdjust);}
+                      tooltip {use the depth stream from the kinect}
+                      xywh {10 35 25 25} value 1
+                    }
+                    {fltk::CheckButton} ui_draw_mesh {
+                      label {draw mesh}
+                      callback {event(evRangeAdjust);}
+                      tooltip {modify SnColorSurf}
+                      xywh {115 10 25 25} value 1
+                    }
+                    {fltk::CheckButton} ui_draw_markers {
+                      label {draw markers}
+                      callback {event(evRangeAdjust);}
+                      xywh {115 23 25 25}
+                    }
+                    {fltk::CheckButton} ui_draw_output {
+                      label {draw output}
+                      callback {event(evRangeAdjust);}
+                      xywh {115 35 25 25} value 1
+                    }
+                  }
+                  {fltk::Group} {} {
+                    label {hand filter} open
+                    xywh {5 75 235 95} align 33 box DOWN_BOX
+                  } {
+                    {fltk::ValueSlider} ui_hand_var {
+                      label prox
+                      callback {event(evRangeAdjust);}
+                      xywh {60 20 160 25} align 4 value 0.05
+                    }
+                    {fltk::ValueSlider} ui_hand_color_var {
+                      label {col var}
+                      callback {event(evRangeAdjust);}
+                      xywh {60 45 160 25} align 4 maximum 200 step 1 value 20
+                    }
+                    {fltk::CheckButton} ui_hand_proximity {
+                      label prox
+                      callback {event(evRangeAdjust);}
+                      xywh {40 70 25 25}
+                    }
+                    {fltk::CheckButton} ui_hand_color_proximity {
+                      label {col prox}
+                      callback {event(evRangeAdjust);}
+                      xywh {120 70 25 25}
+                    }
+                  }
+                  {fltk::Group} {} {
+                    label clipping
+                    xywh {5 350 230 100} align 33 box DOWN_BOX
+                  } {
+                    {fltk::ValueSlider} {ui_range[0]} {
+                      label Min
+                      callback {event(evRangeAdjust);}
+                      xywh {50 25 100 15} align 4
+                    }
+                    {fltk::ValueSlider} {ui_range[1]} {
+                      label Max
+                      callback {event(evRangeAdjust);}
+                      xywh {50 40 100 15} align 4 maximum 20 value 200
+                    }
+                    {fltk::ValueSlider} {ui_range[3]} {
+                      label {clip size}
+                      callback {event(evRangeAdjust);}
+                      xywh {50 55 100 15} align 4 maximum 2 value 0.2
+                    }
+                    {fltk::CheckButton} ui_use_clip_box {
+                      label {clip box}
+                      callback {event(evRangeAdjust);}
+                      tooltip {use the clip box for filtering points otherwise use the min and max z range}
+                      xywh {155 25 25 25} value 1
+                    }
+                    {fltk::CheckButton} ui_clip_box_vis {
+                      label vis
+                      callback {event(evRangeAdjust);}
+                      xywh {155 45 25 25} value 1
+                    }
+                    {fltk::ValueSlider} {ui_range[2]} {
+                      label Cutoff
+                      callback {event(evRangeAdjust);}
+                      xywh {50 70 100 15} align 4 maximum 10 step 0.0001 value 10
+                    }
+                    {fltk::LightButton} ui_set_clip_box {
+                      label pick
+                      xywh {155 65 55 20}
+                    }
+                  }
+                  {fltk::Group} {} {
+                    label markers open
+                    xywh {5 175 235 165} align 33 box DOWN_BOX
+                  } {
+                    {fltk::LightButton} ui_make_finger {
+                      label make
+                      xywh {10 20 65 20}
+                    }
+                    {fltk::Browser} ui_marker_list {
+                      callback {event(evChangeMarker);} open
+                      xywh {0 40 230 50}
+                    } {}
+                    {fltk::Choice} ui_marker_type {
+                      callback {event(evChangeType);}
+                      xywh {80 20 70 20}
+                    } {}
+                    {fltk::CheckButton} ui_track_colors {
+                      label update
+                      callback {event(evRangeAdjust);}
+                      tooltip {update the markers}
+                      xywh {160 90 25 25} value 1
+                    }
+                    {fltk::Button} {} {
+                      label del
+                      callback {event(evDeleteLastFinger);}
+                      xywh {65 90 35 25}
+                    }
+                    {fltk::Button} {} {
+                      label clear
+                      callback {event(evClearFinger);}
+                      xywh {5 90 30 25}
+                    }
+                    {fltk::Button} {} {
+                      label cal
+                      callback {event(evCalibrate);}
+                      xywh {35 90 30 25}
+                    }
+                    {fltk::ValueSlider} ui_color_variance {
+                      label var
+                      xywh {130 140 100 20} align 4 maximum 100 step 1 value 20
+                    }
+                    {fltk::ValueInput} ui_max_v {
+                      label maxV
+                      xywh {55 120 25 20}
+                    }
+                    {fltk::ValueInput} ui_sample {
+                      label sample
+                      xywh {130 120 25 20}
+                    }
+                    {fltk::ValueInput} ui_finger_radius {
+                      label radius
+                      callback {event(evFingerRadiusAdjust);}
+                      xywh {55 135 25 20}
+                    }
+                  }
+                }
+              }
+              {fltk::Group} {} {
+                label old
+                xywh {5 30 240 475} hide
+              } {
+                {fltk::CheckButton} ui_fps {
+                  label fps
+                  xywh {75 350 25 25}
+                }
+                {fltk::Output} ui_fps_label {
+                  xywh {115 350 65 25}
+                }
+                {fltk::Choice} ui_kinect_selected {
+                  label kinect
+                  xywh {90 15 135 25}
+                } {}
+                {fltk::ValueInput} {ui_kinect[0]} {
+                  label X
+                  callback {event(evTrans);}
+                  xywh {80 225 45 25} minimum -2 maximum 2 step 0.001
+                }
+                {fltk::ValueInput} {ui_kinect[1]} {
+                  label Y
+                  callback {event(evTrans);}
+                  xywh {80 250 45 25} minimum -2 maximum 2 step 0.01
+                }
+                {fltk::ValueInput} {ui_kinect[2]} {
+                  label Z
+                  callback {event(evTrans);}
+                  xywh {80 275 45 25} minimum -2 maximum 2 step 0.01
+                }
+                {fltk::ValueInput} {ui_kinect[3]} {
+                  label RX
+                  callback {event(evTrans);}
+                  xywh {155 225 45 25} minimum -180 maximum 180 step 1
+                }
+                {fltk::ValueInput} {ui_kinect[4]} {
+                  label RY
+                  callback {event(evTrans);}
+                  xywh {155 250 45 25} minimum -180 maximum 180 step 1
+                }
+                {fltk::ValueInput} {ui_kinect[5]} {
+                  label RZ
+                  callback {event(evTrans);}
+                  xywh {155 275 45 25} minimum -180 maximum 180 step 1
+                }
+                {fltk::Group} {} {
+                  label marker open
+                  xywh {5 75 235 140} align 33 box DOWN_BOX
+                } {}
+                {fltk::Group} {} {
+                  label kinect
+                  xywh {5 390 210 50} align 33 box DOWN_BOX
+                } {
+                  {fltk::ValueSlider} ui_angle {
+                    label angle
+                    xywh {45 25 125 25} align 4 minimum -28 maximum 28 step 1
+                  }
+                  {fltk::Button} {} {
+                    label set
+                    callback {event(evAngle);}
+                    xywh {170 25 40 25}
+                  }
+                }
+              }
+            }
+            {fltk::Group} ui_message {
+              label text open
+              xywh {0 520 245 20} align 32 box FLAT_BOX labelfont 1 textfont 1 textcolor 0xa7000000 labelcolor 0xbd000000 labelsize 11 textsize 11
+            } {}
+          }
+          {fltk::LightButton} ui_kinect_active {
+            label {kinect active}
+            callback {event(evKinectActive);}
+            xywh {135 0 100 20}
+          }
+        }
+      }
+    }
+    {fltk::Window} ui_hand_window {
+      label {Hand Tracker}
+      xywh {1959 145 338 375} hide resizable
+    } {
+      {fltk::TiledGroup} {} {open
+        xywh {0 0 338 375} horizontal
+      } {
+        {fltk::Group} ui_hand_viewer {open
+          xywh {5 0 320 320} vertical box DOWN_BOX
+          class HandViewer
+        } {}
+        {fltk::Button} {} {
+          label {make  points}
+          callback {event(evMakePoints);}
+          xywh {55 325 85 25}
+        }
+        {fltk::Button} {} {
+          label {skel win}
+          callback {event(evLoadSkelWin);}
+          xywh {140 325 50 25}
+        }
+        {fltk::Button} {} {
+          label {delete  points}
+          callback {event(evDeletePoints);}
+          xywh {55 350 85 20}
+        }
+        {fltk::Button} {} {
+          label {capture hand cloud}
+          callback {event(evCaptureHand);}
+          xywh {190 325 120 25}
+        }
+        {fltk::Button} {} {
+          label {save synth cloud}
+          callback {event(evSaveSynthCloud);}
+          xywh {140 350 90 20}
+        }
+        {fltk::Button} {} {
+          label {depth mode}
+          callback {event(evToggleDepthMode);}
+          xywh {230 350 90 20}
+        }
+      }
+    }
+    {fltk::Window} ui_depth_window {
+      label {Hand Tracker}
+      xywh {2512 623 1046 408} vertical hide resizable
+    } {
+      {fltk::TiledGroup} {} {open
+        xywh {0 0 1046 408}
+      } {
+        {fltk::Group} ui_real_depth_viewer {
+          label {Real Depth} open
+          xywh {5 20 320 320} box DOWN_BOX
+          class ImageViewer
+        } {}
+        {fltk::Group} ui_synth_depth_viewer {
+          label {Synth Depth}
+          xywh {330 20 320 320} box DOWN_BOX
+          class ImageViewer
+        } {}
+        {fltk::CheckButton} ui_kinect_stream {
+          label stream
+          xywh {50 345 25 25}
+        }
+        {fltk::Group} ui_diff_viewer {
+          label difference
+          xywh {650 20 320 320} box DOWN_BOX
+          class ImageViewer
+        } {}
+        {fltk::CheckButton} ui_synth_stream {
+          label stream
+          xywh {445 347 40 28}
+        }
+        {fltk::CheckButton} ui_diff_stream {
+          label stream
+          xywh {700 352 40 28}
+        }
+        {fltk::ValueOutput} ui_diff_val {
+          label {value:}
+          xywh {865 357 95 18} maximum 20000 step 1
+        }
+        {fltk::CheckButton} ui_kinect_image_scale {
+          label scale
+          xywh {130 345 25 25}
+        }
+        {fltk::CheckButton} ui_diff_image_scale {
+          label scale
+          xywh {765 352 40 28}
+        }
+        {fltk::CheckButton} ui_check_stream {
+          label check
+          tooltip {automatically find the closest hand in the database}
+          xywh {355 347 40 28}
+        }
+        {fltk::CheckButton} ui_kinect_image_filter {
+          label filter
+          xywh {200 345 25 25}
+        }
+      }
+      {fltk::CheckButton} ui_synth_image_scale {
+        label scale
+        xywh {510 350 25 25}
+      }
+    }
+  }
+} 

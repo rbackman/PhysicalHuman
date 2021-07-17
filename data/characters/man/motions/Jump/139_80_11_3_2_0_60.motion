@@ -1,0 +1,54 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_descriptor_avg =  1.351454 -0.710673 0.110030 -0.033362 0.026723 0.011186 0.612515;
+	motion_descriptor_min =  1.351454 -0.710673 0.110030 -0.033362 0.026723 0.011186 0.612515;
+	motion_descriptor_max =  1.351454 -0.710673 0.110030 -0.033362 0.026723 0.011186 0.612515;
+	motion_descriptor_env =  1.472653 -1.626463 1.683068 -1.597127 1.564205 -0.800670 1.547778 -0.759974 1.326614 -0.343767 1.203223 -0.626020;
+	motion_success =  0;
+}
+
+Hips_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.640842 0.939716 1.394799 2.992908;
+	trajectory_channel_p_y =  -0.042805 -0.524845 0.021247 -0.071708 -0.042805;
+	trajectory_channel_tng =  0.526849 -2.000000 0.500000 0.500000 0.500000;
+}
+Hips_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.497869 0.894552 1.812057;
+	trajectory_channel_p_y =  0.000000 0.172588 0.035887 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Hips_VEC_Z 
+{
+	trajectory_channel_p_t =  0.000000 0.433769 0.824582 2.000001;
+	trajectory_channel_p_y =  0.062237 0.744952 0.068878 0.062237;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+ContactModule_FLOAT 
+{
+	trajectory_channel_p_t =  0.000000 0.500120 1.517731;
+	trajectory_channel_p_y =  0.500000 1.278994 0.500000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+GainMult 
+{
+	trajectory_channel_p_t =  0.000000 1.024519 1.261793 2.179670;
+	trajectory_channel_p_y =  2.600000 2.183803 1.433131 2.600000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Foot_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.857692 1.164895 1.716313;
+	trajectory_channel_p_y =  0.000000 0.725759 0.205452 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Arm_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.458237 0.756126 1.497873;
+	trajectory_channel_p_y =  0.000000 1.030606 -0.084489 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}

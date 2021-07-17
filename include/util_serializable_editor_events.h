@@ -1,0 +1,20 @@
+enum SerializableEvent
+{
+	evSaveParm,
+	evParmTraj,
+	evLoadList,
+	evParmEdited,
+	evCloseParmEditor,
+	evParmListModified,
+	evSwitchEul,
+	evSwitchQuat,
+	evMakeChannelVecX,
+	evMakeChannelVecY,
+	evMakeChannelVecZ,
+	evMakeChannelRotX,
+	evMakeChannelRotY,
+	evMakeChannelRotZ,
+	evMakeChannelBool,
+	evMakeChannelFloat,
+	evFloatChoiceSelect
+};

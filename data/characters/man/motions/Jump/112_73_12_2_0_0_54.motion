@@ -1,0 +1,54 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_descriptor_avg =  5.149423 -29.559816 0.126554 0.105521 -0.037334 -0.011949 0.475825;
+	motion_descriptor_min =  5.149423 -29.559816 0.126554 0.105521 -0.037334 -0.011949 0.475825;
+	motion_descriptor_max =  5.149423 -29.559816 0.126554 0.105521 -0.037334 -0.011949 0.475825;
+	motion_descriptor_env =  1.280759 -0.925783 1.316524 -0.897519 1.324044 -0.847696 1.284468 -0.731508 1.210928 -0.665710 1.022706 -0.737044 1.054537 -0.789144 1.217770 -0.912470;
+	motion_success =  0;
+}
+
+Hips_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.651522 0.939716 1.394799 2.992908;
+	trajectory_channel_p_y =  -0.042805 -0.376873 0.021247 -0.071708 -0.042805;
+	trajectory_channel_tng =  0.526849 -2.000000 0.500000 0.500000 0.500000;
+}
+Hips_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.486382 0.874751 1.812057;
+	trajectory_channel_p_y =  0.000000 -0.099243 -0.293419 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Hips_VEC_Z 
+{
+	trajectory_channel_p_t =  0.000000 0.431839 0.836591 2.000001;
+	trajectory_channel_p_y =  0.062237 0.620296 0.184624 0.062237;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+ContactModule_FLOAT 
+{
+	trajectory_channel_p_t =  0.000000 0.483044 1.517731;
+	trajectory_channel_p_y =  0.500000 1.527048 0.500000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+GainMult 
+{
+	trajectory_channel_p_t =  0.000000 1.015660 1.262000 2.179670;
+	trajectory_channel_p_y =  2.600000 2.101507 1.984176 2.600000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Foot_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.873175 1.154809 1.716313;
+	trajectory_channel_p_y =  0.000000 0.977415 0.221435 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Arm_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.451326 0.774073 1.497873;
+	trajectory_channel_p_y =  0.000000 0.908969 0.098347 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}

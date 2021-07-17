@@ -1,0 +1,262 @@
+# data file for the FLTK User Interface Designer (FLUID)
+version 2.1000 
+images_dir fltk::ValueSlider 
+header_name {.h} 
+code_name {.cpp} 
+gridx 5 
+gridy 5 
+snap 3
+decl {\# include "data_glove_win_events.h"} {public
+} 
+
+class DataGloveFluid {open
+} {
+  decl {virtual void event ( GloveEvent e )=0;} {public
+  }
+  Function {DataGloveFluid()} {open
+  } {
+    {fltk::Window} ui_window {
+      label {Hand Tracker} open
+      xywh {-826 269 269 615} resizable visible
+    } {
+      {fltk::TiledGroup} {} {open
+        xywh {0 0 269 615} horizontal
+      } {
+        {fltk::Group} ui_main_group {open
+          xywh {0 0 255 590} box FLAT_BOX
+        } {
+          {fltk::MenuBar} {} {
+            xywh {0 0 175 20}
+          } {
+            {fltk::Item} {} {
+              label X
+              callback {event ( evQuit );}
+              labelfont 1 textfont 1 color 0xece9d800 textcolor 0xd40d2900 selection_textcolor 0xff122b00
+            }
+            {fltk::ItemGroup} {} {
+              label draw
+              color 0xece9d800
+            } {}
+            {fltk::ItemGroup} {} {
+              label edit open
+              color 0xece9d800
+            } {
+              {fltk::Item} {} {
+                label {set max}
+                callback {event(evSetMax);}
+                }
+              {fltk::Item} {} {
+                label {set min}
+                callback {event(evSetMin);}
+                }
+              {fltk::Item} {} {
+                label {set max thumb}
+                callback {event(evSetMaxThumb);}
+                }
+            }
+          }
+          {fltk::Group} {} {open
+            xywh {0 20 250 570} resizable
+          } {
+            {fltk::TabGroup} ui_main_tab {open
+              xywh {0 0 245 570} resizable box FLAT_BOX
+            } {
+              {fltk::Group} {} {
+                label Data open selected
+                xywh {0 30 245 540}
+              } {
+                {fltk::ValueOutput} {data[0]} {
+                  label {value:}
+                  xywh {65 55 75 25}
+                }
+                {fltk::ValueOutput} {data[1]} {
+                  label {value:}
+                  xywh {65 80 75 25}
+                }
+                {fltk::ValueOutput} {data[2]} {
+                  label {value:}
+                  xywh {65 105 75 25}
+                }
+                {fltk::ValueOutput} {data[3]} {
+                  label {value:}
+                  xywh {65 130 75 25}
+                }
+                {fltk::ValueOutput} {data[4]} {
+                  label {value:}
+                  xywh {65 155 75 25}
+                }
+                {fltk::ValueOutput} {data[5]} {
+                  label {value:}
+                  xywh {65 180 75 25}
+                }
+                {fltk::ValueOutput} {data[6]} {
+                  label {value:}
+                  xywh {65 205 75 25}
+                }
+                {fltk::ValueOutput} {data[7]} {
+                  label {value:}
+                  xywh {65 230 75 25}
+                }
+                {fltk::ValueOutput} {data[8]} {
+                  label {value:}
+                  xywh {65 255 75 25}
+                }
+                {fltk::ValueOutput} {data[9]} {
+                  label {value:}
+                  xywh {65 280 75 25}
+                }
+                {fltk::ValueOutput} {data[10]} {
+                  label {value:}
+                  xywh {65 305 75 25}
+                }
+                {fltk::ValueOutput} {data[11]} {
+                  label {value:}
+                  xywh {65 330 75 25}
+                }
+                {fltk::ValueOutput} {data[12]} {
+                  label {value:}
+                  xywh {65 355 75 25}
+                }
+                {fltk::ValueOutput} {data[13]} {
+                  label {value:}
+                  xywh {65 380 75 25}
+                }
+                {fltk::ValueOutput} {data[14]} {
+                  label {value:}
+                  xywh {65 405 75 25}
+                }
+                {fltk::ValueOutput} {data[15]} {
+                  label {value:}
+                  xywh {65 430 75 25}
+                }
+                {fltk::ValueOutput} {data[16]} {
+                  label {value:}
+                  xywh {65 455 75 25}
+                }
+                {fltk::ValueOutput} {data[17]} {
+                  label {value:}
+                  xywh {65 480 75 25}
+                }
+                {fltk::ValueOutput} {data_min[0]} {
+                  xywh {140 55 48 25}
+                }
+                {fltk::ValueOutput} {data_min[1]} {
+                  xywh {140 80 48 25}
+                }
+                {fltk::ValueOutput} {data_min[2]} {
+                  xywh {140 105 48 25}
+                }
+                {fltk::ValueOutput} {data_min[3]} {
+                  xywh {140 130 48 25}
+                }
+                {fltk::ValueOutput} {data_min[4]} {
+                  xywh {140 155 48 25}
+                }
+                {fltk::ValueOutput} {data_min[5]} {
+                  xywh {140 180 48 25}
+                }
+                {fltk::ValueOutput} {data_min[6]} {
+                  xywh {140 205 48 25}
+                }
+                {fltk::ValueOutput} {data_min[7]} {
+                  xywh {140 230 48 25}
+                }
+                {fltk::ValueOutput} {data_min[8]} {
+                  xywh {140 255 48 25}
+                }
+                {fltk::ValueOutput} {data_min[9]} {
+                  xywh {140 280 48 25}
+                }
+                {fltk::ValueOutput} {data_min[10]} {
+                  xywh {140 305 48 25}
+                }
+                {fltk::ValueOutput} {data_min[11]} {
+                  xywh {140 330 48 25}
+                }
+                {fltk::ValueOutput} {data_min[12]} {
+                  xywh {140 355 48 25}
+                }
+                {fltk::ValueOutput} {data_min[13]} {
+                  xywh {140 380 48 25}
+                }
+                {fltk::ValueOutput} {data_min[14]} {
+                  xywh {140 405 48 25}
+                }
+                {fltk::ValueOutput} {data_min[15]} {
+                  xywh {140 430 48 25}
+                }
+                {fltk::ValueOutput} {data_min[16]} {
+                  xywh {140 455 48 25}
+                }
+                {fltk::ValueOutput} {data_min[17]} {
+                  xywh {140 480 48 25}
+                }
+                {fltk::Group} {} {
+                  label {value            range} open
+                  xywh {50 25 160 20} align 33
+                } {}
+              }
+              {fltk::Group} {} {
+                label config
+                xywh {15 25 230 545} hide
+              } {
+                {fltk::Input} ui_glove_config {
+                  label {config file}
+                  xywh {55 25 150 25}
+                }
+                {fltk::Button} {} {
+                  label load
+                  callback {event(evLoadGloveCfg);}
+                  xywh {60 55 70 25}
+                }
+                {fltk::Button} {} {
+                  label save
+                  callback {event(evSaveGloveCfg);}
+                  xywh {135 55 70 25}
+                }
+                {fltk::Button} {} {
+                  label {pose 1}
+                  callback {event(evSetPose1);}
+                  xywh {60 300 85 25}
+                }
+                {fltk::Button} {} {
+                  label {pose 2}
+                  callback {event(evSetPose2);}
+                  xywh {60 330 85 25}
+                }
+                {fltk::ValueOutput} ui_interp_output {
+                  label output
+                  xywh {60 365 85 25}
+                }
+                {fltk::Group} {} {
+                  label calibration open
+                  xywh {50 135 110 110} align 33 box DOWN_BOX
+                } {
+                  {fltk::Button} {} {
+                    label {hand open}
+                    callback {event(evSetMin);}
+                    xywh {10 20 85 25}
+                  }
+                  {fltk::Button} {} {
+                    label {hand closed}
+                    callback {event(evSetMax);}
+                    xywh {10 50 85 25}
+                  }
+                  {fltk::Button} {} {
+                    label {thumb closed}
+                    callback {event(evSetMaxThumb);}
+                    xywh {10 80 85 25}
+                  }
+                }
+              }
+            }
+          }
+          {fltk::LightButton} ui_glove_active {
+            label active
+            xywh {180 0 60 20}
+          }
+        }
+      }
+    }
+  }
+} 

@@ -1,0 +1,24 @@
+#motion for physical humanoid
+#Robert Backman 10/28/11
+
+Motion
+{
+	motion_node_list = Node;
+	motion_trajectory_list = Trajectory;
+}
+Node
+{
+	channel_control_mode = ADDITIVE;
+	channel_node_position = vec 0.0 0.0 0.0;
+}
+Trajectory
+{
+	trajectory_channel_type = BEZIER;
+	trajectory_channel_p_t =  0.0 0.5 ;
+	trajectory_channel_p_y =  0.0 0.0 ;
+	trajectory_channel_tng =  0.5;
+	channel_node_position = vec 0.0 0.0 0.0;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  0.000000 0.000000 1.000000;
+}

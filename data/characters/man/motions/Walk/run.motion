@@ -1,0 +1,64 @@
+#motion for physical humanoid
+#Robert Backman 10/28/11
+
+Motion
+{
+
+}
+
+StepInput
+{
+	trajectory_channel_p_t =  0.000000 0.298990;
+	trajectory_channel_p_y =  0.000000 0.500000;
+}
+Swing_Y
+{
+	
+	trajectory_channel_p_t =  0.000000 0.194632 0.600000;
+	trajectory_channel_p_y =  -0.003968 0.130618 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+Swing_Z
+{
+
+	trajectory_channel_p_t =  0.000000 0.305960 0.589091;
+	trajectory_channel_p_y =  0.000000 -0.109693 -0.009524;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+Stance_Z
+{
+	trajectory_channel_p_t =  0.000000 0.309091;
+	trajectory_channel_p_y =  0.000000 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000;
+}
+Swing_RX 
+{
+	trajectory_channel_p_t =  0.040000;
+	trajectory_channel_p_y =  0.000000;
+	trajectory_channel_tng =  0.500000;
+}
+Stance_RX 
+{
+	trajectory_channel_p_t =  0.000000 0.281864 0.600000;
+	trajectory_channel_p_y =  -0.009524 -0.468963 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+Stance_Y
+{
+	trajectory_channel_p_t =  0.000000;
+	trajectory_channel_p_y =  0.000000;
+	trajectory_channel_tng =  -2.000000;
+}
+VelDesired_Z 
+{
+	trajectory_channel_p_t =  0.300000;
+	trajectory_channel_p_y =  1.813654;
+	trajectory_channel_tng =  0.500000;
+}
+Hips_RX
+{
+	
+	trajectory_channel_p_t =  0.282285;
+	trajectory_channel_p_y =  0.019280;
+	trajectory_channel_tng =  0.500000;
+}

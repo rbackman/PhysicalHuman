@@ -1,0 +1,219 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_trajectory_list =  StepInput Swing_Y Swing_Z Stance_Z Swing_RX Stance_RX Stance_Y VelDesired_Z Heading ToeHeelRatio StanceSwingRatio Hips_RX;
+	motion_node_list =  LFoot_TY RFoot_TY LFOOT_TZ RFOOT_TZ LeftCharFrame RightCharFrame StanceInverse LFoot_RX RFoot_RX;
+	motion_duration =  0.600000;
+	motion_loops = true;
+}
+
+StepInput 
+{
+	trajectory_channel_type =  STEP;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  0.000000 0.000000 1.000000;
+	channel_node_position = vec 0.785052 1.464303 0.000000;
+}
+Swing_Y 
+{
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  0.000000 0.000000 0.500000;
+	channel_node_position = vec 0.728132 0.049906 0.000000;
+}
+Swing_Z 
+{
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -1.000000 0.000000 1.000000;
+	channel_node_position = vec 0.720519 -0.370470 0.000000;
+}
+Stance_Z 
+{
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -1.000000 0.000000 1.000000;
+	channel_node_position = vec 0.717697 -0.734102 0.000000;
+}
+Swing_RX 
+{
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -0.200000 0.000000 0.200000;
+	channel_node_position = vec 0.732841 -1.706260 0.000000;
+}
+Stance_RX 
+{
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -0.200000 0.000000 0.200000;
+	channel_node_position = vec 0.719783 -1.241639 0.000000;
+}
+Stance_Y 
+{
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  0;
+	channel_phase_flip = false;
+	channel_range =  0.000000 0.000000 1.000000;
+	channel_node_position = vec 0.737647 0.523506 0.000000;
+}
+VelDesired_Z 
+{
+	channel_parameter_name =  balance_jcom_velocity_desired;
+	channel_object_name =  BalanceModule;
+	channel_object_type =  Controller;
+	channel_dof =  VEC_Z;
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -1.000000 0.000000 1.000000;
+	channel_node_position = vec 0.088417 0.526764 0.000000;
+}
+Heading 
+{
+	channel_parameter_name =  human_desired_heading_delta;
+	channel_object_name =  Human;
+	channel_object_type =  Human;
+	channel_dof =  FLOAT;
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -1.000000 0.000000 1.000000;
+	channel_node_position = vec 0.084942 1.450122 0.000000;
+}
+ToeHeelRatio 
+{
+	channel_parameter_name =  contact_toe_heel_ratio;
+	channel_object_name =  ContactModule;
+	channel_object_type =  Controller;
+	channel_dof =  FLOAT;
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -1.000000 0.000000 1.000000;
+	channel_node_val =  0.500000;
+	channel_node_position = vec 0.067267 1.134361 0.000000;
+}
+StanceSwingRatio 
+{
+	channel_parameter_name =  contact_stance_swing_ratio;
+	channel_object_name =  ContactModule;
+	channel_object_type =  Controller;
+	channel_dof =  FLOAT;
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -1.000000 0.000000 1.000000;
+	channel_node_val =  0.500000;
+	channel_node_position = vec 0.071386 0.818059 0.000000;
+}
+Hips_RX 
+{
+	channel_parameter_name =  manipulator_orientation;
+	channel_object_name =  Hips;
+	channel_object_type =  IKManip;
+	channel_dof =  ROT_X;
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  -6.283185 0.000000 6.283185;
+	channel_node_position = vec null;
+}
+LFoot_TY 
+{
+	channel_parameter_name =  manipulator_position;
+	channel_object_name =  LeftFoot;
+	channel_object_type =  IKManip;
+	channel_dof =  VEC_Y;
+	channel_control_mode =  MODULATE;
+	channel_control_list =  StepInput Swing_Y Stance_Y;
+	channel_node_position = vec 1.223750 0.013745 0.000000;
+}
+RFoot_TY 
+{
+	channel_parameter_name =  manipulator_position;
+	channel_object_name =  RightFoot;
+	channel_object_type =  IKManip;
+	channel_dof =  VEC_Y;
+	channel_control_mode =  MODULATE;
+	channel_control_list =  StepInput Stance_Y Swing_Y;
+	channel_node_position = vec 1.225950 0.417202 0.000000;
+}
+LFOOT_TZ 
+{
+	channel_parameter_name =  manipulator_position;
+	channel_object_name =  LeftFoot;
+	channel_object_type =  IKManip;
+	channel_dof =  VEC_Z;
+	channel_control_mode =  MODULATE;
+	channel_control_list =  StepInput Swing_Z Stance_Z;
+	channel_node_position = vec 1.234089 -0.337835 0.000000;
+}
+RFOOT_TZ 
+{
+	channel_parameter_name =  manipulator_position;
+	channel_object_name =  RightFoot;
+	channel_object_type =  IKManip;
+	channel_dof =  VEC_Z;
+	channel_control_mode =  MODULATE;
+	channel_control_list =  StepInput Stance_Z Swing_Z;
+	channel_node_position = vec 1.234918 -0.744635 0.000000;
+}
+LeftCharFrame 
+{
+	channel_parameter_name =  joint_char_frame;
+	channel_object_name =  LeftUpLeg;
+	channel_object_type =  PhysicalJoint;
+	channel_dof =  BOOL;
+	channel_control_mode =  INVERSE;
+	channel_control_list =  StepInput;
+	channel_node_position = vec 1.311088 1.680457 0.000000;
+}
+RightCharFrame 
+{
+	channel_parameter_name =  joint_char_frame;
+	channel_object_name =  RightUpLeg;
+	channel_object_type =  PhysicalJoint;
+	channel_dof =  BOOL;
+	channel_control_mode =  ADDITIVE;
+	channel_control_list =  StepInput;
+	channel_node_position = vec 1.305796 1.305409 0.000000;
+}
+StanceInverse 
+{
+	channel_parameter_name =  human_stance_state;
+	channel_object_name =  Human;
+	channel_object_type =  Human;
+	channel_dof =  BOOL;
+	channel_control_mode =  INVERSE;
+	channel_control_list =  StepInput;
+	channel_node_position = vec 1.312259 2.037235 0.000000;
+}
+LFoot_RX 
+{
+	channel_parameter_name =  manipulator_orientation;
+	channel_object_name =  LeftFoot;
+	channel_object_type =  IKManip;
+	channel_dof =  ROT_X;
+	channel_control_mode =  MODULATE;
+	channel_control_list =  StepInput Swing_RX Stance_RX;
+	channel_node_position = vec 1.245818 -1.686943 0.000000;
+}
+RFoot_RX 
+{
+	channel_parameter_name =  manipulator_orientation;
+	channel_object_name =  RightFoot;
+	channel_object_type =  IKManip;
+	channel_dof =  ROT_X;
+	channel_control_mode =  MODULATE;
+	channel_control_list =  StepInput Stance_RX Swing_RX;
+	channel_node_position = vec 1.238095 -1.309814 0.000000;
+}

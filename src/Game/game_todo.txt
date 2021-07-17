@@ -1,0 +1,4 @@
+
+-make each jump start from the current
+-show the jumps being interpolated
+-add a nicer environment for the platforms

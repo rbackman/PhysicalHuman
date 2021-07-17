@@ -1,0 +1,24 @@
+﻿Build started 6/24/2013 5:04:21 PM.
+     1>Project "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\HumanWindow.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\include /I..\..\graphsim /I..\..\fltk /I..\..\sdks\include /ZI /nologo /W3 /WX- /Od /Oy- /D SR_DEBUG /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\HumanWindow_Debug\\" /Fd"obj\HumanWindow_Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\Window\phw_events.cpp ..\src\Window\phw_window.cpp
+         phw_events.cpp
+         phw_window.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"obj\HumanWindow_Debug\HumanWindow-dbg.lib" /NOLOGO obj\HumanWindow_Debug\phw_window_fluid.obj
+         obj\HumanWindow_Debug\phw_events.obj
+         obj\HumanWindow_Debug\phw_graph_viewer.obj
+         obj\HumanWindow_Debug\phw_node_viewer.obj
+         obj\HumanWindow_Debug\phw_window.obj
+         obj\HumanWindow_Debug\phw_viewer.obj
+         HumanWindow.vcxproj -> C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\obj\HumanWindow_Debug\HumanWindow-dbg.lib
+       PostBuildEvent:
+         copy /Y "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\obj\HumanWindow_Debug\HumanWindow-dbg.lib" "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\\..\lib\HumanWindow-dbg.lib"
+         :VCEnd
+                 1 file(s) copied.
+     1>Done Building Project "C:\Users\Robert\Desktop\labcode\physicalhuman\vs2012\HumanWindow.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.90

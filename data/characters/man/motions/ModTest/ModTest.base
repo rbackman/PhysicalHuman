@@ -1,0 +1,40 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_trajectory_list =  traj2 traj1 step;
+	motion_node_list =  mod;
+	motion_duration =  1.000000;
+}
+
+traj2 
+{
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  0.000000 0.000000 1.000000;
+	channel_node_position = vec 0.146718 0.051095 0.000000;
+}
+traj1 
+{
+	trajectory_channel_type =  BEZIER;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  0.000000 0.000000 1.000000;
+	channel_node_position = vec 0.152124 0.396594 0.000000;
+}
+step 
+{
+	trajectory_channel_type =  STEP;
+	channel_phase_repetitions =  1;
+	channel_phase_flip = false;
+	channel_range =  0.000000 0.000000 1.000000;
+	channel_node_position = vec 0.142085 0.744526 0.000000;
+}
+mod 
+{
+	channel_control_mode =  MODULATE;
+	channel_control_list =  step traj2 traj1;
+	channel_node_position = vec 0.627027 0.197080 0.000000;
+}

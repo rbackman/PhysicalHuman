@@ -1,0 +1,42 @@
+#state file for IKModule  manips.. they are in a separate file since they have the same names as the joints
+LeftHand{
+manipulator_position = vec -0.503477 -0.668233 0.062123;
+manipulator_orientation = quat 0.772818 -0.026165 -0.034783 -0.633134;
+manipulator_active = false;
+manipulator_visible = false;
+ik_manip_orbit =  90.000000;
+}
+RightHand{
+manipulator_position = vec 0.503430 -0.668226 0.062784;
+manipulator_orientation = quat 0.772788 -0.026540 0.035428 0.633118;
+manipulator_active = false;
+manipulator_visible = false;
+ik_manip_orbit =  90.000000;
+}
+LeftFoot{
+manipulator_position = vec 0.000000 0.000000 0.000001;
+manipulator_orientation = quat 1.000000 0.000000 0.000000 0.000000;
+manipulator_active = true;
+manipulator_visible = true;
+ik_manip_orbit =  0.000000;
+}
+RightFoot{
+manipulator_position = vec 0.000001 0.000000 0.000001;
+manipulator_orientation = quat 1.000000 -0.000000 0.000000 -0.000000;
+manipulator_active = true;
+manipulator_visible = true;
+ik_manip_orbit =  0.000000;
+}
+Hips{
+manipulator_position = vec -0.000003 -0.019523 0.062237;
+manipulator_orientation = quat 0.999997 0.002446 0.000000 0.000000;
+manipulator_active = true;
+manipulator_visible = true;
+ik_manip_orbit =  0.000000;
+}
+FrameManip{
+manipulator_position = vec null;
+manipulator_orientation = quat null;
+manipulator_active = true;
+manipulator_visible = true;
+}

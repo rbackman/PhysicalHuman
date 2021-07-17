@@ -1,0 +1,54 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_descriptor_avg =  0.977222 0.252328 0.160756 -0.020010 0.001200 0.020209 0.611952;
+	motion_descriptor_min =  0.977222 0.252328 0.160756 -0.020010 0.001200 0.020209 0.611952;
+	motion_descriptor_max =  0.977222 0.252328 0.160756 -0.020010 0.001200 0.020209 0.611952;
+	motion_descriptor_env =  1.311957 -0.256890 1.217027 0.016849 1.147071 0.156222 1.097859 0.201247 0.910980 0.225101 0.976256 -0.087107;
+	motion_success =  0;
+}
+
+Hips_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.701861 0.939716 1.394799 2.992908;
+	trajectory_channel_p_y =  -0.042805 -0.566842 0.021247 -0.071708 -0.042805;
+	trajectory_channel_tng =  0.526849 -2.000000 0.500000 0.500000 0.500000;
+}
+Hips_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.523270 0.881568 1.812057;
+	trajectory_channel_p_y =  0.000000 0.138781 0.033396 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Hips_VEC_Z 
+{
+	trajectory_channel_p_t =  0.000000 0.414355 0.903277 2.000001;
+	trajectory_channel_p_y =  0.062237 0.580649 0.106970 0.062237;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+ContactModule_FLOAT 
+{
+	trajectory_channel_p_t =  0.000000 0.489825 1.517731;
+	trajectory_channel_p_y =  0.500000 1.203515 0.500000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+GainMult 
+{
+	trajectory_channel_p_t =  0.000000 1.004121 1.240670 2.179670;
+	trajectory_channel_p_y =  2.600000 2.084522 1.918090 2.600000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Foot_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.886169 1.180875 1.716313;
+	trajectory_channel_p_y =  0.000000 0.998870 0.172796 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Arm_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.455297 0.749912 1.497873;
+	trajectory_channel_p_y =  0.000000 0.848892 0.145224 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}

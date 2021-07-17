@@ -1,0 +1,230 @@
+# data file for the FLTK User Interface Designer (FLUID)
+version 2.1000 
+images_dir fltk::ValueSlider 
+header_name {.h} 
+code_name {.cpp} 
+gridx 5 
+gridy 5 
+snap 3
+decl {\# include "gsim/fl_viewer.h"} {public
+} 
+
+decl {\# include "neural_net_events.h"} {public
+} 
+
+decl {\# include "util_image_viewer.h"} {public
+} 
+
+class NeuralNetFluid {open
+} {
+  decl {virtual void event ( NeuralNetEvent e )=0;} {public
+  }
+  Function {NeuralNetFluid()} {open
+  } {
+    {fltk::Window} ui_window {
+      label {Neural Nets} open
+      xywh {-1784 358 880 561} vertical resizable visible
+    } {
+      {fltk::TiledGroup} {} {open
+        xywh {0 0 845 561}
+      } {
+        {fltk::Group} ui_main_group {open
+          xywh {0 0 255 560} box FLAT_BOX
+        } {
+          {fltk::MenuBar} {} {open
+            xywh {0 0 135 20}
+          } {
+            {fltk::Item} {} {
+              label X
+              callback {event ( evNetQuit );}
+              labelfont 1 textfont 1 color 0xece9d800 textcolor 0xd40d2900 selection_textcolor 0xff122b00
+            }
+            {fltk::ItemGroup} {} {
+              label edit open
+              color 0xece9d800
+            } {
+              {fltk::Item} {} {
+                label {save data}
+                callback {event(evSaveData);}
+                }
+            }
+          }
+          {fltk::Group} {} {open
+            xywh {0 20 250 540} resizable
+          } {
+            {fltk::TabGroup} ui_main_tab {open
+              xywh {0 0 245 540} resizable box FLAT_BOX
+            } {
+              {fltk::Group} {} {
+                xywh {25 25 220 515} hide
+              } {}
+              {fltk::Group} {} {
+                label data open
+                xywh {5 25 240 515}
+              } {
+                {fltk::ValueOutput} ui_dim_in {
+                  label din
+                  xywh {50 15 75 25} maximum 512 step 1
+                }
+                {fltk::ValueOutput} ui_dim_hid {
+                  label dhidden
+                  xywh {50 40 75 25} maximum 512 step 1
+                }
+                {fltk::ValueOutput} ui_dim_out {
+                  label dout
+                  xywh {50 65 75 25} maximum 512 step 1
+                }
+                {fltk::ValueInput} ui_learning_rate {
+                  label {learning rate}
+                  callback {event(evUpdateNetParms);}
+                  xywh {100 155 75 25}
+                }
+                {fltk::ValueInput} ui_momentum {
+                  label momentum
+                  callback {event(evUpdateNetParms);}
+                  xywh {100 185 75 25}
+                }
+                {fltk::ValueInput} ui_weight_decay {
+                  label {weight decay}
+                  callback {event(evUpdateNetParms);}
+                  xywh {100 215 75 25}
+                }
+                {fltk::ValueOutput} ui_sse {
+                  label Error
+                  xywh {50 90 75 25} maximum 512 step 1
+                }
+                {fltk::Input} ui_net_data_dir {
+                  label {train data}
+                  xywh {60 325 90 25}
+                }
+                {fltk::ValueInput} ui_num_epoch {
+                  label epochs
+                  xywh {100 245 75 25} value 1000
+                }
+                {fltk::ValueInput} {ui_make[0]} {
+                  label X
+                  xywh {55 380 55 25}
+                }
+                {fltk::ValueInput} {ui_make[1]} {
+                  label Y
+                  xywh {55 405 55 25}
+                }
+                {fltk::ValueInput} {ui_make[2]} {
+                  label hidden
+                  xywh {55 430 55 25}
+                }
+                {fltk::ValueInput} {ui_make[3]} {
+                  label output
+                  xywh {55 455 55 25}
+                }
+                {fltk::Button} {} {
+                  label {make net}
+                  callback {event(evMakeNet);}
+                  xywh {130 405 75 25}
+                }
+                {fltk::ValueOutput} ui_n_train {
+                  label {n train}
+                  xywh {50 115 75 25} maximum 512 step 1
+                }
+                {fltk::ValueOutput} ui_dim_in_w {
+                  label w
+                  xywh {140 15 35 25} maximum 512 step 1
+                }
+                {fltk::ValueOutput} ui_dim_in_h {
+                  label h
+                  xywh {190 15 35 25} maximum 512 step 1
+                }
+                {fltk::Input} ui_net_cfg {
+                  label config
+                  xywh {60 350 90 25}
+                }
+              }
+            }
+            {fltk::Group} ui_message {
+              label text open
+              xywh {0 520 245 20} align 32 box FLAT_BOX labelfont 1 textfont 1 textcolor 0xa7000000 labelcolor 0xbd000000 labelsize 11 textsize 11
+            } {}
+          }
+        }
+        {fltk::Group} ui_hidden_weights {
+          label {hidden weights}
+          xywh {270 55 256 256} box DOWN_BOX
+          class ImageViewer
+        } {}
+        {fltk::Group} ui_output_weights {
+          label {output weights} open
+          xywh {535 54 256 256} box DOWN_BOX
+          class ImageViewer
+        } {}
+        {fltk::CheckButton} ui_scale_images {
+          label {scale images}
+          xywh {290 335 70 25}
+        }
+        {fltk::Button} {} {
+          label {update images}
+          callback {event(evUpdateImages);}
+          xywh {430 330 125 25}
+        }
+        {fltk::Choice} ui_display_choice {
+          label display open
+          xywh {615 330 75 20}
+        } {
+          {fltk::Item} {} {
+            label Weights
+            }
+          {fltk::Item} {} {
+            label DWeights
+            }
+        }
+        {fltk::Button} {} {
+          label train
+          callback {event(evTrainImages);}
+          xywh {30 315 60 25}
+        }
+        {fltk::Button} {} {
+          label test
+          callback {event(evTestImages);}
+          xywh {90 315 60 25}
+        }
+        {fltk::Button} {} {
+          label stop
+          callback {event(evStopTrain);}
+          xywh {155 315 60 25}
+        }
+        {fltk::Button} {} {
+          label load
+          callback {event(evLoadNet);}
+          xywh {160 395 60 25}
+        }
+        {fltk::Button} {} {
+          label load
+          callback {event(evLoadImages);}
+          xywh {160 370 60 25}
+        }
+        {fltk::Button} {} {
+          label {rand weights}
+          callback {event(evRandomizeWeights)}
+          xywh {280 380 90 25}
+        }
+        {fltk::Button} {} {
+          label {noise weights}
+          callback {event(evNoiseWeights)}
+          xywh {280 410 90 25}
+        }
+        {fltk::ValueInput} ui_noise_seeds {
+          label seeds
+          xywh {425 410 45 25} maximum 20 step 1 value 10
+        }
+        {fltk::Input} ui_net_test_data_dir {
+          label {test data} selected
+          xywh {65 346 90 25}
+        }
+        {fltk::Button} {} {
+          label load
+          callback {event(evLoadTestImages);}
+          xywh {160 350 60 25}
+        }
+      }
+    }
+  }
+} 

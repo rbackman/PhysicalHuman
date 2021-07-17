@@ -1,0 +1,54 @@
+#trajectories motion for physical humanoid
+#Robert Backman 3/15/12
+
+Motion
+{
+	motion_descriptor_avg =  1.507017 -0.439845 0.163098 -0.022516 0.006955 -0.019338 0.781521;
+	motion_descriptor_min =  1.507017 -0.439845 0.163098 -0.022516 0.006955 -0.019338 0.781521;
+	motion_descriptor_max =  1.507017 -0.439845 0.163098 -0.022516 0.006955 -0.019338 0.781521;
+	motion_descriptor_env =  1.631722 -0.439817 1.622054 -0.392029 1.602865 -0.359168 1.470181 -0.257006 1.212889 -0.133982 1.118848 -0.128157 1.050694 -0.131166 1.060775 -0.171174 1.093571 -0.202660;
+	motion_success =  0;
+}
+
+Hips_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.663898 0.939716 1.394799 2.992908;
+	trajectory_channel_p_y =  -0.042805 -0.707834 0.021247 -0.071708 -0.042805;
+	trajectory_channel_tng =  0.526849 -2.000000 0.500000 0.500000 0.500000;
+}
+Hips_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.480766 0.856420 1.812057;
+	trajectory_channel_p_y =  0.000000 0.380284 -0.080697 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Hips_VEC_Z 
+{
+	trajectory_channel_p_t =  0.000000 0.429208 0.856350 2.000001;
+	trajectory_channel_p_y =  0.062237 0.912172 0.243109 0.062237;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+ContactModule_FLOAT 
+{
+	trajectory_channel_p_t =  0.000000 0.472197 1.517731;
+	trajectory_channel_p_y =  0.500000 1.058021 0.500000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000;
+}
+GainMult 
+{
+	trajectory_channel_p_t =  0.000000 1.004871 1.260959 2.179670;
+	trajectory_channel_p_y =  2.600000 2.350827 2.231850 2.600000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Foot_ROT_X 
+{
+	trajectory_channel_p_t =  0.000000 0.887690 1.155111 1.716313;
+	trajectory_channel_p_y =  0.000000 0.908825 -0.021007 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}
+Arm_VEC_Y 
+{
+	trajectory_channel_p_t =  0.000000 0.458448 0.778846 1.497873;
+	trajectory_channel_p_y =  0.000000 1.222606 0.038080 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000 0.500000 0.500000;
+}

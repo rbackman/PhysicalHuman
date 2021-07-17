@@ -1,0 +1,57 @@
+#motion for physical humanoid
+#Robert Backman 10/28/11
+
+Motion
+{
+	motion_name =  segment_control_default;
+	motion_start_state =  none;
+	motion_trajectory_list =  RightFoot_VEC_Y COMModule_VEC_X;
+	motion_duration =  1.000000;
+	motion_loops = false;
+	human_motion_stance_start =  Left;
+	human_motion_mirror = false;
+	human_motion_manual_com = true;
+	human_motion_stance_swing_vec_start =  vec 0.000000 0.000000 0.000000;
+	human_motion_stance_swing_vec_end =  vec 0.000000 0.000000 0.000000;
+	human_motion_stance_com_vec_start =  vec 0.000000 0.000000 0.000000;
+	human_motion_stance_com_vec_end =  vec 0.000000 0.000000 0.000000;
+}
+
+
+RightFoot_VEC_Y
+{
+	channel_parameter_name =  manipulator_position;
+	channel_object_name =  RightFoot;
+	channel_object_type =  IKManip;
+	channel_general_name =  SwingFoot;
+	channel_dof =  VEC_Y;
+	channel_range =  -1.000000 0.000000 1.000000;
+	channel_phase_repetitions = 1;
+	channel_phase_flip = false;
+
+	trajectory_channel_p_t =  0.000000 1.000000;
+	trajectory_channel_p_y =  0.000000 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000;
+	trajectory_channel_sample = false;
+	trajectory_channel_type =  BEZIER;
+	trajectory_channel_loop_continuity = false;
+	trajectory_channel_loop_flip = false;
+}
+COMModule_VEC_X
+{
+	channel_parameter_name =  com_desired_support_vector;
+	channel_object_name =  COMModule;
+	channel_object_type =  Controller;
+	channel_dof =  VEC_X;
+	channel_range =  -1.000000 0.000000 1.000000;
+	channel_phase_repetitions = 1;
+	channel_phase_flip = false;
+
+	trajectory_channel_p_t =  0.000000 1.000000;
+	trajectory_channel_p_y =  0.004785 0.000000;
+	trajectory_channel_tng =  0.500000 0.500000;
+	trajectory_channel_sample = false;
+	trajectory_channel_type =  BEZIER;
+	trajectory_channel_loop_continuity = false;
+	trajectory_channel_loop_flip = false;
+}

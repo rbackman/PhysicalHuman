@@ -1,0 +1,307 @@
+# data file for the FLTK User Interface Designer (FLUID)
+version 2.1000 
+images_dir header_name 
+header_name {.h} 
+code_name {.cpp} 
+gridx 5 
+gridy 5 
+snap 3
+decl {\#include "util_serializable_editor_events.h"} {public
+} 
+
+class SerializableEditorFluid {open
+} {
+  decl {virtual void event ( SerializableEvent e )=0;} {public
+  }
+  Function {SerializableEditorFluid()} {open
+  } {
+    {fltk::Window} ui_serializable_editor {
+      label {Physical Human} open
+      xywh {244 111 215 551} resizable visible
+    } {
+      {fltk::Group} ui_parm_grp {open
+        xywh {4 0 211 543} align 33 box DOWN_BOX
+      } {
+        {fltk::Browser} ui_parm_list {
+          callback {event(evParmListModified);} open
+          xywh {5 63 200 320}
+        } {}
+        {fltk::Output} ui_serializable_name {
+          xywh {6 38 200 25}
+        }
+        {fltk::Output} ui_param_name_field {
+          xywh {5 390 200 25}
+        }
+        {fltk::Group} {} {open
+          xywh {5 415 202 95} box DOWN_BOX
+        } {
+          {fltk::Group} ui_string_array_grp {
+            label {String Array} open selected
+            xywh {0 0 200 90} align 33 box DOWN_BOX
+          } {
+            {fltk::Choice} ui_string_array_list {open
+              xywh {20 22 175 25}
+            } {}
+            {fltk::Input} ui_string_array_current {
+              xywh {20 46 151 25} when ENTER_KEY_ALWAYS
+            }
+            {fltk::Button} {} {
+              label set
+              callback {event(evParmEdited);}
+              xywh {171 45 21 25}
+            }
+          }
+          {fltk::Group} ui_int_grp {
+            label Integer
+            xywh {0 0 200 90} align 33 hide box DOWN_BOX
+          } {
+            {fltk::ValueSlider} ui_int_input {
+              callback {event(evParmEdited);}
+              xywh {10 25 180 25} maximum 10 step 1
+            }
+            {fltk::ValueInput} ui_int_min {
+              label min
+              callback {ui_int_input->minimum(ui_int_min->value());}
+              xywh {101 50 30 20}
+            }
+            {fltk::ValueInput} ui_int_max {
+              label max
+              callback {ui_int_input->maximum(ui_int_max->value());}
+              xywh {156 50 30 20}
+            }
+            {fltk::Choice} ui_int_array_list {
+              xywh {11 50 50 25}
+            } {}
+          }
+          {fltk::Group} ui_euler_grp {
+            label Euler
+            xywh {1 0 200 90} align 33 hide box DOWN_BOX
+          } {
+            {fltk::ValueSlider} ui_eul_x_input {
+              label x
+              callback {event(evParmEdited);}
+              xywh {30 30 150 20} align 4 minimum -180 maximum 180 step 0.001
+            }
+            {fltk::ValueSlider} ui_eul_y_input {
+              label y
+              callback {event(evParmEdited);}
+              xywh {30 48 150 20} align 4 minimum -180 maximum 180 step 0.001
+            }
+            {fltk::ValueSlider} ui_eul_z_input {
+              label z
+              callback {event(evParmEdited);}
+              xywh {30 65 150 20} align 4 minimum -180 maximum 180 step 0.001
+            }
+            {fltk::Button} {} {
+              label quat
+              callback {event(evSwitchQuat);}
+              xywh {5 5 40 15}
+            }
+            {fltk::Button} {} {
+              callback {event(evMakeChannelRotX);}
+              xywh {184 32 15 15} vertical
+            }
+            {fltk::Button} {} {
+              callback {event(evMakeChannelRotY);}
+              xywh {185 50 15 15} vertical
+            }
+            {fltk::Button} {} {
+              callback {event(evMakeChannelRotZ);}
+              xywh {185 65 15 15}
+            }
+          }
+          {fltk::Group} ui_vector_grp {
+            label vector
+            xywh {0 0 200 90} align 33 hide box DOWN_BOX
+          } {
+            {fltk::ValueSlider} ui_vx_input {
+              label x
+              callback {event(evParmEdited);}
+              xywh {25 15 150 20} align 4 maximum 10 step 0.001
+            }
+            {fltk::ValueSlider} ui_vy_input {
+              label y
+              callback {event(evParmEdited);}
+              xywh {25 33 150 20} align 4 maximum 10 step 0.001
+            }
+            {fltk::ValueSlider} ui_vz_input {
+              label z
+              callback {event(evParmEdited);}
+              xywh {25 50 150 20} align 4 maximum 10 step 0.001
+            }
+            {fltk::ValueInput} ui_vec_min {
+              label min
+              callback {ui_vx_input->minimum(ui_vec_min->value());
+ui_vy_input->minimum(ui_vec_min->value());
+ui_vz_input->minimum(ui_vec_min->value());}
+              xywh {91 70 30 20}
+            }
+            {fltk::ValueInput} ui_vec_max {
+              label max
+              callback {ui_vx_input->maximum(ui_vec_max->value());
+ui_vy_input->maximum(ui_vec_max->value());
+ui_vz_input->maximum(ui_vec_max->value());}
+              xywh {146 70 30 20}
+            }
+            {fltk::Button} {} {
+              callback {event(evMakeChannelVecX);}
+              xywh {176 15 15 15} vertical
+            }
+            {fltk::Button} {} {
+              callback {event(evMakeChannelVecY);}
+              xywh {176 35 15 15} vertical
+            }
+            {fltk::Button} {} {
+              callback {event(evMakeChannelVecZ);}
+              xywh {176 52 15 15} vertical
+            }
+          }
+          {fltk::Group} ui_float_grp {
+            label Float
+            xywh {0 0 200 90} align 33 hide box DOWN_BOX
+          } {
+            {fltk::ValueSlider} ui_float_input {
+              callback {event(evParmEdited);}
+              xywh {11 20 160 25} maximum 10 step 1e-005
+            }
+            {fltk::ValueInput} ui_float_min {
+              label min
+              callback {ui_float_input->minimum(ui_float_min->value());}
+              xywh {91 47 30 20}
+            }
+            {fltk::ValueInput} ui_float_max {
+              label max
+              callback {ui_float_input->maximum(ui_float_max->value());}
+              xywh {146 47 30 20}
+            }
+            {fltk::Choice} ui_float_array_list {
+              callback {event(evFloatChoiceSelect);} open
+              xywh {11 50 56 25}
+            } {}
+            {fltk::Button} {} {
+              label ch
+              callback {event(evMakeChannelFloat);}
+              xywh {176 20 20 25}
+            }
+          }
+          {fltk::Group} ui_bool_grp {
+            label bool
+            xywh {0 0 200 90} align 33 hide box DOWN_BOX
+          } {
+            {fltk::RadioButton} ui_bool_true {
+              label true
+              callback {event(evParmEdited);}
+              xywh {55 20 20 20} value 1
+            }
+            {fltk::RadioButton} ui_bool_false {
+              label false
+              callback {event(evParmEdited);}
+              xywh {105 20 20 20}
+            }
+            {fltk::Button} {} {
+              callback {event(evMakeChannelBool);}
+              xywh {161 20 15 15} vertical
+            }
+          }
+          {fltk::Group} ui_string_grp {
+            label string
+            xywh {0 0 200 90} align 33 hide box DOWN_BOX
+          } {
+            {fltk::Input} ui_string_val {
+              callback {event(evParmEdited);}
+              xywh {5 25 190 25} when ENTER_KEY
+            }
+          }
+          {fltk::Group} ui_quat_grp {
+            label Quat
+            xywh {1 0 200 95} align 33 hide box DOWN_BOX
+          } {
+            {fltk::ValueSlider} ui_qx_input {
+              label x
+              callback {event(evParmEdited);}
+              xywh {35 40 150 20} align 4 step 0.001
+            }
+            {fltk::ValueSlider} ui_qy_input {
+              label y
+              callback {event(evParmEdited);}
+              xywh {35 58 150 20} align 4 step 0.001
+            }
+            {fltk::ValueSlider} ui_qz_input {
+              label z
+              callback {event(evParmEdited);}
+              xywh {35 75 150 20} align 4 step 0.001
+            }
+            {fltk::ValueSlider} ui_qw_input {
+              label w
+              callback {event(evParmEdited);}
+              xywh {35 21 150 20} align 4 step 0.001
+            }
+            {fltk::Button} {} {
+              label eul
+              callback {event(evSwitchEul);}
+              xywh {5 5 40 15}
+            }
+          }
+        }
+        {fltk::CheckButton} ui_stream_parm {
+          label stream
+          tooltip {this will automatically stream the values of the selected parameter}
+          xywh {16 505 25 25}
+        }
+        {fltk::CheckButton} ui_save_parm {
+          label save
+          callback {event(evSaveParm);}
+          tooltip {save the parameter or not
+}
+          xywh {76 505 25 25}
+        }
+        {fltk::Group} {} {
+          xywh {56 5 150 30}
+        } {
+          {fltk::CheckButton} {ui_type_choice[0]} {
+            label v
+            callback {event(evLoadList);}
+            xywh {40 10 20 20} align 1
+          }
+          {fltk::CheckButton} {ui_type_choice[1]} {
+            label q
+            callback {event(evLoadList);}
+            xywh {55 10 20 20} align 1 value 1
+          }
+          {fltk::CheckButton} {ui_type_choice[2]} {
+            label b
+            callback {event(evLoadList);}
+            xywh {70 10 20 20} align 1
+          }
+          {fltk::CheckButton} {ui_type_choice[3]} {
+            label f
+            callback {event(evLoadList);}
+            xywh {85 10 20 20} align 1
+          }
+          {fltk::CheckButton} {ui_type_choice[4]} {
+            label s
+            callback {event(evLoadList);}
+            xywh {100 10 20 20} align 1
+          }
+          {fltk::CheckButton} {ui_type_choice[5]} {
+            label c
+            callback {event(evLoadList);}
+            xywh {115 10 20 20} align 1
+          }
+          {fltk::CheckButton} {ui_type_choice[6]} {
+            label i
+            callback {event(evLoadList);}
+            xywh {130 10 20 20} align 1
+          }
+        }
+        {fltk::CheckButton} ui_make_traj {
+          label traj
+          callback {event(evParmTraj);}
+          tooltip {if a node is made attach a trajectory to it
+}
+          xywh {126 505 25 25}
+        }
+      }
+    }
+  }
+} 

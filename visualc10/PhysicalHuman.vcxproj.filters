@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\Human\ph_file_manager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_manager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_motion.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_motion_manager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_manip_frame.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_manip_ik.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_manip_puppet.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_manip_virtual.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_motion_segmenter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_manip.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_state_manager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_mod.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_mod_balance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_mod_com.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_mod_contact.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_mod_gravity.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_mod_ik.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_mod_manip.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_mod_puppet.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_mod_ref.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_mod_root.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_mod_template.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_mod_virtual.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_human_loader.cpp">
+      <Filter>human</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_human_getters.cpp">
+      <Filter>human</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_motion_manager_editing.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_controller.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_joint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_trajectory_planner.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_human.cpp">
+      <Filter>human</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_env_builder.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Human\ph_char_builder.cpp">
+      <Filter>managers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\ph_manip_frame.h">
+      <Filter>manipulators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_manip_ik.h">
+      <Filter>manipulators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_manip_puppet.h">
+      <Filter>manipulators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_manip_virtual.h">
+      <Filter>manipulators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_motion.h" />
+    <ClInclude Include="..\include\ph_parameters.h" />
+    <ClInclude Include="..\include\ph_manip.h">
+      <Filter>manipulators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_mod.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_mod_balance.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_mod_com.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_mod_contact.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_mod_gravity.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_mod_ik.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_mod_manip.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_mod_puppet.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_mod_ref.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_mod_root.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_mod_template.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_mod_virtual.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_file_manager.h">
+      <Filter>managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_manager.h">
+      <Filter>managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_motion_manager.h">
+      <Filter>managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_motion_segmenter.h">
+      <Filter>managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_state_manager.h">
+      <Filter>managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_human.h">
+      <Filter>human</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_joint.h">
+      <Filter>human</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_controller.h">
+      <Filter>human</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_trajectory_planner.h">
+      <Filter>human</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_env_builder.h">
+      <Filter>managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ph_char_builder.h">
+      <Filter>managers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="manipulators">
+      <UniqueIdentifier>{2afd38f7-dbd0-4e50-b766-885a89e17fa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{f797d72b-63c9-4c50-b0ac-2ebe33160dd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules">
+      <UniqueIdentifier>{6ebf54ce-3446-478b-b1c5-b1ca4ea7d873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="managers">
+      <UniqueIdentifier>{a825e86d-95de-4788-bce2-a3070aac5b62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="human">
+      <UniqueIdentifier>{fe11905c-7a3d-4f3b-af1d-1212950e85de}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

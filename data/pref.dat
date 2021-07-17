@@ -1,0 +1,188 @@
+#config file for physical humanoid
+#Robert Backman rbackman@ucmerced.edu
+#2/27/2011
+
+HumanManager
+{
+	human_manager_simulation_running = true;
+	human_manager_graphics_active = true;
+	human_manager_auto_reset_from_hip_height = false;
+	human_manager_scene = FlatGround;
+}
+HumanWindow
+{
+}
+EnvBuilder
+{
+   env_manager_default_manip_size = vec 0.2 0.4 0.2;
+   	env_manager_friction = 30.0;
+	env_manager_bounce = 0.01;
+	env_manager_density = 0.2;
+}
+CharBuilder
+{
+   char_manager_default_manip_size = vec 0.2 0.4 0.2;
+   char_manager_friction = 30.0;
+	char_manager_bounce = 0.01;
+	char_manager_density = 0.2;
+}
+HumanMotionManager
+{
+	human_motion_manager_playing = false;
+	human_motion_manager_time =  0.000000;
+	human_motion_manager_loops = false;
+	human_motion_manager_resets = true;
+	human_motion_manager_default_control_file =  control_walk;
+	human_motion_manager_interactive_mode = false;
+	human_motion_manager_show_original_motion = true;
+	human_motion_manager_show_replay = false;
+	human_motion_manager_step_length =  0.200000;
+	human_motion_manager_expand_dist =  1.000000;
+	human_motion_manager_use_kn_motion_composite = true;
+	human_motion_manager_timewarp_file =  time_warp;
+	human_motion_manager_cmu_skel = "cmu_skel.bvh";
+	human_motion_manager_draw_snapshots = false;
+	human_motion_manager_snapshot_increment =  0.1;
+	human_motion_manager_wait_for_stance = false;
+	human_motion_manager_update_when_not_playing = true;
+	human_motion_manager_rbds_max_neighbors = 3;
+	human_motion_manager_rbds_support = 30.0;
+	human_motion_manager_load_env = true;
+	human_motion_manager_relative_jump = false;
+	human_motion_manager_edit_motions = 0 500;
+	human_motion_manager_expand_tries = 3;
+	human_motion_manager_edit_mode = true;
+}
+HumanMotionSegmenter
+{
+	segment_reduction_merge_distance =  0.100000;
+	segment_motion_reduction_slope_tolerance =  0.120000;
+	segment_motion_reduction_sample_points =  2;
+	segment_motion_reduction_conc_tolerance =  0.100000;
+}
+HumanStateManager
+{
+}
+FileManager
+{
+	files_character_name =  man;
+	files_data_dir =  data;
+	files_motion_dir =  motions;
+	files_scene_dir = scenes;
+	files_base_motion_dir =  baseMotions;
+	files_config_dir =  characters;
+	files_state_dir =  states;
+	files_kinematics_dir =  kinematics;
+	files_motion_group_dir =  groups;
+	files_scene_fmt = ".scene";
+	files_motion_fmt = ".motion";
+	files_config_fmt = ".cfg";
+	files_state_fmt = ".state";
+	files_default_config =  default;
+	files_plan_file =  jump_base;
+	files_scene_list =  RandomPillars RandomJump MotionJump Empty;
+}
+ODEWorld
+{
+	world_time_scale =  1.000000;
+	world_erp =  0.300000;
+	world_cfm =  0.000010;
+	world_contact_surface_layer =  0.000100;
+	world_gravity =  9.800000;
+	world_auto_disable_steps =  5;
+	world_simulation_over_sample =  40;
+	world_simulation_fps =  60;
+	world_gain_mult =  1000.000000;
+	world_ode_torque_color_feedback = false;
+	world_bounce =  0.1;
+	world_friction =  200.000000;
+	world_limit_contacts = true;   
+}
+TrajectoryPlanner
+{
+	trajectory_planner_plan_time =  6.000000;
+	trajectory_planner_min_distance =  0.4;
+	trajectory_wants_static_balance = true;
+	trajectory_planner_randomize_environment = true;
+	trajectory_planner_tries_per_jump = 30;
+	trajectory_planner_start_sample_tolerance = 0.2;
+	trajectory_planner_max_sample_tolerance = 1.5;
+	trajectory_planner_start_sample_increment = 0.08;
+	trajectory_planner_min_com_height = 0.3;
+	trajectory_planner_max_interpolation_motions = 8;
+	trajectory_planner_energy_weight = 0.0;
+	trajectory_planner_sample_bounds = 1.5 1.8 0.2 0.5;
+	trajectory_planner_seed = 14;
+}
+
+TrajectoryGoalManip
+{
+	manipulator_position =  vec 0.000000 0.000000 1.000000;
+	manipulator_orientation =  quat null;
+	manipulator_active = true;
+	manipulator_visible = true;
+	manipulator_size = vec 0.1 0.1 0.1;
+	manipulator_active_color = color red;
+}
+
+GameWindow
+{
+
+}
+GameViewer
+{
+	camera_fovy =  0.201000;
+	camera_eye = vec 0.000000 0.000000 2.000000;
+	camera_center = vec null;
+	camera_up = vec unit_j;
+	camera_znear =  0.010000;
+	camera_zfar =  3.100000;
+	camera_aspect =  1.457014;
+	camera_scale =  0.125000;
+	camera_rotation = quat -0.797389 -0.102851 0.583099 0.116586;
+	camera_translation = vec -0.000110 -0.877679 -0.063447;
+}
+
+AppViewer
+{
+	camera_fovy =  0.201000;
+	camera_eye = vec 0.000000 0.000000 2.000000;
+	camera_center = vec null;
+	camera_up = vec unit_j;
+	camera_znear =  0.010000;
+	camera_zfar =  3.100000;
+	camera_aspect =  1.457014;
+	camera_scale =  0.125000;
+	camera_rotation = quat -0.797389 -0.102851 0.583099 0.116586;
+	camera_translation = vec -0.000110 -0.877679 -0.063447;
+}
+NodeViewer
+{
+	node_viewer_text_size =  3.600000;
+	node_viewer_node_size = vec 0.240000 0.240000 0.000000;
+	node_viewer_control_size = vec 0.060000 0.050000 0.000000;
+	node_viewer_object_size = vec 0.220000 0.220000 0.000000;
+	node_viewer_text_offset = vec 0.120000 0.018000 0.000000;
+	node_viewer_text_line_offset =  -0.080000;
+	node_viewer_control_offset = vec 0.140000 0.020000 0.000000;
+	node_viewer_control_text_offset =  -0.037000;
+	node_viewer_feedback_text_offset =  0.220000;
+	node_viewer_background_color = color 255 255 255;
+	node_viewer_node_color = color 159 159 159;
+	node_viewer_object_color = color 118 118 229;
+	node_viewer_text_color = color 255 255 255;
+	node_viewer_temp_node_color = color 0 153 0;
+	node_viewer_feedback_color = color 0 0 204;
+}
+GraphViewer
+{
+	graph_viewer_draw_grid = true;
+	graph_viewer_background_color = color 255 255 255;
+	graph_viewer_default_curve_color = color 0 0 0;
+	graph_viewer_default_curve_width =  3;
+	graph_viewer_default_point_width =  20;
+	graph_viewer_sample_width =  2;
+	graph_viewer_draw_bounds = false;
+}
+
+end
